@@ -2,8 +2,17 @@
 
 *[English](README.md) | 中文*
 
-这个开源示例项目演示了Agora视频SDK的部分API使用示例，以帮助开发者更好地理解和运用Agora视频SDK的API。
+这个 Mac 端示例项目演示了 Agora 音视频 SDK 的高阶能力，以帮助客户进一步了解声网 RTC 的技术高度。
 
+
+## 高阶功能列表
+1.H265编码
+2.色彩增强
+3.暗光增强
+4.视频降噪
+5.码率节省
+6.AI降噪
+7.超分辨率
 
 ## 环境准备
 
@@ -56,16 +65,6 @@ pod install
 
 然后你就可以使用 `APIExample.xcworkspace` 编译并运行项目了。
 
-## 联系我们
-
-- 如果你遇到了困难，可以先参阅 [常见问题](https://docs.agora.io/cn/faq)
-- 如果你想了解更多官方示例，可以参考 [官方SDK示例](https://github.com/AgoraIO)
-- 如果你想了解声网SDK在复杂场景下的应用，可以参考 [官方场景案例](https://github.com/AgoraIO-usecase)
-- 如果你想了解声网的一些社区开发者维护的项目，可以查看 [社区](https://github.com/AgoraIO-Community)
-- 完整的 API 文档见 [文档中心](https://docs.agora.io/cn/)
-- 若遇到问题需要开发者帮助，你可以到 [开发者社区](https://rtcdeveloper.com/) 提问
-- 如果需要售后技术支持, 你可以在 [Agora Dashboard](https://dashboard.agora.io) 提交工单
-- 如果发现了示例代码的 bug，欢迎提交 [issue](https://github.com/AgoraIO/Basic-Video-Call/issues)
 
 ## 代码许可
 
