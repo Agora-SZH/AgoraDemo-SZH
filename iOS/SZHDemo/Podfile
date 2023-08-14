@@ -1,0 +1,10 @@
+target 'SZHDemo' do
+  use_frameworks!
+  
+  pod 'Floaty', '~> 4.2.0'
+  pod 'AGEVideoLayout', '~> 1.0.2'
+  pod 'CocoaAsyncSocket', '7.6.5'
+  pod 'AgoraRtcEngine_iOS', '4.2.2'
+
+end
+
