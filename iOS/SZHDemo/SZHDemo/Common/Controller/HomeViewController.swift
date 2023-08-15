@@ -19,6 +19,7 @@ class HomeViewController: ViewController {
     var token:String = ""
     var channel:String = ""
     var userId:Int32 = 0
+    var userArray:Array<Int> = []
     var localVideo = Bundle.loadVideoView(type: .local, audioOnly: false)
     var remoteVideo = Bundle.loadVideoView(type: .remote, audioOnly: false)
     var moreView:MoreView? = nil
@@ -47,16 +48,16 @@ class HomeViewController: ViewController {
         super.viewDidLoad()
         channelL.text = channel
         
-        localVideo.isUserInteractionEnabled = true
-        remoteVideo.isUserInteractionEnabled = true
-        localVideo.frame = CGRectMake(0, 100, 150, 180)
-        remoteVideo.frame = CGRectMake(0, -57, self.backView.frame.size.width, self.backView.frame.size.height+92)
-        self.backView.addSubview(localVideo)
-        self.backView.addSubview(remoteVideo)
-        self.backView.bringSubviewToFront(localVideo)
+//        localVideo.isUserInteractionEnabled = true
+//        remoteVideo.isUserInteractionEnabled = true
+//        localVideo.frame = CGRectMake(0, 100, 150, 180)
+//        remoteVideo.frame = CGRectMake(0, -57, self.backView.frame.size.width, self.backView.frame.size.height+92)
+//        self.backView.addSubview(localVideo)
+//        self.backView.addSubview(remoteVideo)
+//        self.backView.bringSubviewToFront(localVideo)
         
         self.timeStart()//启动通话计时
-        self.gestureSetup()//添加UI手势方法
+        
         
         //配置RtcEngine
         let config = AgoraRtcEngineConfig()
@@ -78,6 +79,10 @@ class HomeViewController: ViewController {
         currentResolution = CGSizeMake(540, 720)
         currentFramerate = .fps15
         //设置本地预览视图
+        localVideo.isUserInteractionEnabled = true
+        localVideo.frame = CGRectMake(0, 100, 150, 180)
+        self.backView.addSubview(localVideo)
+        self.localGestureSetup()//添加UI手势方法
         let videoCanvas = AgoraRtcVideoCanvas()
         videoCanvas.uid = 0
         videoCanvas.view = localVideo.videoView
@@ -85,11 +90,7 @@ class HomeViewController: ViewController {
         agoraKit.setupLocalVideo(videoCanvas)
         agoraKit.startPreview()
         agoraKit.setDefaultAudioRouteToSpeakerphone(true)
-        //开始网络质量检测
-        let lastMileConfig = AgoraLastmileProbeConfig()
-        lastMileConfig.probeDownlink = true
-        lastMileConfig.probeUplink = true
-        agoraKit.startLastmileProbeTest(lastMileConfig)
+        
         //加入频道
         let option = AgoraRtcChannelMediaOptions()
         option.publishCameraTrack = true
@@ -100,6 +101,14 @@ class HomeViewController: ViewController {
             self.showAlert(title: "Error", message: "joinChannel call failed: \(result), please check your params")
         }
     }
+    //静音按钮点击事件
+    @IBAction func Volume(_ sender: UIButton) {
+    }
+    //切换摄像头
+    @IBAction func CameraSwitch(_ sender: UIButton) {
+        agoraKit.switchCamera()
+    }
+    
     //设置
     @IBAction func setting(_ sender: UIButton) {
     }
@@ -188,11 +197,13 @@ class HomeViewController: ViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    //绑定手势
-    private func gestureSetup() {
+    //本地视图绑定手势
+    private func localGestureSetup() {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(localViewPan(gesture:)))
         localVideo.addGestureRecognizer(panGesture)
-        
+    }
+    //远端视图绑定手势
+    private func remoteGestureSetup() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(remoteViewTap(gesture:)))
         remoteVideo.addGestureRecognizer(tapGesture)
     }
@@ -227,6 +238,13 @@ class HomeViewController: ViewController {
     @IBAction func unwindToHomeViewController(_ unwindSegue: UIStoryboardSegue) {
         if let settingVC = unwindSegue.source as? SettingViewController {}
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowUsersViewController"{
+            let controller = segue.destination as! UsersViewController
+            controller.userArray = self.userArray
+        }
+    }
 }
 
 /// agora rtc engine delegate events
@@ -244,16 +262,25 @@ extension HomeViewController: AgoraRtcEngineDelegate {
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinChannel channel: String, withUid uid: UInt, elapsed: Int) {
         self.isJoined = true
         LogUtils.log(message: "Join \(channel) with uid \(uid) elapsed \(elapsed)ms", level: .info)
+        //添加本地用户uid到user list
+        userArray.append(Int(uid))
         print("joined")
     }
 
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
         LogUtils.log(message: "remote user join: \(uid) \(elapsed)ms", level: .info)
+        remoteVideo.isUserInteractionEnabled = true
+        remoteVideo.frame = CGRectMake(0, -57, self.backView.frame.size.width, self.backView.frame.size.height+92)
+        self.backView.addSubview(remoteVideo)
+        self.backView.bringSubviewToFront(localVideo)
+        self.remoteGestureSetup()
         let videoCanvas = AgoraRtcVideoCanvas()
         videoCanvas.uid = uid
         videoCanvas.view = remoteVideo.videoView
         videoCanvas.renderMode = .hidden
         agoraKit.setupRemoteVideo(videoCanvas)
+        //添加远端用户uid到user list
+        userArray.append(Int(uid))
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid: UInt, reason: AgoraUserOfflineReason) {
@@ -263,6 +290,11 @@ extension HomeViewController: AgoraRtcEngineDelegate {
         videoCanvas.view = nil
         videoCanvas.renderMode = .hidden
         agoraKit.setupRemoteVideo(videoCanvas)
+        //从到user list移除远端用户uid
+        if userArray.contains(Int(uid)) {
+         let index = userArray.firstIndex(of:Int(uid))
+            userArray.remove(at: index!)
+        }
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, reportRtcStats stats: AgoraChannelStats) {
@@ -284,10 +316,19 @@ extension HomeViewController: AgoraRtcEngineDelegate {
     func rtcEngine(_ engine: AgoraRtcEngineKit, remoteAudioStats stats: AgoraRtcRemoteAudioStats) {
         remoteVideo.statsInfo?.updateAudioStats(stats)
     }
-    
-    func rtcEngine(_ engine: AgoraRtcEngineKit, lastmileQuality quality: AgoraNetworkQuality) {
-    }
-    func rtcEngine(_ engine: AgoraRtcEngineKit, lastmileProbeTest result: AgoraLastmileProbeResult) {
+        
+    func rtcEngine(_ engine: AgoraRtcEngineKit, networkQuality uid: UInt, txQuality: AgoraNetworkQuality, rxQuality: AgoraNetworkQuality) {
+        if uid == userId {
+            if txQuality == .excellent || txQuality == .good || txQuality == .unknown {
+                stateImage.image = UIImage.init(named: "states-nice")
+            }
+            else if txQuality == .poor {
+                stateImage.image = UIImage.init(named: "states-poor")
+            }
+            else if txQuality == .bad || txQuality == .vBad || txQuality == .down || txQuality == .detecting || txQuality == .unsupported{
+                stateImage.image = UIImage.init(named: "states-bad")
+            }
+        }
     }
 }
 

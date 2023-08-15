@@ -40,6 +40,8 @@
 		2CA6A9D12A821EE000214648 /* H265View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6A9D02A821EE000214648 /* H265View.swift */; };
 		2CA6A9D32A821EED00214648 /* H265View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6A9D22A821EED00214648 /* H265View.xib */; };
 		2CA6A9D52A84C3E200214648 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6A9D42A84C3E200214648 /* UsersViewController.swift */; };
+		2CF7647B2A8B592100C305B5 /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7647A2A8B592100C305B5 /* UserViewCell.swift */; };
+		2CF7647F2A8B5F6200C305B5 /* UserViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF7647E2A8B5F6200C305B5 /* UserViewCell.xib */; };
 		44EB4B16EA9F5D74E79AB94F /* Pods_SZHDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE83992AF65688CFD7FF555 /* Pods_SZHDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +84,8 @@
 		2CA6A9D02A821EE000214648 /* H265View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H265View.swift; sourceTree = "<group>"; };
 		2CA6A9D22A821EED00214648 /* H265View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = H265View.xib; sourceTree = "<group>"; };
 		2CA6A9D42A84C3E200214648 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		2CF7647A2A8B592100C305B5 /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
+		2CF7647E2A8B5F6200C305B5 /* UserViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewCell.xib; sourceTree = "<group>"; };
 		74C36F677DE2D207FB72A6E8 /* Pods-SZHDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SZHDemo.debug.xcconfig"; path = "Target Support Files/Pods-SZHDemo/Pods-SZHDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		8AE83992AF65688CFD7FF555 /* Pods_SZHDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SZHDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -220,6 +224,8 @@
 				2CA6A9CE2A8100B500214648 /* SRView.xib */,
 				2CA6A9D02A821EE000214648 /* H265View.swift */,
 				2CA6A9D22A821EED00214648 /* H265View.xib */,
+				2CF7647A2A8B592100C305B5 /* UserViewCell.swift */,
+				2CF7647E2A8B5F6200C305B5 /* UserViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 				2CA6A9D32A821EED00214648 /* H265View.xib in Resources */,
 				2C806F592A7A4D4B001E6B50 /* MoreView.xib in Resources */,
 				2C227ADF2A77B7B300F6FBB9 /* VideoViewSampleBufferDisplayView.xib in Resources */,
+				2CF7647F2A8B5F6200C305B5 /* UserViewCell.xib in Resources */,
 				2C227A9A2A77A1A500F6FBB9 /* LaunchScreen.storyboard in Resources */,
 				2CA6A9CF2A8100B500214648 /* SRView.xib in Resources */,
 				2C227A972A77A1A500F6FBB9 /* Assets.xcassets in Resources */,
@@ -361,6 +368,7 @@
 				2CA6A9D52A84C3E200214648 /* UsersViewController.swift in Sources */,
 				2C227AF42A77B7B300F6FBB9 /* UITypeAlias.swift in Sources */,
 				2C227AF02A77B7B300F6FBB9 /* Util.swift in Sources */,
+				2CF7647B2A8B592100C305B5 /* UserViewCell.swift in Sources */,
 				2CA6A9D12A821EE000214648 /* H265View.swift in Sources */,
 				2CA6A9C92A7B4F0600214648 /* AINoiseView.swift in Sources */,
 				2C227A902A77A1A400F6FBB9 /* SceneDelegate.swift in Sources */,
@@ -514,6 +522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YGVN96458X;
@@ -531,8 +540,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.agora.sa.SZHDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agora.SZHDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -545,6 +555,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YGVN96458X;
@@ -562,8 +573,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.agora.sa.SZHDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agora.SZHDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

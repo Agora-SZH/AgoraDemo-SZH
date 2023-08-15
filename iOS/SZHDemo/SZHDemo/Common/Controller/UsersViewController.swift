@@ -8,11 +8,12 @@
 import UIKit
 
 class UsersViewController: UIViewController {
-    var userArray:Array<Int> = [1,2,3,4]
+    var userArray:Array<Int> = []
     @IBOutlet weak var userTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let cellNib = UINib(nibName: "UserViewCell", bundle: nil)
+        userTable.register(cellNib, forCellReuseIdentifier: "UserViewCell")
     }
 }
 
@@ -26,13 +27,9 @@ extension UsersViewController:UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellID = "userCell"
-        var cell:UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: cellID)
-        if (cell==nil) {
-            cell = UITableViewCell.init(style: .value1, reuseIdentifier: cellID)
-        }
-        cell.imageView?.image = UIImage.init(named: "用户")
-        cell.textLabel?.text = String(userArray[indexPath.row])
+        let cell:UserViewCell = (tableView.dequeueReusableCell(withIdentifier: "UserViewCell", for: indexPath)) as! UserViewCell
+        cell.iconImage?.image = UIImage.init(named: "userIcon")
+        cell.nameL?.text = String(userArray[indexPath.row])
         return cell
     }
 }
