@@ -20,8 +20,8 @@ class HomeViewController: ViewController {
     var channel:String = ""
     var userId:Int32 = 0
     var userArray:Array<Int> = []
-    var localVideo = Bundle.loadVideoView(type: .local, audioOnly: false)
-    var remoteVideo = Bundle.loadVideoView(type: .remote, audioOnly: false)
+    var localVideo:VideoView!
+    var remoteVideo:VideoView!
     var moreView:MoreView? = nil
     var currentResolution:CGSize = CGSizeZero //当前分辨率
     var currentFramerate:AgoraVideoFrameRate = .fps15 //当前帧率
@@ -72,13 +72,14 @@ class HomeViewController: ViewController {
         
         //设置本地视频采集、编码参数
         let capturerConfig = AgoraCameraCapturerConfiguration()
-        capturerConfig.cameraDirection = .rear
+        capturerConfig.cameraDirection = .front
         agoraKit.setCameraCapturerConfiguration(capturerConfig)
         agoraKit.setVideoEncoderConfiguration(AgoraVideoEncoderConfiguration(size: CGSize(width: 540, height: 720),
                 frameRate: .fps15,bitrate: AgoraVideoBitrateStandard,orientationMode: .adaptative, mirrorMode: .auto))
         currentResolution = CGSizeMake(540, 720)
         currentFramerate = .fps15
         //设置本地预览视图
+        localVideo = Bundle.loadVideoView(type: .local, audioOnly: false)
         localVideo.isUserInteractionEnabled = true
         localVideo.frame = CGRectMake(0, 100, 150, 180)
         self.backView.addSubview(localVideo)
@@ -269,6 +270,7 @@ extension HomeViewController: AgoraRtcEngineDelegate {
 
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
         LogUtils.log(message: "remote user join: \(uid) \(elapsed)ms", level: .info)
+        remoteVideo = Bundle.loadVideoView(type: .remote, audioOnly: false)
         remoteVideo.isUserInteractionEnabled = true
         remoteVideo.frame = CGRectMake(0, -57, self.backView.frame.size.width, self.backView.frame.size.height+92)
         self.backView.addSubview(remoteVideo)
@@ -295,6 +297,7 @@ extension HomeViewController: AgoraRtcEngineDelegate {
          let index = userArray.firstIndex(of:Int(uid))
             userArray.remove(at: index!)
         }
+        self.remoteVideo.removeFromSuperview()
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, reportRtcStats stats: AgoraChannelStats) {
