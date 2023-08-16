@@ -33,6 +33,10 @@
 		2C806F542A7A0E0F001E6B50 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C806F532A7A0E0F001E6B50 /* SettingViewController.swift */; };
 		2C806F572A7A4CEB001E6B50 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C806F562A7A4CEB001E6B50 /* MoreView.swift */; };
 		2C806F592A7A4D4B001E6B50 /* MoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C806F582A7A4D4B001E6B50 /* MoreView.xib */; };
+		2C9354FC2A8CBA620028CA69 /* agora-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C9354FB2A8CBA620028CA69 /* agora-logo.png */; };
+		2C9355012A8CBB0E0028CA69 /* blue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2C9354FE2A8CBB0E0028CA69 /* blue.jpg */; };
+		2C9355022A8CBB0E0028CA69 /* yellow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2C9354FF2A8CBB0E0028CA69 /* yellow.jpg */; };
+		2C9355032A8CBB0E0028CA69 /* black.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2C9355002A8CBB0E0028CA69 /* black.jpg */; };
 		2CA6A9C92A7B4F0600214648 /* AINoiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6A9C82A7B4F0600214648 /* AINoiseView.swift */; };
 		2CA6A9CB2A7B4F1600214648 /* AINoiseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6A9CA2A7B4F1600214648 /* AINoiseView.xib */; };
 		2CA6A9CD2A8100AA00214648 /* SRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6A9CC2A8100AA00214648 /* SRView.swift */; };
@@ -42,6 +46,8 @@
 		2CA6A9D52A84C3E200214648 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6A9D42A84C3E200214648 /* UsersViewController.swift */; };
 		2CF7647B2A8B592100C305B5 /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7647A2A8B592100C305B5 /* UserViewCell.swift */; };
 		2CF7647F2A8B5F6200C305B5 /* UserViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF7647E2A8B5F6200C305B5 /* UserViewCell.xib */; };
+		2CF764812A8C9F0800C305B5 /* VirtualBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF764802A8C9F0800C305B5 /* VirtualBgView.swift */; };
+		2CF764832A8C9F1200C305B5 /* VirtualBgView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF764822A8C9F1200C305B5 /* VirtualBgView.xib */; };
 		44EB4B16EA9F5D74E79AB94F /* Pods_SZHDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE83992AF65688CFD7FF555 /* Pods_SZHDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +83,10 @@
 		2C806F532A7A0E0F001E6B50 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2C806F562A7A4CEB001E6B50 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		2C806F582A7A4D4B001E6B50 /* MoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreView.xib; sourceTree = "<group>"; };
+		2C9354FB2A8CBA620028CA69 /* agora-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "agora-logo.png"; path = "SZHDemo/Common/Resources/agora-logo.png"; sourceTree = SOURCE_ROOT; };
+		2C9354FE2A8CBB0E0028CA69 /* blue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue.jpg; sourceTree = "<group>"; };
+		2C9354FF2A8CBB0E0028CA69 /* yellow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yellow.jpg; sourceTree = "<group>"; };
+		2C9355002A8CBB0E0028CA69 /* black.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = black.jpg; sourceTree = "<group>"; };
 		2CA6A9C82A7B4F0600214648 /* AINoiseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AINoiseView.swift; sourceTree = "<group>"; };
 		2CA6A9CA2A7B4F1600214648 /* AINoiseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AINoiseView.xib; sourceTree = "<group>"; };
 		2CA6A9CC2A8100AA00214648 /* SRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRView.swift; sourceTree = "<group>"; };
@@ -86,6 +96,8 @@
 		2CA6A9D42A84C3E200214648 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		2CF7647A2A8B592100C305B5 /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
 		2CF7647E2A8B5F6200C305B5 /* UserViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewCell.xib; sourceTree = "<group>"; };
+		2CF764802A8C9F0800C305B5 /* VirtualBgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualBgView.swift; sourceTree = "<group>"; };
+		2CF764822A8C9F1200C305B5 /* VirtualBgView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VirtualBgView.xib; sourceTree = "<group>"; };
 		74C36F677DE2D207FB72A6E8 /* Pods-SZHDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SZHDemo.debug.xcconfig"; path = "Target Support Files/Pods-SZHDemo/Pods-SZHDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		8AE83992AF65688CFD7FF555 /* Pods_SZHDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SZHDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -154,6 +166,7 @@
 		2C227AA32A77B7B300F6FBB9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2C9354FD2A8CBACF0028CA69 /* Resources */,
 				2CA6A9C72A7B457200214648 /* Model */,
 				2CD022A22A7B437F00FA7751 /* View */,
 				2CD022A12A7B435900FA7751 /* Controller */,
@@ -182,6 +195,17 @@
 				2C227AC62A77B7B300F6FBB9 /* MediaUtils.h */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		2C9354FD2A8CBACF0028CA69 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2C9354FB2A8CBA620028CA69 /* agora-logo.png */,
+				2C9355002A8CBB0E0028CA69 /* black.jpg */,
+				2C9354FE2A8CBB0E0028CA69 /* blue.jpg */,
+				2C9354FF2A8CBB0E0028CA69 /* yellow.jpg */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		2CA6A9C72A7B457200214648 /* Model */ = {
@@ -226,6 +250,8 @@
 				2CA6A9D22A821EED00214648 /* H265View.xib */,
 				2CF7647A2A8B592100C305B5 /* UserViewCell.swift */,
 				2CF7647E2A8B5F6200C305B5 /* UserViewCell.xib */,
+				2CF764802A8C9F0800C305B5 /* VirtualBgView.swift */,
+				2CF764822A8C9F1200C305B5 /* VirtualBgView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,15 +317,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CA6A9D32A821EED00214648 /* H265View.xib in Resources */,
+				2CF764832A8C9F1200C305B5 /* VirtualBgView.xib in Resources */,
 				2C806F592A7A4D4B001E6B50 /* MoreView.xib in Resources */,
 				2C227ADF2A77B7B300F6FBB9 /* VideoViewSampleBufferDisplayView.xib in Resources */,
+				2C9355012A8CBB0E0028CA69 /* blue.jpg in Resources */,
 				2CF7647F2A8B5F6200C305B5 /* UserViewCell.xib in Resources */,
+				2C9354FC2A8CBA620028CA69 /* agora-logo.png in Resources */,
 				2C227A9A2A77A1A500F6FBB9 /* LaunchScreen.storyboard in Resources */,
 				2CA6A9CF2A8100B500214648 /* SRView.xib in Resources */,
 				2C227A972A77A1A500F6FBB9 /* Assets.xcassets in Resources */,
 				2CA6A9CB2A7B4F1600214648 /* AINoiseView.xib in Resources */,
 				2C227AEC2A77B7B300F6FBB9 /* VideoView.xib in Resources */,
 				2C227A952A77A1A400F6FBB9 /* Main.storyboard in Resources */,
+				2C9355022A8CBB0E0028CA69 /* yellow.jpg in Resources */,
+				2C9355032A8CBB0E0028CA69 /* black.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +406,7 @@
 				2C227AFD2A77B7B300F6FBB9 /* GlobalSettings.swift in Sources */,
 				2C806F542A7A0E0F001E6B50 /* SettingViewController.swift in Sources */,
 				2C227AA22A77A79C00F6FBB9 /* HomeViewController.swift in Sources */,
+				2CF764812A8C9F0800C305B5 /* VirtualBgView.swift in Sources */,
 				2C227AED2A77B7B300F6FBB9 /* VideoView.swift in Sources */,
 				2C806F572A7A4CEB001E6B50 /* MoreView.swift in Sources */,
 			);

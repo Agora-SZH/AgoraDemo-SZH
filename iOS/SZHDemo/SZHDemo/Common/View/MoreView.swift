@@ -26,7 +26,7 @@ protocol MoreDelegate:NSObjectProtocol {
     func FramerateChange(index:Int)
     func AINosie(noiseParameter:AINoisePramaters)
     func SuperResolutionAction(index:Int)
-    
+    func VirtualBgWithSource(source:String)
 }
 
 
@@ -35,6 +35,7 @@ class MoreView: UIView {
     var delegate:MoreDelegate!
     var nosieView:AINoiseView!
     var srView:SRView!
+    var virtualView:VirtualBgView!
     //ui
     @IBOutlet weak var srBtn: UIButton!
     
@@ -84,7 +85,7 @@ class MoreView: UIView {
     //AI降噪
     @IBAction func AINoise(_ sender: UIButton) {
         nosieView = Bundle.main.loadNibNamed("AINoiseView", owner: nil, options: [:])?.first as? AINoiseView;
-        nosieView?.frame = CGRectMake(0, 0, self.frame.size.width,360)
+        nosieView?.frame = CGRectMake(0, 0, self.frame.size.width,400)
         nosieView?.masksToBounds = true
         nosieView?.cornerRadius = 25
         nosieView?.delegate = self
@@ -97,7 +98,7 @@ class MoreView: UIView {
             nosiePramaters = AINoisePramaters(jiangzao: 0, huisheng: 0, weiying: 0, lvboqi: 0)
         }
         UIView.animate(withDuration: 0.3, delay: 0) {
-            self.nosieView?.frame = CGRectMake(0, self.frame.size.height - 360, self.frame.size.width, 360)
+            self.nosieView?.frame = CGRectMake(0, self.frame.size.height - 400, self.frame.size.width, 400)
             self.addSubview(self.nosieView!)
             self.bringSubviewToFront(self.nosieView!)
         }
@@ -119,6 +120,22 @@ class MoreView: UIView {
             self.bringSubviewToFront(self.srView!)
         }
     }
+    
+    @IBAction func VirtualBackground(_ sender: UIButton) {
+        virtualView = Bundle.main.loadNibNamed("VirtualBgView", owner: nil, options: [:])?.first as? VirtualBgView;
+        virtualView?.frame = CGRectMake(0, 0, self.frame.size.width,210)
+        virtualView?.masksToBounds = true
+        virtualView?.cornerRadius = 25
+        virtualView.delegate = self
+        virtualView.addTapGes()
+        UIView.animate(withDuration: 0.2, delay: 0) {
+            self.frame.origin = CGPointMake(0, self.frame.origin.y+self.frame.size.height - 210)
+            self.virtualView?.frame = CGRectMake(0, 0, self.frame.size.width, 210)
+            self.addSubview(self.virtualView!)
+            self.bringSubviewToFront(self.virtualView!)
+        }
+    }
+    
 }
 
     
@@ -179,5 +196,14 @@ extension MoreView:SRDelegate {
     func srAction(index: Int) {
         srPramaters = index
         self.delegate.SuperResolutionAction(index: index)
+    }
+}
+
+//虚拟背景页面代理方法
+extension MoreView:VirtualBgDelegate {
+    func virtualBgWithSource(source: String) {
+        virtualView.removeFromSuperview()
+        self.frame.origin = CGPointMake(0, self.frame.origin.y-self.frame.size.height + 210)
+        self.delegate.VirtualBgWithSource(source: source)
     }
 }

@@ -124,7 +124,7 @@ class HomeViewController: ViewController {
     @IBAction func MoreOperation(_ sender: UIButton) {
         if (moreView == nil) {
             moreView = Bundle.main.loadNibNamed("MoreView", owner: nil, options: [:])?.first as? MoreView;
-            moreView?.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width,360)
+            moreView?.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width,400)
             moreView?.masksToBounds = true
             moreView?.cornerRadius = 25
             moreView?.delegate = self
@@ -132,13 +132,13 @@ class HomeViewController: ViewController {
             moreView?.nosiePramaters = nosie
             moreView?.srPramaters = sr
             UIView .animate(withDuration: 0.3, delay: 0) {
-                self.moreView?.frame = CGRectMake(0, self.view.frame.size.height - 360, self.view.frame.size.width, 360)
+                self.moreView?.frame = CGRectMake(0, self.view.frame.size.height - 400, self.view.frame.size.width, 400)
                 self.view.addSubview(self.moreView!)
                 self.view.bringSubviewToFront(self.moreView!)
                 
             }
         }else {
-            moreView?.frame = CGRectMake(0, self.view.frame.size.height-360, (moreView?.frame.size.width)!, (moreView?.frame.size.height)!)
+            moreView?.frame = CGRectMake(0, self.view.frame.size.height-400, (moreView?.frame.size.width)!, (moreView?.frame.size.height)!)
         }
     }
     
@@ -235,6 +235,13 @@ class HomeViewController: ViewController {
             let controller = segue.destination as! UsersViewController
             controller.userArray = self.userArray
         }
+    }
+    
+    func virtualBgTest(){
+        let back = AgoraVirtualBackgroundSource()
+        back.backgroundSourceType = .img
+        back.source = Bundle.main.path(forResource: "yellow", ofType: "jpg")
+        let result = agoraKit.enableVirtualBackground(true, backData: back, segData: nil)
     }
 }
 
@@ -589,5 +596,13 @@ extension HomeViewController: MoreDelegate {
             agoraKit.setParameters(pameters)
             print("2倍超分")
         }
+    }
+    
+    //虚拟背景
+    func VirtualBgWithSource(source: String) {
+        let back = AgoraVirtualBackgroundSource()
+        back.backgroundSourceType = .img
+        back.source = source
+        let result = agoraKit.enableVirtualBackground(true, backData: back, segData: nil)
     }
 }
