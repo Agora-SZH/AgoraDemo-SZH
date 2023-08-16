@@ -47,17 +47,7 @@ class HomeViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         channelL.text = channel
-        
-//        localVideo.isUserInteractionEnabled = true
-//        remoteVideo.isUserInteractionEnabled = true
-//        localVideo.frame = CGRectMake(0, 100, 150, 180)
-//        remoteVideo.frame = CGRectMake(0, -57, self.backView.frame.size.width, self.backView.frame.size.height+92)
-//        self.backView.addSubview(localVideo)
-//        self.backView.addSubview(remoteVideo)
-//        self.backView.bringSubviewToFront(localVideo)
-        
         self.timeStart()//启动通话计时
-        
         
         //配置RtcEngine
         let config = AgoraRtcEngineConfig()
@@ -237,7 +227,7 @@ class HomeViewController: ViewController {
     }
     
     @IBAction func unwindToHomeViewController(_ unwindSegue: UIStoryboardSegue) {
-        if let settingVC = unwindSegue.source as? SettingViewController {}
+//        if let settingVC = unwindSegue.source as? SettingViewController {}
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
