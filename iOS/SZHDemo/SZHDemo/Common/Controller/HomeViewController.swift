@@ -599,10 +599,10 @@ extension HomeViewController: MoreDelegate {
     }
     
     //虚拟背景
-    func VirtualBgWithSource(source: String) {
+    func VirtualBgWithSource(enable:Bool , source: String) {
         let back = AgoraVirtualBackgroundSource()
         back.backgroundSourceType = .img
         back.source = source
-        let result = agoraKit.enableVirtualBackground(true, backData: back, segData: nil)
+        agoraKit.enableVirtualBackground(enable, backData: back, segData: nil)
     }
 }

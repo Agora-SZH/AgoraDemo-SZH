@@ -26,7 +26,7 @@ protocol MoreDelegate:NSObjectProtocol {
     func FramerateChange(index:Int)
     func AINosie(noiseParameter:AINoisePramaters)
     func SuperResolutionAction(index:Int)
-    func VirtualBgWithSource(source:String)
+    func VirtualBgWithSource(enable:Bool, source:String)
 }
 
 
@@ -201,9 +201,9 @@ extension MoreView:SRDelegate {
 
 //虚拟背景页面代理方法
 extension MoreView:VirtualBgDelegate {
-    func virtualBgWithSource(source: String) {
+    func virtualBgWithSource(enable: Bool, source: String) {
         virtualView.removeFromSuperview()
         self.frame.origin = CGPointMake(0, self.frame.origin.y-self.frame.size.height + 210)
-        self.delegate.VirtualBgWithSource(source: source)
+        self.delegate.VirtualBgWithSource(enable:enable ,source: source)
     }
 }

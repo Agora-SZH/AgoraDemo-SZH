@@ -8,7 +8,7 @@
 import UIKit
 
 protocol VirtualBgDelegate:NSObjectProtocol {
-    func virtualBgWithSource(source:String)
+    func virtualBgWithSource(enable:Bool, source:String)
 }
 
 class VirtualBgView: UIView {
@@ -27,16 +27,21 @@ class VirtualBgView: UIView {
     
     @IBAction func doneBtnClick(_ sender: Any) {
         if delegate != nil {
-            var name:String = ""
             switch sourceTag {
-            case 100: name = ""
-            case 200: name = "black"
-            case 300: name = "blue"
-            case 400: name = "yellow"
-            default: name = ""
+            case 100:
+                delegate.virtualBgWithSource(enable: false, source: "")
+            case 200:
+                let path:String = Bundle.main.path(forResource: "black", ofType: "jpg")!
+                delegate.virtualBgWithSource(enable: true, source: path)
+            case 300:
+                let path:String = Bundle.main.path(forResource: "blue", ofType: "jpg")!
+                delegate.virtualBgWithSource(enable: true, source: path)
+            case 400:
+                let path:String = Bundle.main.path(forResource: "yellow", ofType: "jpg")!
+                delegate.virtualBgWithSource(enable: true, source: path)
+            default:
+                delegate.virtualBgWithSource(enable: false, source: "")
             }
-            let path:String = Bundle.main.path(forResource: name, ofType: "jpg")!
-            delegate.virtualBgWithSource(source: path)
         }
     }
     
