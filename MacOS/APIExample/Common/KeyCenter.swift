@@ -23,7 +23,7 @@ struct KeyCenter {
 	则应使用不同的 App ID。如果应用程序需要相互通信，则应使用同一个App ID。
 	进入声网控制台(https://console.agora.io/)，创建一个项目，进入项目配置页，即可看到APP ID。
 	*/
-    static let AppId: String = "aab8b8f5a8cd4469a63042fcfafe7063"
+    static let AppId: String = "05039ead7cf5415ca365cce36d61350a"
 	
 	/**
 	Certificate.

@@ -349,7 +349,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OVv-JF-8np">
                                 <rect key="frame" x="2" y="5" width="111" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="回声消除尾音长度" id="QzR-Hr-fqo">
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -388,7 +388,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xdE-a9-U97">
                                 <rect key="frame" x="2" y="5" width="97" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="回声消除滤波器" id="4Gc-e5-oxU">
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
