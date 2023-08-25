@@ -5,6 +5,7 @@ target 'SZHDemo' do
   pod 'AGEVideoLayout', '~> 1.0.2'
   pod 'CocoaAsyncSocket', '7.6.5'
   pod 'AgoraRtcEngine_iOS', '4.2.2'
+  pod 'AgoraRtm_iOS', '~> 2.1.4'
 
 end
 

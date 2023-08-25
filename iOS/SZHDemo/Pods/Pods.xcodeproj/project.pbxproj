@@ -17,153 +17,174 @@
 			);
 			name = AgoraRtcEngine_iOS;
 		};
+		C749B96AD7CBE862709769C59C7DF18E /* AgoraRtm_iOS */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 6C2987931515191B934C1E94C1222C48 /* Build configuration list for PBXAggregateTarget "AgoraRtm_iOS" */;
+			buildPhases = (
+				BDDA42BFB327EBD0788E4050D18FF09D /* [CP] Copy XCFrameworks */,
+			);
+			dependencies = (
+			);
+			name = AgoraRtm_iOS;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		013A0B965FB7F20BD0F87E8871221253 /* FloatyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E575122BD8035C231AA03C16B6272F8 /* FloatyItem.swift */; };
-		12F482FE2022286A223FFC9BFA84F83A /* CocoaAsyncSocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA02653BA40171B5A66D345999325B6B /* CocoaAsyncSocket-dummy.m */; };
-		197533DE6434BAC49762D75A4E774AB6 /* Floaty-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 691ACF37D26CA424C510AF0DB72BAD2E /* Floaty-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		013A0B965FB7F20BD0F87E8871221253 /* FloatyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093839705BF205AA172B3F8C9E4F0175 /* FloatyItem.swift */; };
+		12D56B0567CFDEF8F37AB34E4B4A55A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57891F4605EE0076E5A60BAE79A4217 /* Foundation.framework */; };
+		12F482FE2022286A223FFC9BFA84F83A /* CocoaAsyncSocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EC00566C6E1FB364C884E6CCAB4B49 /* CocoaAsyncSocket-dummy.m */; };
+		197533DE6434BAC49762D75A4E774AB6 /* Floaty-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C66F19EFE79A400336E8A6684680AD2 /* Floaty-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		224183C41F3E7E35EE13E9CD3BB36938 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57891F4605EE0076E5A60BAE79A4217 /* Foundation.framework */; };
 		26F87A3DC73299D66231DFE835E9C13D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57891F4605EE0076E5A60BAE79A4217 /* Foundation.framework */; };
-		2B26DA9B3B9BDBDE79AD34079DA25CC2 /* AGEEventsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794AEA34B3BBD498E31027ED6D39F23 /* AGEEventsObserver.swift */; };
+		2B26DA9B3B9BDBDE79AD34079DA25CC2 /* AGEEventsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF954C5D8DB995563A62FA521E6332C /* AGEEventsObserver.swift */; };
 		33A88215D5655DDBF56DEAA41CC8D8DA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B85F3C49384CDDD32EC3A384F2B2B9 /* CFNetwork.framework */; };
-		36EDF538E419A9721571437C7F1CA6DD /* FloatyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741183D40A8376C29F7FE128A9D93118 /* FloatyViewController.swift */; };
-		37B0BF2484BE142772F5429AEE5CF0B1 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F95FBA04A28C5399C9237A120CE4271D /* GCDAsyncUdpSocket.m */; };
+		36EDF538E419A9721571437C7F1CA6DD /* FloatyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E172A59436C3321543E7EC92580A57 /* FloatyViewController.swift */; };
+		37B0BF2484BE142772F5429AEE5CF0B1 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F12C647BC74DE9E0F538135E25112EB0 /* GCDAsyncUdpSocket.m */; };
 		3CFEBBE9B3AAF58FEA654F00B9F16FBC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA00A58329C5DB80A50302F650B8128 /* UIKit.framework */; };
-		464DBEEA11A998854A3C3132AE24B4B4 /* Pods-SZHDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE6EF9B2102503A9EE6F5C556D7E8E2 /* Pods-SZHDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		49BF971BAF363175D611044A75C5C4A1 /* AGEVideoConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51D3F7E484442DE9C50AB1294FDEEBC /* AGEVideoConstraints.swift */; };
-		4FC2272F4C11472C903CFCC6A101313E /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0024042D9C5C63E306C7C922450543 /* GCDAsyncSocket.m */; };
-		58544F8A4087F236EA70653036E00A6A /* AGEVideoLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 257C403B1EEF42F6411C1E427E6EF49E /* AGEVideoLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		67A4DC4B4DB5321811BC3D3627AE855E /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 5741F180FC830D70F03E42F9BA529F90 /* GCDAsyncSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C246624877A277A06C1792FFD31CEE0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57891F4605EE0076E5A60BAE79A4217 /* Foundation.framework */; };
+		49BF971BAF363175D611044A75C5C4A1 /* AGEVideoConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F8FA2EE47A64059ADBD4911E72401D /* AGEVideoConstraints.swift */; };
+		4FC2272F4C11472C903CFCC6A101313E /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = E3FA77CEBBE6BB7B1FE0556A62808AEB /* GCDAsyncSocket.m */; };
+		58544F8A4087F236EA70653036E00A6A /* AGEVideoLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A058867BD0B8648F0777D7B31B5A94A /* AGEVideoLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67A4DC4B4DB5321811BC3D3627AE855E /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = E8EDD0ADEE0CBF260807763AD7217AEA /* GCDAsyncSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		72C98C8817A912FB7038531F576548C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BA00A58329C5DB80A50302F650B8128 /* UIKit.framework */; };
-		7C1DD31A3A7A0FBBA1A9C88A92CAA28C /* CocoaAsyncSocket-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 53717E36F32623961E861D9653F0696B /* CocoaAsyncSocket-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8091A6D5D32B94B079733D9D09EAE747 /* FloatyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01246C0DBA1F4617E71C9B43A5AD463B /* FloatyDelegate.swift */; };
+		7C1DD31A3A7A0FBBA1A9C88A92CAA28C /* CocoaAsyncSocket-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8889D430F8EEF0A95F1277ADCFB3AEF5 /* CocoaAsyncSocket-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8091A6D5D32B94B079733D9D09EAE747 /* FloatyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51484C146EABA65EC1F021D76AB4191A /* FloatyDelegate.swift */; };
 		8861DA09219E12C0A1DBA07EB1CEB94A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E77AC642A0E03644D0C23B25ED6AD9FA /* Security.framework */; };
-		9A7AD53C3DEC307C9D365BF6175D6180 /* AGEVideoLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 151368827E0F3E8DACE1A4E82A06123C /* AGEVideoLayout-dummy.m */; };
+		9A7AD53C3DEC307C9D365BF6175D6180 /* AGEVideoLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC4CC7E0B9CADF8383D1EF6D4744D17 /* AGEVideoLayout-dummy.m */; };
 		9D557ECF54C4F6AF8506643849AD6EA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57891F4605EE0076E5A60BAE79A4217 /* Foundation.framework */; };
-		B19D3C79B36157522E7662E737D558EF /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 496DC66B64FB42776E4B13A18926BFF0 /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C39A1418F489D89B2B08D2C908A1BCD0 /* AGEView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097254A0CA0EBD979195EB3F3A64A835 /* AGEView.swift */; };
-		CA7F3C2E65B19F2F4BCBFF5567024BAF /* FloatyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7017B6F0EE3F83B03B789291377042F1 /* FloatyManager.swift */; };
-		D3214C9C78BB1008BBE89C1F11A42B77 /* Floaty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC0653F6C379580F1EE93469200F9D /* Floaty.swift */; };
-		D9FB3A64C227528D834DF04B1D14583C /* FloatyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D485BDB4A7F28DC9716E8582271A20C9 /* FloatyWindow.swift */; };
-		DE02BED48C5B2126BC5C7858D21EE65E /* Pods-SZHDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD7DF6866332DF2B0F7B96BA1B2987 /* Pods-SZHDemo-dummy.m */; };
-		E276DF1CD7EE2C0D4259DB7B8913A4E2 /* AGEVideoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826D4355EA29EA600931E153258BCD71 /* AGEVideoContainer.swift */; };
-		E3A0847E6F038EBCDF40438A6D28BA60 /* AGEVideoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5E144965FD1863E66EF06AAD70B00F /* AGEVideoLayout.swift */; };
-		E660E9ACA165C6A86576E1DFE587AA53 /* UIView+Draggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5010D22224173365DE7298FED1FDC12 /* UIView+Draggable.swift */; };
-		E7E9CAB3F831619EA98022C3ACBB0E8F /* Floaty-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 544BF637899954B8ED2D83DEC3D5DD8B /* Floaty-dummy.m */; };
+		A38A3F758E854B1D12632C16DBB3B5EA /* Pods-SZHDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DE6EF9B2102503A9EE6F5C556D7E8E2 /* Pods-SZHDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A888897313803250A85E3D27B86F9DD4 /* Pods-SZHDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD7DF6866332DF2B0F7B96BA1B2987 /* Pods-SZHDemo-dummy.m */; };
+		B19D3C79B36157522E7662E737D558EF /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = D1C66CAC97162F3DA9E6D4606481DFDF /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C39A1418F489D89B2B08D2C908A1BCD0 /* AGEView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2856B352E74152EC996A9AA1243C5C80 /* AGEView.swift */; };
+		CA7F3C2E65B19F2F4BCBFF5567024BAF /* FloatyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CF5EB9D88AE9901324EB6AA8E7DBF1 /* FloatyManager.swift */; };
+		D3214C9C78BB1008BBE89C1F11A42B77 /* Floaty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3AC9BE2957C4D5EE74285DA220B26F /* Floaty.swift */; };
+		D9FB3A64C227528D834DF04B1D14583C /* FloatyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE6B559BE988EA5B64762A5B0BA97A /* FloatyWindow.swift */; };
+		E276DF1CD7EE2C0D4259DB7B8913A4E2 /* AGEVideoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D73365ABCBA01C22B8CD8CD3E3C58D /* AGEVideoContainer.swift */; };
+		E3A0847E6F038EBCDF40438A6D28BA60 /* AGEVideoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006075DDC1D5017ADC494E48B336477E /* AGEVideoLayout.swift */; };
+		E660E9ACA165C6A86576E1DFE587AA53 /* UIView+Draggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D9334CD396158C3CA4FDDA86D803CD /* UIView+Draggable.swift */; };
+		E7E9CAB3F831619EA98022C3ACBB0E8F /* Floaty-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F9A6830AE8F5AB526E623D18E2334F /* Floaty-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4132E44C5CF5B54556009F423968BF97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D2A775A88EA787684F2905BCB73F96D1;
-			remoteInfo = Floaty;
-		};
-		BF0FD8622DDA5A894F7451BDB3BD4F3E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 183C29DD6DE04D22CA29BAE61F5C530B;
-			remoteInfo = AgoraRtcEngine_iOS;
-		};
-		E2FF2D1F6FAB30584F410185E4EBBB9E /* PBXContainerItemProxy */ = {
+		25C116051472CDB21B9C0CF09BA8A78B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6083682834ABE0AE7BD1CBF06CADD036;
 			remoteInfo = CocoaAsyncSocket;
 		};
-		E39728460FC00A0E6D101AA1CA997A22 /* PBXContainerItemProxy */ = {
+		640462CFE397EB74629ACCBACAA06708 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1E3F69CA415029D70E9A6EA1837F132C;
 			remoteInfo = AGEVideoLayout;
 		};
+		EA242095B6AB6E44530AD6D0E7993D27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2A775A88EA787684F2905BCB73F96D1;
+			remoteInfo = Floaty;
+		};
+		EA51D0642559D19726A145F66BCD61CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C749B96AD7CBE862709769C59C7DF18E;
+			remoteInfo = AgoraRtm_iOS;
+		};
+		F591E00AB408DC351B1A0B3F3AC557D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 183C29DD6DE04D22CA29BAE61F5C530B;
+			remoteInfo = AgoraRtcEngine_iOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01246C0DBA1F4617E71C9B43A5AD463B /* FloatyDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatyDelegate.swift; path = Sources/FloatyDelegate.swift; sourceTree = "<group>"; };
-		070FB3490BB2ADDF6CD3B5EF47FAB220 /* Floaty-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Floaty-prefix.pch"; sourceTree = "<group>"; };
-		097254A0CA0EBD979195EB3F3A64A835 /* AGEView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AGEView.swift; path = sources/AGEView.swift; sourceTree = "<group>"; };
-		0B70F608A27098543CD9AF011B20D694 /* Agoraffmpeg.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = Agoraffmpeg.xcframework; sourceTree = "<group>"; };
+		003797BAF585C6F269017D5823DC2BE7 /* Floaty-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Floaty-prefix.pch"; sourceTree = "<group>"; };
+		006075DDC1D5017ADC494E48B336477E /* AGEVideoLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AGEVideoLayout.swift; path = sources/AGEVideoLayout.swift; sourceTree = "<group>"; };
+		02EAA8A5CACFF84266A6621E99A6B577 /* AGEVideoLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AGEVideoLayout-prefix.pch"; sourceTree = "<group>"; };
+		0453EB656636E77A2BE31DDC1B5A0B6C /* AgoraFaceDetectionExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraFaceDetectionExtension.xcframework; sourceTree = "<group>"; };
+		04D0424981D1E02582C39711B20CAB89 /* CocoaAsyncSocket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaAsyncSocket.release.xcconfig; sourceTree = "<group>"; };
+		06CC7F1E815F3D9EF3943F84AA95DDC0 /* AgoraRtcEngine_iOS-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "AgoraRtcEngine_iOS-xcframeworks.sh"; sourceTree = "<group>"; };
+		093839705BF205AA172B3F8C9E4F0175 /* FloatyItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatyItem.swift; path = Sources/FloatyItem.swift; sourceTree = "<group>"; };
+		0B29FC0CEF3E9A9D2A1869E99DE59DFB /* AgoraReplayKitExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraReplayKitExtension.xcframework; sourceTree = "<group>"; };
 		0C987C8BE25284877FFEED401CF8D33B /* Pods-SZHDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SZHDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		0FDFC76E1198676FFF66D3738DE0CA6F /* Floaty-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Floaty-Info.plist"; sourceTree = "<group>"; };
-		105EFB314D3B5A22121B083448AC9F30 /* Floaty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Floaty.debug.xcconfig; sourceTree = "<group>"; };
-		116FB0BDCEF6723D48364A91F39B981D /* AgoraClearVisionExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraClearVisionExtension.xcframework; sourceTree = "<group>"; };
 		14F85D250838ACBE5FA5E1FE719896A8 /* Pods-SZHDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SZHDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		151368827E0F3E8DACE1A4E82A06123C /* AGEVideoLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AGEVideoLayout-dummy.m"; sourceTree = "<group>"; };
-		152C73DC003E879C89D29139ADF96FB9 /* AgoraAudioBeautyExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraAudioBeautyExtension.xcframework; sourceTree = "<group>"; };
-		1B0024042D9C5C63E306C7C922450543 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = Source/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
+		15FE852BDEEACFF5F937A7B8FDA6DA92 /* AgoraRtm_iOS-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "AgoraRtm_iOS-xcframeworks.sh"; sourceTree = "<group>"; };
 		1B1DC267030A8CC7E85F3173B1B01E33 /* Pods-SZHDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SZHDemo-frameworks.sh"; sourceTree = "<group>"; };
-		257C403B1EEF42F6411C1E427E6EF49E /* AGEVideoLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AGEVideoLayout-umbrella.h"; sourceTree = "<group>"; };
-		266F16639B5D78E5BC2C4174645F2250 /* AgoraRtcEngine_iOS-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "AgoraRtcEngine_iOS-xcframeworks.sh"; sourceTree = "<group>"; };
 		26D4BDB8E7DF14FAD6C9345E160DE944 /* Pods-SZHDemo */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SZHDemo"; path = Pods_SZHDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2856B352E74152EC996A9AA1243C5C80 /* AGEView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AGEView.swift; path = sources/AGEView.swift; sourceTree = "<group>"; };
+		28AE25BEE78DB6BAAC1422F17091C92B /* AgoraVideoDecoderExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraVideoDecoderExtension.xcframework; sourceTree = "<group>"; };
 		2915C263A5C5C8012A8C1E97512DC6A8 /* Floaty */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Floaty; path = Floaty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A9A1526E6A742B28015BE6277BA587C /* AGEVideoLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AGEVideoLayout-prefix.pch"; sourceTree = "<group>"; };
-		2C45113E051CD52DCCED3025AE5F526F /* AGEVideoLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AGEVideoLayout.debug.xcconfig; sourceTree = "<group>"; };
-		2E575122BD8035C231AA03C16B6272F8 /* FloatyItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatyItem.swift; path = Sources/FloatyItem.swift; sourceTree = "<group>"; };
-		33566A26E18AE3DDFB4F093444FB3B5B /* AgoraRtcEngine_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AgoraRtcEngine_iOS.release.xcconfig; sourceTree = "<group>"; };
-		35EA03C86A4DBC83A6FDCC7CC35BBCD1 /* AGEVideoLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AGEVideoLayout.modulemap; sourceTree = "<group>"; };
-		4039B76B363AC19A1A503476522D13AD /* Floaty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Floaty.release.xcconfig; sourceTree = "<group>"; };
+		2C3AC9BE2957C4D5EE74285DA220B26F /* Floaty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Floaty.swift; path = Sources/Floaty.swift; sourceTree = "<group>"; };
+		353D2FF53F8C9F23A44EC112BAAA4199 /* AgoraVideoEncoderExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraVideoEncoderExtension.xcframework; sourceTree = "<group>"; };
+		3A058867BD0B8648F0777D7B31B5A94A /* AGEVideoLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AGEVideoLayout-umbrella.h"; sourceTree = "<group>"; };
+		40EC00566C6E1FB364C884E6CCAB4B49 /* CocoaAsyncSocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaAsyncSocket-dummy.m"; sourceTree = "<group>"; };
 		41B554195636898919BD88E6273E5C7F /* AGEVideoLayout */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AGEVideoLayout; path = AGEVideoLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		496DC66B64FB42776E4B13A18926BFF0 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = Source/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
-		49DC0653F6C379580F1EE93469200F9D /* Floaty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Floaty.swift; path = Sources/Floaty.swift; sourceTree = "<group>"; };
+		41D4E2D189C7B875C412B1ADD1328AB9 /* Floaty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Floaty.debug.xcconfig; sourceTree = "<group>"; };
+		440A52836A3890E24A768512C0B777D2 /* AgoraRtm_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AgoraRtm_iOS.release.xcconfig; sourceTree = "<group>"; };
+		46F9A6830AE8F5AB526E623D18E2334F /* Floaty-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Floaty-dummy.m"; sourceTree = "<group>"; };
+		48621DED0F89904EA9E4006592E4F79B /* CocoaAsyncSocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CocoaAsyncSocket.modulemap; sourceTree = "<group>"; };
+		4C47C7EEA32D54001C1F3DC7DD007AC7 /* AgoraRtcEngine_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AgoraRtcEngine_iOS.release.xcconfig; sourceTree = "<group>"; };
+		4DF954C5D8DB995563A62FA521E6332C /* AGEEventsObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AGEEventsObserver.swift; path = sources/AGEEventsObserver.swift; sourceTree = "<group>"; };
+		4F65A7F633E1BBC58DE50CD67119CFA5 /* Floaty.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Floaty.modulemap; sourceTree = "<group>"; };
 		4FFD7DF6866332DF2B0F7B96BA1B2987 /* Pods-SZHDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SZHDemo-dummy.m"; sourceTree = "<group>"; };
-		525F0BC19E8853FBF3BE33AD8BF7F187 /* AgoraSpatialAudioExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraSpatialAudioExtension.xcframework; sourceTree = "<group>"; };
-		53717E36F32623961E861D9653F0696B /* CocoaAsyncSocket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-umbrella.h"; sourceTree = "<group>"; };
-		544BF637899954B8ED2D83DEC3D5DD8B /* Floaty-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Floaty-dummy.m"; sourceTree = "<group>"; };
-		5741F180FC830D70F03E42F9BA529F90 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
+		51484C146EABA65EC1F021D76AB4191A /* FloatyDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatyDelegate.swift; path = Sources/FloatyDelegate.swift; sourceTree = "<group>"; };
+		544F274C740B12696DEFD1489D358469 /* AgoraAiEchoCancellationExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraAiEchoCancellationExtension.xcframework; sourceTree = "<group>"; };
+		59CF5EB9D88AE9901324EB6AA8E7DBF1 /* FloatyManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatyManager.swift; path = Sources/FloatyManager.swift; sourceTree = "<group>"; };
 		5BA00A58329C5DB80A50302F650B8128 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		5E6469FB9F47A8772C4DA61347EEF75D /* Pods-SZHDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SZHDemo.modulemap"; sourceTree = "<group>"; };
-		5F3EEF4AFABEEBFDD112BA8DFE38E607 /* AgoraVideoQualityAnalyzerExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraVideoQualityAnalyzerExtension.xcframework; sourceTree = "<group>"; };
+		5F482B5DDDE748273307100A382F6DA7 /* AgoraRtcKit.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraRtcKit.xcframework; sourceTree = "<group>"; };
+		63FBF5D1B3DB4F056E276CB55A39175E /* CocoaAsyncSocket-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CocoaAsyncSocket-Info.plist"; sourceTree = "<group>"; };
 		65B85F3C49384CDDD32EC3A384F2B2B9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		66E140825F6CF7136509AC7851AF06AC /* AgoraDrmLoaderExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraDrmLoaderExtension.xcframework; sourceTree = "<group>"; };
-		691ACF37D26CA424C510AF0DB72BAD2E /* Floaty-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Floaty-umbrella.h"; sourceTree = "<group>"; };
-		6A994453A3DA372D5535BFA9F590477B /* CocoaAsyncSocket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaAsyncSocket.debug.xcconfig; sourceTree = "<group>"; };
 		6CBEFE4F9E22AFDC6347A739BB35FF8C /* CocoaAsyncSocket */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaAsyncSocket; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EEBBC5893A92FA0E85612D723833C23 /* AgoraAiNoiseSuppressionExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraAiNoiseSuppressionExtension.xcframework; sourceTree = "<group>"; };
-		7017B6F0EE3F83B03B789291377042F1 /* FloatyManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatyManager.swift; path = Sources/FloatyManager.swift; sourceTree = "<group>"; };
+		6DC4CC7E0B9CADF8383D1EF6D4744D17 /* AGEVideoLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AGEVideoLayout-dummy.m"; sourceTree = "<group>"; };
+		6DE2B50EE4D2786ADB2DB501C6841449 /* AgoraSoundTouch.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraSoundTouch.xcframework; sourceTree = "<group>"; };
+		70F2C22D0D8D2C8C3FFD0F8C0FE2D8FE /* AgoraSpatialAudioExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraSpatialAudioExtension.xcframework; sourceTree = "<group>"; };
 		73F64F3081EA38B19238247AB28A0BDF /* Pods-SZHDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SZHDemo.release.xcconfig"; sourceTree = "<group>"; };
-		741183D40A8376C29F7FE128A9D93118 /* FloatyViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatyViewController.swift; path = Sources/FloatyViewController.swift; sourceTree = "<group>"; };
-		78D6984489BEB869EA28B5ABBED0D1F3 /* CocoaAsyncSocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CocoaAsyncSocket.modulemap; sourceTree = "<group>"; };
-		7C15A3C44FA97EC1E6A14ECEE2BBD682 /* CocoaAsyncSocket-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CocoaAsyncSocket-Info.plist"; sourceTree = "<group>"; };
+		79DE6B559BE988EA5B64762A5B0BA97A /* FloatyWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatyWindow.swift; path = Sources/FloatyWindow.swift; sourceTree = "<group>"; };
 		7DE6EF9B2102503A9EE6F5C556D7E8E2 /* Pods-SZHDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SZHDemo-umbrella.h"; sourceTree = "<group>"; };
-		826D4355EA29EA600931E153258BCD71 /* AGEVideoContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AGEVideoContainer.swift; path = sources/AGEVideoContainer.swift; sourceTree = "<group>"; };
-		8C05FD2D4276570E3A1DCA16A3A20428 /* AgoraSoundTouch.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraSoundTouch.xcframework; sourceTree = "<group>"; };
-		8C49F3DBE12686825D95F1EA00AA7B84 /* AgoraVideoEncoderExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraVideoEncoderExtension.xcframework; sourceTree = "<group>"; };
-		8C64AB8EF51B3C9367ECA97EC0A1355F /* AgoraFaceDetectionExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraFaceDetectionExtension.xcframework; sourceTree = "<group>"; };
-		8E317D9F4964A85938370B1A21EFF677 /* AgoraVideoSegmentationExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraVideoSegmentationExtension.xcframework; sourceTree = "<group>"; };
-		8F181D8FCF2AF6CEA0712D4C6CE059F0 /* AgoraReplayKitExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraReplayKitExtension.xcframework; sourceTree = "<group>"; };
-		98ECA3001CA09E10DA53440E220BB26B /* AgoraContentInspectExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraContentInspectExtension.xcframework; sourceTree = "<group>"; };
-		9CFAB6CA279D6C70B037A439D5EB7D00 /* AgoraRtcEngine_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AgoraRtcEngine_iOS.debug.xcconfig; sourceTree = "<group>"; };
+		7EE0A3CAF702D4B666D48E4A3E923110 /* AGEVideoLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AGEVideoLayout.release.xcconfig; sourceTree = "<group>"; };
+		81D9334CD396158C3CA4FDDA86D803CD /* UIView+Draggable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Draggable.swift"; path = "Sources/UIView+Draggable.swift"; sourceTree = "<group>"; };
+		8626EC6AFD4989BE3702451742A9A7D7 /* Floaty-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Floaty-Info.plist"; sourceTree = "<group>"; };
+		8889D430F8EEF0A95F1277ADCFB3AEF5 /* CocoaAsyncSocket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-umbrella.h"; sourceTree = "<group>"; };
+		8B56B0777999BBE79DFE8C604957DF54 /* Agorafdkaac.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = Agorafdkaac.xcframework; sourceTree = "<group>"; };
+		8C66F19EFE79A400336E8A6684680AD2 /* Floaty-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Floaty-umbrella.h"; sourceTree = "<group>"; };
+		8C9FB72FDC94AC2922D0801569D9636F /* Floaty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Floaty.release.xcconfig; sourceTree = "<group>"; };
+		8DD9ABC991546013B9663D1D4E1A51CE /* AgoraContentInspectExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraContentInspectExtension.xcframework; sourceTree = "<group>"; };
+		965C2AD149E5631E0D46E3F657316D68 /* AgoraVideoSegmentationExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraVideoSegmentationExtension.xcframework; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A3AB7E4D0290BA89F8F594FE70A623FB /* AGEVideoLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AGEVideoLayout.release.xcconfig; sourceTree = "<group>"; };
-		A42B29BA02AF59CE65202FDF6A000912 /* CocoaAsyncSocket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaAsyncSocket.release.xcconfig; sourceTree = "<group>"; };
+		9E1A8C925AF1CA55FE00443562BAAEAC /* AgoraDrmLoaderExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraDrmLoaderExtension.xcframework; sourceTree = "<group>"; };
+		A10E6B2D18E7EF6554665423598F4B43 /* video_dec.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = video_dec.xcframework; sourceTree = "<group>"; };
 		A4E1BBC62DFADC865E41B12B02487E8D /* Pods-SZHDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SZHDemo-Info.plist"; sourceTree = "<group>"; };
-		A794AEA34B3BBD498E31027ED6D39F23 /* AGEEventsObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AGEEventsObserver.swift; path = sources/AGEEventsObserver.swift; sourceTree = "<group>"; };
-		BA02653BA40171B5A66D345999325B6B /* CocoaAsyncSocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaAsyncSocket-dummy.m"; sourceTree = "<group>"; };
-		BCEE1A8D6E898B738109971677A45BD7 /* video_dec.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = video_dec.xcframework; sourceTree = "<group>"; };
-		C51D3F7E484442DE9C50AB1294FDEEBC /* AGEVideoConstraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AGEVideoConstraints.swift; path = sources/AGEVideoConstraints.swift; sourceTree = "<group>"; };
+		AD39B8083DC9153EEAABAE55ACBC31AC /* AgoraRtm_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AgoraRtm_iOS.debug.xcconfig; sourceTree = "<group>"; };
+		B7D73365ABCBA01C22B8CD8CD3E3C58D /* AGEVideoContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AGEVideoContainer.swift; path = sources/AGEVideoContainer.swift; sourceTree = "<group>"; };
+		B820B0E05CB3CB08054AAE49D249EA52 /* CocoaAsyncSocket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaAsyncSocket.debug.xcconfig; sourceTree = "<group>"; };
+		BD1F19F921BE25770A31DD85E0E19EF0 /* AGEVideoLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AGEVideoLayout.debug.xcconfig; sourceTree = "<group>"; };
+		BDE00BF18DCF3FEA4160338261D47900 /* AgoraAiNoiseSuppressionExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraAiNoiseSuppressionExtension.xcframework; sourceTree = "<group>"; };
+		C1F8FA2EE47A64059ADBD4911E72401D /* AGEVideoConstraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AGEVideoConstraints.swift; path = sources/AGEVideoConstraints.swift; sourceTree = "<group>"; };
+		C3E172A59436C3321543E7EC92580A57 /* FloatyViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatyViewController.swift; path = Sources/FloatyViewController.swift; sourceTree = "<group>"; };
+		C5598261A3D62BB81DDA70A06CF71D21 /* AGEVideoLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AGEVideoLayout.modulemap; sourceTree = "<group>"; };
 		C57891F4605EE0076E5A60BAE79A4217 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CC0342AE26FAE05774F387A989A713D0 /* AgoraRtcKit.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraRtcKit.xcframework; sourceTree = "<group>"; };
-		CE5C0A5400DDE880EF72C95E64186422 /* AgoraCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraCore.xcframework; sourceTree = "<group>"; };
-		D0B46971D3F2B32D583DDE72CDB29859 /* AgoraVideoDecoderExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraVideoDecoderExtension.xcframework; sourceTree = "<group>"; };
-		D485BDB4A7F28DC9716E8582271A20C9 /* FloatyWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatyWindow.swift; path = Sources/FloatyWindow.swift; sourceTree = "<group>"; };
-		D5010D22224173365DE7298FED1FDC12 /* UIView+Draggable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Draggable.swift"; path = "Sources/UIView+Draggable.swift"; sourceTree = "<group>"; };
-		D6231870E62018D0AA759E95098DCFE0 /* CocoaAsyncSocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-prefix.pch"; sourceTree = "<group>"; };
+		C5FA6CFB265E79741C72911194DD0260 /* AgoraCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraCore.xcframework; sourceTree = "<group>"; };
+		C67F125B8AC2626CD6F6731FB83B2DDC /* AgoraAudioBeautyExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraAudioBeautyExtension.xcframework; sourceTree = "<group>"; };
+		D1C66CAC97162F3DA9E6D4606481DFDF /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = Source/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		D743BA6BF02C9D61CF647A841E47A566 /* AgoraRtcEngine_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AgoraRtcEngine_iOS.debug.xcconfig; sourceTree = "<group>"; };
 		D7A43517378B3FE72D063ED7E8E00BCF /* Pods-SZHDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SZHDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		DA5E144965FD1863E66EF06AAD70B00F /* AGEVideoLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AGEVideoLayout.swift; path = sources/AGEVideoLayout.swift; sourceTree = "<group>"; };
-		DAD3A30D1AB5E03EAB54597B836B01E2 /* video_enc.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = video_enc.xcframework; sourceTree = "<group>"; };
-		E6690CCA1ADCD64DE6A32BF8796DEF05 /* Agorafdkaac.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = Agorafdkaac.xcframework; sourceTree = "<group>"; };
+		DC16BA638E9E2239CC4A35246E4937F4 /* Agoraffmpeg.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = Agoraffmpeg.xcframework; sourceTree = "<group>"; };
+		DD1FEB69364E6B9ACDDB7CD230AD4461 /* CocoaAsyncSocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-prefix.pch"; sourceTree = "<group>"; };
+		E059F8812448EBB7AF33A693444B1EA4 /* video_enc.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = video_enc.xcframework; sourceTree = "<group>"; };
+		E09AE61AA53FC5C4683F1C0242CA3498 /* AGEVideoLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AGEVideoLayout-Info.plist"; sourceTree = "<group>"; };
+		E3FA77CEBBE6BB7B1FE0556A62808AEB /* GCDAsyncSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = Source/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
 		E77AC642A0E03644D0C23B25ED6AD9FA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		EE92D6ECDA0C8998B03BCE24C789F1C3 /* AGEVideoLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AGEVideoLayout-Info.plist"; sourceTree = "<group>"; };
-		F2B09729D383886276C24C11E0436CFA /* Floaty.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Floaty.modulemap; sourceTree = "<group>"; };
-		F95FBA04A28C5399C9237A120CE4271D /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = Source/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
-		FBA163063B8BF6B10EF0BEC66FE2B4E9 /* AgoraAiEchoCancellationExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraAiEchoCancellationExtension.xcframework; sourceTree = "<group>"; };
+		E8EDD0ADEE0CBF260807763AD7217AEA /* GCDAsyncSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
+		E953752DD13EF79DA8DFBBC08FE4A851 /* AgoraRtmKit.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraRtmKit.xcframework; sourceTree = "<group>"; };
+		EA3507728D8B96DC532E1EB3AE336636 /* AgoraVideoQualityAnalyzerExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraVideoQualityAnalyzerExtension.xcframework; sourceTree = "<group>"; };
+		EAA0D9A967AED2AAD68792B38A32FCC8 /* AgoraClearVisionExtension.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = AgoraClearVisionExtension.xcframework; sourceTree = "<group>"; };
+		F12C647BC74DE9E0F538135E25112EB0 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = Source/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,20 +197,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5ED6F36D6F26D33F3CB43A7412D7B9CA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6C246624877A277A06C1792FFD31CEE0 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		64608A899105E73EF1EEAF763727B591 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				224183C41F3E7E35EE13E9CD3BB36938 /* Foundation.framework in Frameworks */,
 				72C98C8817A912FB7038531F576548C3 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B312F97800C7F7D27E25A4465C0DFC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12D56B0567CFDEF8F37AB34E4B4A55A4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,36 +227,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06F659789B351ADF4FF50A00B4CD5793 /* Frameworks */ = {
+		086D2C23AC3C26B7C2DB6AEC23ACC8E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5F3EEF4AFABEEBFDD112BA8DFE38E607 /* AgoraVideoQualityAnalyzerExtension.xcframework */,
+				8DD9ABC991546013B9663D1D4E1A51CE /* AgoraContentInspectExtension.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0AE72BDB2A0C15D27BA0D68F6423D362 /* AINS */ = {
+		08CEA4B3F27FCFACC5284C6178FE1131 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BCF1220252BBF1B80094F63C94BF42F9 /* Frameworks */,
+				28AE25BEE78DB6BAAC1422F17091C92B /* AgoraVideoDecoderExtension.xcframework */,
+				A10E6B2D18E7EF6554665423598F4B43 /* video_dec.xcframework */,
 			);
-			name = AINS;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		11411C01DDBEF61BF483023F62E8DFF0 /* RtcBasic */ = {
+		09CC63CEB9C51E41CBE0A13E03E582B1 /* VideoCodecEnc */ = {
 			isa = PBXGroup;
 			children = (
-				8F00E601066FA001C055E881874B8A7A /* Frameworks */,
+				26BDDD1CA09ABD7FCA4B1AC1997B8527 /* Frameworks */,
 			);
-			name = RtcBasic;
+			name = VideoCodecEnc;
 			sourceTree = "<group>";
 		};
-		146E6F83C384AECB52D89D61A8C98C17 /* ContentInspect */ = {
+		1310C3C777DD8AFE334E6C2051968CB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				957D7D0F50E9DD823E1F2D51AE80F61D /* Frameworks */,
+				9E1A8C925AF1CA55FE00443562BAAEAC /* AgoraDrmLoaderExtension.xcframework */,
 			);
-			name = ContentInspect;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1617B7C126F235497EAB7B52E872AE6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				965C2AD149E5631E0D46E3F657316D68 /* AgoraVideoSegmentationExtension.xcframework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		1E312FC75BEE688D1C8D396DFE64C8F0 /* iOS */ = {
@@ -249,96 +279,163 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		2FBEB1E9CDA8596B2534B89992820D0A /* VQA */ = {
+		26BDDD1CA09ABD7FCA4B1AC1997B8527 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				06F659789B351ADF4FF50A00B4CD5793 /* Frameworks */,
-			);
-			name = VQA;
-			sourceTree = "<group>";
-		};
-		3175F2B6C39E61363A562DE979D31358 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8E317D9F4964A85938370B1A21EFF677 /* AgoraVideoSegmentationExtension.xcframework */,
+				353D2FF53F8C9F23A44EC112BAAA4199 /* AgoraVideoEncoderExtension.xcframework */,
+				E059F8812448EBB7AF33A693444B1EA4 /* video_enc.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3804DCB0E81F1FDBEDC7ED0A09462582 /* Frameworks */ = {
+		273C18F401086C704894008A8BFD3F78 /* VideoCodecDec */ = {
 			isa = PBXGroup;
 			children = (
-				66E140825F6CF7136509AC7851AF06AC /* AgoraDrmLoaderExtension.xcframework */,
+				08CEA4B3F27FCFACC5284C6178FE1131 /* Frameworks */,
+			);
+			name = VideoCodecDec;
+			sourceTree = "<group>";
+		};
+		3943A5A6B042D2304F42674B53493F21 /* AgoraRtm_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				40EE1D9DFA350A708638B4FCC4D2174F /* Frameworks */,
+				787D0C2975AB5D865CB1AEF0683F1C19 /* Support Files */,
+			);
+			name = AgoraRtm_iOS;
+			path = AgoraRtm_iOS;
+			sourceTree = "<group>";
+		};
+		3C726876DE936BF130E20EDA49049E61 /* AGEVideoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				4DF954C5D8DB995563A62FA521E6332C /* AGEEventsObserver.swift */,
+				C1F8FA2EE47A64059ADBD4911E72401D /* AGEVideoConstraints.swift */,
+				B7D73365ABCBA01C22B8CD8CD3E3C58D /* AGEVideoContainer.swift */,
+				006075DDC1D5017ADC494E48B336477E /* AGEVideoLayout.swift */,
+				2856B352E74152EC996A9AA1243C5C80 /* AGEView.swift */,
+				6EEB62A0D06D91E36D0F0A5614ACC731 /* Support Files */,
+			);
+			name = AGEVideoLayout;
+			path = AGEVideoLayout;
+			sourceTree = "<group>";
+		};
+		3D4F270987EB3D5EB669DA570B6B75ED /* AINS */ = {
+			isa = PBXGroup;
+			children = (
+				CD46681727890D9F217413CB5D076F16 /* Frameworks */,
+			);
+			name = AINS;
+			sourceTree = "<group>";
+		};
+		40EE1D9DFA350A708638B4FCC4D2174F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E953752DD13EF79DA8DFBBC08FE4A851 /* AgoraRtmKit.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		42E23ED73969D672EA21EDA8BD565751 /* Pods */ = {
+		412041708EC4571FB4176B90A35874E7 /* AudioBeauty */ = {
 			isa = PBXGroup;
 			children = (
-				DBEB07D69CEF91B59F754DF5F3625576 /* AGEVideoLayout */,
-				680B689EAF1CF5BFB8E6EC325104A8EE /* AgoraRtcEngine_iOS */,
-				6F27D5D2F44978B040D115D847E5CAC1 /* CocoaAsyncSocket */,
-				8210E66A2C906478F725C3A9479AFC62 /* Floaty */,
+				CC2E1CC17D7801F557E07DFADB8B9D0A /* Frameworks */,
 			);
-			name = Pods;
+			name = AudioBeauty;
 			sourceTree = "<group>";
 		};
-		4BB21F351E6BD717CABA3E3103ABB191 /* SpatialAudio */ = {
+		41DF09F23E10AF4E282006FC0BDDFB99 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B50E1FE4BFF4E4B8F5BFB803BA971515 /* Frameworks */,
-			);
-			name = SpatialAudio;
-			sourceTree = "<group>";
-		};
-		4FAE191207BA0E0974BBDFB3D8DC8DA0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				116FB0BDCEF6723D48364A91F39B981D /* AgoraClearVisionExtension.xcframework */,
+				0453EB656636E77A2BE31DDC1B5A0B6C /* AgoraFaceDetectionExtension.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5725EF963410EC2BBD1FB9BF8F8B3A03 /* Frameworks */ = {
+		4894DBF91E07730AB6F7FA1B3D4AE0C0 /* ClearVision */ = {
 			isa = PBXGroup;
 			children = (
-				8C49F3DBE12686825D95F1EA00AA7B84 /* AgoraVideoEncoderExtension.xcframework */,
-				DAD3A30D1AB5E03EAB54597B836B01E2 /* video_enc.xcframework */,
+				934D57355F9D1A386BEC5C925BB222C2 /* Frameworks */,
+			);
+			name = ClearVision;
+			sourceTree = "<group>";
+		};
+		48A57DA0141D5C262FAE8AD90007D423 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				48621DED0F89904EA9E4006592E4F79B /* CocoaAsyncSocket.modulemap */,
+				40EC00566C6E1FB364C884E6CCAB4B49 /* CocoaAsyncSocket-dummy.m */,
+				63FBF5D1B3DB4F056E276CB55A39175E /* CocoaAsyncSocket-Info.plist */,
+				DD1FEB69364E6B9ACDDB7CD230AD4461 /* CocoaAsyncSocket-prefix.pch */,
+				8889D430F8EEF0A95F1277ADCFB3AEF5 /* CocoaAsyncSocket-umbrella.h */,
+				B820B0E05CB3CB08054AAE49D249EA52 /* CocoaAsyncSocket.debug.xcconfig */,
+				04D0424981D1E02582C39711B20CAB89 /* CocoaAsyncSocket.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CocoaAsyncSocket";
+			sourceTree = "<group>";
+		};
+		584AA62D83884B3DDBA01234EB893EE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5FA6CFB265E79741C72911194DD0260 /* AgoraCore.xcframework */,
+				8B56B0777999BBE79DFE8C604957DF54 /* Agorafdkaac.xcframework */,
+				DC16BA638E9E2239CC4A35246E4937F4 /* Agoraffmpeg.xcframework */,
+				5F482B5DDDE748273307100A382F6DA7 /* AgoraRtcKit.xcframework */,
+				6DE2B50EE4D2786ADB2DB501C6841449 /* AgoraSoundTouch.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5C34CB26D09B1A78F3DE35A3BCA9669C /* Frameworks */ = {
+		58B77B44AC877E49EC22045AE91CCD33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D0B46971D3F2B32D583DDE72CDB29859 /* AgoraVideoDecoderExtension.xcframework */,
-				BCEE1A8D6E898B738109971677A45BD7 /* video_dec.xcframework */,
+				544F274C740B12696DEFD1489D358469 /* AgoraAiEchoCancellationExtension.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		680B689EAF1CF5BFB8E6EC325104A8EE /* AgoraRtcEngine_iOS */ = {
+		59220E6D09C7D39F53AE4EA62F701651 /* ContentInspect */ = {
 			isa = PBXGroup;
 			children = (
-				D54DDA5F8D093E3328AE1D4AE491233B /* AIAEC */,
-				0AE72BDB2A0C15D27BA0D68F6423D362 /* AINS */,
-				A2D15976FC9CAB6FACBA4AF843BE3F45 /* AudioBeauty */,
-				C4C8F03BC581C5FD2405F5DC6CC95401 /* ClearVision */,
-				146E6F83C384AECB52D89D61A8C98C17 /* ContentInspect */,
-				C4472FC59623C0854563A9C9332084DA /* DRM */,
-				C0ECC4053EF6C5E6D8EEB37165B68BE3 /* FaceDetection */,
-				AC5623C021AA51FDC33DA52401090D32 /* ReplayKit */,
-				11411C01DDBEF61BF483023F62E8DFF0 /* RtcBasic */,
-				4BB21F351E6BD717CABA3E3103ABB191 /* SpatialAudio */,
-				7D0E71C54D9432FB0FFDE95FB27FE59B /* Support Files */,
-				8EA433A484265094BF2C4FE83AA8D0E2 /* VideoCodecDec */,
-				D425C29B7A110D60251B24779C1930EE /* VideoCodecEnc */,
-				AC03540BB69DCAB654349FEB28CF1722 /* VirtualBackground */,
-				2FBEB1E9CDA8596B2534B89992820D0A /* VQA */,
+				086D2C23AC3C26B7C2DB6AEC23ACC8E7 /* Frameworks */,
 			);
-			name = AgoraRtcEngine_iOS;
-			path = AgoraRtcEngine_iOS;
+			name = ContentInspect;
+			sourceTree = "<group>";
+		};
+		5E99D612A3E36C7DD578D045AA98F26B /* VirtualBackground */ = {
+			isa = PBXGroup;
+			children = (
+				1617B7C126F235497EAB7B52E872AE6F /* Frameworks */,
+			);
+			name = VirtualBackground;
+			sourceTree = "<group>";
+		};
+		6105F3F2FA57DB7FEB2D0EDD93292092 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				06CC7F1E815F3D9EF3943F84AA95DDC0 /* AgoraRtcEngine_iOS-xcframeworks.sh */,
+				D743BA6BF02C9D61CF647A841E47A566 /* AgoraRtcEngine_iOS.debug.xcconfig */,
+				4C47C7EEA32D54001C1F3DC7DD007AC7 /* AgoraRtcEngine_iOS.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AgoraRtcEngine_iOS";
+			sourceTree = "<group>";
+		};
+		6669F3D65E13BFC5317460B7281B16C3 /* Floaty */ = {
+			isa = PBXGroup;
+			children = (
+				2C3AC9BE2957C4D5EE74285DA220B26F /* Floaty.swift */,
+				51484C146EABA65EC1F021D76AB4191A /* FloatyDelegate.swift */,
+				093839705BF205AA172B3F8C9E4F0175 /* FloatyItem.swift */,
+				59CF5EB9D88AE9901324EB6AA8E7DBF1 /* FloatyManager.swift */,
+				C3E172A59436C3321543E7EC92580A57 /* FloatyViewController.swift */,
+				79DE6B559BE988EA5B64762A5B0BA97A /* FloatyWindow.swift */,
+				81D9334CD396158C3CA4FDDA86D803CD /* UIView+Draggable.swift */,
+				DDA699F9B16A8D2276F6EFD6690B9377 /* Support Files */,
+			);
+			name = Floaty;
+			path = Floaty;
 			sourceTree = "<group>";
 		};
 		6ED652C954140814D436FBDA96E8C481 /* Pods-SZHDemo */ = {
@@ -358,64 +455,77 @@
 			path = "Target Support Files/Pods-SZHDemo";
 			sourceTree = "<group>";
 		};
-		6F27D5D2F44978B040D115D847E5CAC1 /* CocoaAsyncSocket */ = {
+		6EEB62A0D06D91E36D0F0A5614ACC731 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5741F180FC830D70F03E42F9BA529F90 /* GCDAsyncSocket.h */,
-				1B0024042D9C5C63E306C7C922450543 /* GCDAsyncSocket.m */,
-				496DC66B64FB42776E4B13A18926BFF0 /* GCDAsyncUdpSocket.h */,
-				F95FBA04A28C5399C9237A120CE4271D /* GCDAsyncUdpSocket.m */,
-				AA95B4635646670ACD7E58CE482920CB /* Support Files */,
-			);
-			name = CocoaAsyncSocket;
-			path = CocoaAsyncSocket;
-			sourceTree = "<group>";
-		};
-		7D0E71C54D9432FB0FFDE95FB27FE59B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				266F16639B5D78E5BC2C4174645F2250 /* AgoraRtcEngine_iOS-xcframeworks.sh */,
-				9CFAB6CA279D6C70B037A439D5EB7D00 /* AgoraRtcEngine_iOS.debug.xcconfig */,
-				33566A26E18AE3DDFB4F093444FB3B5B /* AgoraRtcEngine_iOS.release.xcconfig */,
+				C5598261A3D62BB81DDA70A06CF71D21 /* AGEVideoLayout.modulemap */,
+				6DC4CC7E0B9CADF8383D1EF6D4744D17 /* AGEVideoLayout-dummy.m */,
+				E09AE61AA53FC5C4683F1C0242CA3498 /* AGEVideoLayout-Info.plist */,
+				02EAA8A5CACFF84266A6621E99A6B577 /* AGEVideoLayout-prefix.pch */,
+				3A058867BD0B8648F0777D7B31B5A94A /* AGEVideoLayout-umbrella.h */,
+				BD1F19F921BE25770A31DD85E0E19EF0 /* AGEVideoLayout.debug.xcconfig */,
+				7EE0A3CAF702D4B666D48E4A3E923110 /* AGEVideoLayout.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/AgoraRtcEngine_iOS";
+			path = "../Target Support Files/AGEVideoLayout";
 			sourceTree = "<group>";
 		};
-		8210E66A2C906478F725C3A9479AFC62 /* Floaty */ = {
+		7481FEE13A7CFDE7C535B12EC53DB2C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				49DC0653F6C379580F1EE93469200F9D /* Floaty.swift */,
-				01246C0DBA1F4617E71C9B43A5AD463B /* FloatyDelegate.swift */,
-				2E575122BD8035C231AA03C16B6272F8 /* FloatyItem.swift */,
-				7017B6F0EE3F83B03B789291377042F1 /* FloatyManager.swift */,
-				741183D40A8376C29F7FE128A9D93118 /* FloatyViewController.swift */,
-				D485BDB4A7F28DC9716E8582271A20C9 /* FloatyWindow.swift */,
-				D5010D22224173365DE7298FED1FDC12 /* UIView+Draggable.swift */,
-				A1C25023EC144F815FBD383E5CEF731D /* Support Files */,
-			);
-			name = Floaty;
-			path = Floaty;
-			sourceTree = "<group>";
-		};
-		8EA433A484265094BF2C4FE83AA8D0E2 /* VideoCodecDec */ = {
-			isa = PBXGroup;
-			children = (
-				5C34CB26D09B1A78F3DE35A3BCA9669C /* Frameworks */,
-			);
-			name = VideoCodecDec;
-			sourceTree = "<group>";
-		};
-		8F00E601066FA001C055E881874B8A7A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CE5C0A5400DDE880EF72C95E64186422 /* AgoraCore.xcframework */,
-				E6690CCA1ADCD64DE6A32BF8796DEF05 /* Agorafdkaac.xcframework */,
-				0B70F608A27098543CD9AF011B20D694 /* Agoraffmpeg.xcframework */,
-				CC0342AE26FAE05774F387A989A713D0 /* AgoraRtcKit.xcframework */,
-				8C05FD2D4276570E3A1DCA16A3A20428 /* AgoraSoundTouch.xcframework */,
+				70F2C22D0D8D2C8C3FFD0F8C0FE2D8FE /* AgoraSpatialAudioExtension.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		75A857C2AD9EDF09829AA9F4C53D273C /* DRM */ = {
+			isa = PBXGroup;
+			children = (
+				1310C3C777DD8AFE334E6C2051968CB4 /* Frameworks */,
+			);
+			name = DRM;
+			sourceTree = "<group>";
+		};
+		787D0C2975AB5D865CB1AEF0683F1C19 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				15FE852BDEEACFF5F937A7B8FDA6DA92 /* AgoraRtm_iOS-xcframeworks.sh */,
+				AD39B8083DC9153EEAABAE55ACBC31AC /* AgoraRtm_iOS.debug.xcconfig */,
+				440A52836A3890E24A768512C0B777D2 /* AgoraRtm_iOS.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AgoraRtm_iOS";
+			sourceTree = "<group>";
+		};
+		7BF0C8220A99C02FE3334B3DA93DBC8F /* RtcBasic */ = {
+			isa = PBXGroup;
+			children = (
+				584AA62D83884B3DDBA01234EB893EE1 /* Frameworks */,
+			);
+			name = RtcBasic;
+			sourceTree = "<group>";
+		};
+		869C713A8D4F95F7BA65A0C1C0BC2AB3 /* AgoraRtcEngine_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				943176199EDC66BA342F63BD77B48C5B /* AIAEC */,
+				3D4F270987EB3D5EB669DA570B6B75ED /* AINS */,
+				412041708EC4571FB4176B90A35874E7 /* AudioBeauty */,
+				4894DBF91E07730AB6F7FA1B3D4AE0C0 /* ClearVision */,
+				59220E6D09C7D39F53AE4EA62F701651 /* ContentInspect */,
+				75A857C2AD9EDF09829AA9F4C53D273C /* DRM */,
+				DB4160D406A70F5B39EA386752AF0F9A /* FaceDetection */,
+				E261C91CAAB82E67BAD80ADEC4917960 /* ReplayKit */,
+				7BF0C8220A99C02FE3334B3DA93DBC8F /* RtcBasic */,
+				A5CAF233E628AB6ABDC0140B88E8A866 /* SpatialAudio */,
+				6105F3F2FA57DB7FEB2D0EDD93292092 /* Support Files */,
+				273C18F401086C704894008A8BFD3F78 /* VideoCodecDec */,
+				09CC63CEB9C51E41CBE0A13E03E582B1 /* VideoCodecEnc */,
+				5E99D612A3E36C7DD578D045AA98F26B /* VirtualBackground */,
+				C60BAEA9D814314A92D8A9ACC0770055 /* VQA */,
+			);
+			name = AgoraRtcEngine_iOS;
+			path = AgoraRtcEngine_iOS;
 			sourceTree = "<group>";
 		};
 		933F86F191F75FA0D25692E6F2C3F3C1 /* Targets Support Files */ = {
@@ -426,74 +536,56 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		957D7D0F50E9DD823E1F2D51AE80F61D /* Frameworks */ = {
+		934D57355F9D1A386BEC5C925BB222C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				98ECA3001CA09E10DA53440E220BB26B /* AgoraContentInspectExtension.xcframework */,
+				EAA0D9A967AED2AAD68792B38A32FCC8 /* AgoraClearVisionExtension.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A1C25023EC144F815FBD383E5CEF731D /* Support Files */ = {
+		943176199EDC66BA342F63BD77B48C5B /* AIAEC */ = {
 			isa = PBXGroup;
 			children = (
-				F2B09729D383886276C24C11E0436CFA /* Floaty.modulemap */,
-				544BF637899954B8ED2D83DEC3D5DD8B /* Floaty-dummy.m */,
-				0FDFC76E1198676FFF66D3738DE0CA6F /* Floaty-Info.plist */,
-				070FB3490BB2ADDF6CD3B5EF47FAB220 /* Floaty-prefix.pch */,
-				691ACF37D26CA424C510AF0DB72BAD2E /* Floaty-umbrella.h */,
-				105EFB314D3B5A22121B083448AC9F30 /* Floaty.debug.xcconfig */,
-				4039B76B363AC19A1A503476522D13AD /* Floaty.release.xcconfig */,
+				58B77B44AC877E49EC22045AE91CCD33 /* Frameworks */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Floaty";
+			name = AIAEC;
 			sourceTree = "<group>";
 		};
-		A2D15976FC9CAB6FACBA4AF843BE3F45 /* AudioBeauty */ = {
+		9A9999CDC3737323FDC92803166E8AE1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B4F846E6867991A70F1A2D6CDE8BDFC0 /* Frameworks */,
-			);
-			name = AudioBeauty;
-			sourceTree = "<group>";
-		};
-		A7B55AAFA54B24D921486A97A0C0AEFF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FBA163063B8BF6B10EF0BEC66FE2B4E9 /* AgoraAiEchoCancellationExtension.xcframework */,
+				0B29FC0CEF3E9A9D2A1869E99DE59DFB /* AgoraReplayKitExtension.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AA95B4635646670ACD7E58CE482920CB /* Support Files */ = {
+		A1545C8B4E2222A563D1BE3C74C8F096 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				78D6984489BEB869EA28B5ABBED0D1F3 /* CocoaAsyncSocket.modulemap */,
-				BA02653BA40171B5A66D345999325B6B /* CocoaAsyncSocket-dummy.m */,
-				7C15A3C44FA97EC1E6A14ECEE2BBD682 /* CocoaAsyncSocket-Info.plist */,
-				D6231870E62018D0AA759E95098DCFE0 /* CocoaAsyncSocket-prefix.pch */,
-				53717E36F32623961E861D9653F0696B /* CocoaAsyncSocket-umbrella.h */,
-				6A994453A3DA372D5535BFA9F590477B /* CocoaAsyncSocket.debug.xcconfig */,
-				A42B29BA02AF59CE65202FDF6A000912 /* CocoaAsyncSocket.release.xcconfig */,
+				EA3507728D8B96DC532E1EB3AE336636 /* AgoraVideoQualityAnalyzerExtension.xcframework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/CocoaAsyncSocket";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AC03540BB69DCAB654349FEB28CF1722 /* VirtualBackground */ = {
+		A38B2E681280C91E6FD79D1A9767DE0F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3175F2B6C39E61363A562DE979D31358 /* Frameworks */,
+				3C726876DE936BF130E20EDA49049E61 /* AGEVideoLayout */,
+				869C713A8D4F95F7BA65A0C1C0BC2AB3 /* AgoraRtcEngine_iOS */,
+				3943A5A6B042D2304F42674B53493F21 /* AgoraRtm_iOS */,
+				B5983785E194668815DB9CDDA54C2055 /* CocoaAsyncSocket */,
+				6669F3D65E13BFC5317460B7281B16C3 /* Floaty */,
 			);
-			name = VirtualBackground;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		AC5623C021AA51FDC33DA52401090D32 /* ReplayKit */ = {
+		A5CAF233E628AB6ABDC0140B88E8A866 /* SpatialAudio */ = {
 			isa = PBXGroup;
 			children = (
-				D42C438734688C824514590FFB535FD9 /* Frameworks */,
+				7481FEE13A7CFDE7C535B12EC53DB2C2 /* Frameworks */,
 			);
-			name = ReplayKit;
+			name = SpatialAudio;
 			sourceTree = "<group>";
 		};
 		B353896BA6BB897F05DA71979E4854BC /* Products */ = {
@@ -507,20 +599,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B4F846E6867991A70F1A2D6CDE8BDFC0 /* Frameworks */ = {
+		B5983785E194668815DB9CDDA54C2055 /* CocoaAsyncSocket */ = {
 			isa = PBXGroup;
 			children = (
-				152C73DC003E879C89D29139ADF96FB9 /* AgoraAudioBeautyExtension.xcframework */,
+				E8EDD0ADEE0CBF260807763AD7217AEA /* GCDAsyncSocket.h */,
+				E3FA77CEBBE6BB7B1FE0556A62808AEB /* GCDAsyncSocket.m */,
+				D1C66CAC97162F3DA9E6D4606481DFDF /* GCDAsyncUdpSocket.h */,
+				F12C647BC74DE9E0F538135E25112EB0 /* GCDAsyncUdpSocket.m */,
+				48A57DA0141D5C262FAE8AD90007D423 /* Support Files */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B50E1FE4BFF4E4B8F5BFB803BA971515 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				525F0BC19E8853FBF3BE33AD8BF7F187 /* AgoraSpatialAudioExtension.xcframework */,
-			);
-			name = Frameworks;
+			name = CocoaAsyncSocket;
+			path = CocoaAsyncSocket;
 			sourceTree = "<group>";
 		};
 		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
@@ -531,57 +620,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BA59F40418E99DC966CD463D2130CB11 /* Support Files */ = {
+		C60BAEA9D814314A92D8A9ACC0770055 /* VQA */ = {
 			isa = PBXGroup;
 			children = (
-				35EA03C86A4DBC83A6FDCC7CC35BBCD1 /* AGEVideoLayout.modulemap */,
-				151368827E0F3E8DACE1A4E82A06123C /* AGEVideoLayout-dummy.m */,
-				EE92D6ECDA0C8998B03BCE24C789F1C3 /* AGEVideoLayout-Info.plist */,
-				2A9A1526E6A742B28015BE6277BA587C /* AGEVideoLayout-prefix.pch */,
-				257C403B1EEF42F6411C1E427E6EF49E /* AGEVideoLayout-umbrella.h */,
-				2C45113E051CD52DCCED3025AE5F526F /* AGEVideoLayout.debug.xcconfig */,
-				A3AB7E4D0290BA89F8F594FE70A623FB /* AGEVideoLayout.release.xcconfig */,
+				A1545C8B4E2222A563D1BE3C74C8F096 /* Frameworks */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/AGEVideoLayout";
+			name = VQA;
 			sourceTree = "<group>";
 		};
-		BCF1220252BBF1B80094F63C94BF42F9 /* Frameworks */ = {
+		CC2E1CC17D7801F557E07DFADB8B9D0A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6EEBBC5893A92FA0E85612D723833C23 /* AgoraAiNoiseSuppressionExtension.xcframework */,
+				C67F125B8AC2626CD6F6731FB83B2DDC /* AgoraAudioBeautyExtension.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C0ECC4053EF6C5E6D8EEB37165B68BE3 /* FaceDetection */ = {
+		CD46681727890D9F217413CB5D076F16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CA58E4E8C628010F7535E0C4E541DE2C /* Frameworks */,
-			);
-			name = FaceDetection;
-			sourceTree = "<group>";
-		};
-		C4472FC59623C0854563A9C9332084DA /* DRM */ = {
-			isa = PBXGroup;
-			children = (
-				3804DCB0E81F1FDBEDC7ED0A09462582 /* Frameworks */,
-			);
-			name = DRM;
-			sourceTree = "<group>";
-		};
-		C4C8F03BC581C5FD2405F5DC6CC95401 /* ClearVision */ = {
-			isa = PBXGroup;
-			children = (
-				4FAE191207BA0E0974BBDFB3D8DC8DA0 /* Frameworks */,
-			);
-			name = ClearVision;
-			sourceTree = "<group>";
-		};
-		CA58E4E8C628010F7535E0C4E541DE2C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8C64AB8EF51B3C9367ECA97EC0A1355F /* AgoraFaceDetectionExtension.xcframework */,
+				BDE00BF18DCF3FEA4160338261D47900 /* AgoraAiNoiseSuppressionExtension.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -591,61 +649,46 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
-				42E23ED73969D672EA21EDA8BD565751 /* Pods */,
+				A38B2E681280C91E6FD79D1A9767DE0F /* Pods */,
 				B353896BA6BB897F05DA71979E4854BC /* Products */,
 				933F86F191F75FA0D25692E6F2C3F3C1 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D425C29B7A110D60251B24779C1930EE /* VideoCodecEnc */ = {
+		DB4160D406A70F5B39EA386752AF0F9A /* FaceDetection */ = {
 			isa = PBXGroup;
 			children = (
-				5725EF963410EC2BBD1FB9BF8F8B3A03 /* Frameworks */,
+				41DF09F23E10AF4E282006FC0BDDFB99 /* Frameworks */,
 			);
-			name = VideoCodecEnc;
+			name = FaceDetection;
 			sourceTree = "<group>";
 		};
-		D42C438734688C824514590FFB535FD9 /* Frameworks */ = {
+		DDA699F9B16A8D2276F6EFD6690B9377 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8F181D8FCF2AF6CEA0712D4C6CE059F0 /* AgoraReplayKitExtension.xcframework */,
+				4F65A7F633E1BBC58DE50CD67119CFA5 /* Floaty.modulemap */,
+				46F9A6830AE8F5AB526E623D18E2334F /* Floaty-dummy.m */,
+				8626EC6AFD4989BE3702451742A9A7D7 /* Floaty-Info.plist */,
+				003797BAF585C6F269017D5823DC2BE7 /* Floaty-prefix.pch */,
+				8C66F19EFE79A400336E8A6684680AD2 /* Floaty-umbrella.h */,
+				41D4E2D189C7B875C412B1ADD1328AB9 /* Floaty.debug.xcconfig */,
+				8C9FB72FDC94AC2922D0801569D9636F /* Floaty.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/Floaty";
 			sourceTree = "<group>";
 		};
-		D54DDA5F8D093E3328AE1D4AE491233B /* AIAEC */ = {
+		E261C91CAAB82E67BAD80ADEC4917960 /* ReplayKit */ = {
 			isa = PBXGroup;
 			children = (
-				A7B55AAFA54B24D921486A97A0C0AEFF /* Frameworks */,
+				9A9999CDC3737323FDC92803166E8AE1 /* Frameworks */,
 			);
-			name = AIAEC;
-			sourceTree = "<group>";
-		};
-		DBEB07D69CEF91B59F754DF5F3625576 /* AGEVideoLayout */ = {
-			isa = PBXGroup;
-			children = (
-				A794AEA34B3BBD498E31027ED6D39F23 /* AGEEventsObserver.swift */,
-				C51D3F7E484442DE9C50AB1294FDEEBC /* AGEVideoConstraints.swift */,
-				826D4355EA29EA600931E153258BCD71 /* AGEVideoContainer.swift */,
-				DA5E144965FD1863E66EF06AAD70B00F /* AGEVideoLayout.swift */,
-				097254A0CA0EBD979195EB3F3A64A835 /* AGEView.swift */,
-				BA59F40418E99DC966CD463D2130CB11 /* Support Files */,
-			);
-			name = AGEVideoLayout;
-			path = AGEVideoLayout;
+			name = ReplayKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		125715CFA111163BC3D7C5CBFE1331D2 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				464DBEEA11A998854A3C3132AE24B4B4 /* Pods-SZHDemo-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		17317FE99BCBCAE1DCC6BF783E1EFAF0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -661,6 +704,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				58544F8A4087F236EA70653036E00A6A /* AGEVideoLayout-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCB4079B0415C5E47DB406FF20520A13 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A38A3F758E854B1D12632C16DBB3B5EA /* Pods-SZHDemo-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,20 +764,21 @@
 		};
 		9AA2466F88532954894B16C5FAB7E309 /* Pods-SZHDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 33C59692C00885A3EE4843D8B6118B0B /* Build configuration list for PBXNativeTarget "Pods-SZHDemo" */;
+			buildConfigurationList = 3773B325F140882DB74B64CD94FC005F /* Build configuration list for PBXNativeTarget "Pods-SZHDemo" */;
 			buildPhases = (
-				125715CFA111163BC3D7C5CBFE1331D2 /* Headers */,
-				FF837E95D1B53357B94C7FC5261C11C0 /* Sources */,
-				5ED6F36D6F26D33F3CB43A7412D7B9CA /* Frameworks */,
-				157914E0EEA12E03BD2BD9B808F2B312 /* Resources */,
+				DCB4079B0415C5E47DB406FF20520A13 /* Headers */,
+				B2E9423CFB0F0DFBAB7F3C79EEE13908 /* Sources */,
+				8B312F97800C7F7D27E25A4465C0DFC0 /* Frameworks */,
+				15BCDFFD3F8B05ED3BDDFB8594F62F79 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3888D23774391B74ACB73F249983DF57 /* PBXTargetDependency */,
-				6B4F20C5327F6874A36AC7E8BCC3D730 /* PBXTargetDependency */,
-				E8E48B86953CB7322DEE74FD4C4E3CD2 /* PBXTargetDependency */,
-				933661A801F0BE8EBDD43B109152436A /* PBXTargetDependency */,
+				61802FB26D960AD357F6F79CC5165F90 /* PBXTargetDependency */,
+				87A25E316F02EBBCE284A77B8EBD6CDD /* PBXTargetDependency */,
+				D7F20F6164287E5F0646055C95DC464E /* PBXTargetDependency */,
+				13550A69F6C7CF492858D0E77D1ABE64 /* PBXTargetDependency */,
+				1B93500F7F7EFC051AEDEDC32592F03D /* PBXTargetDependency */,
 			);
 			name = "Pods-SZHDemo";
 			productName = Pods_SZHDemo;
@@ -775,6 +827,7 @@
 			targets = (
 				1E3F69CA415029D70E9A6EA1837F132C /* AGEVideoLayout */,
 				183C29DD6DE04D22CA29BAE61F5C530B /* AgoraRtcEngine_iOS */,
+				C749B96AD7CBE862709769C59C7DF18E /* AgoraRtm_iOS */,
 				6083682834ABE0AE7BD1CBF06CADD036 /* CocoaAsyncSocket */,
 				D2A775A88EA787684F2905BCB73F96D1 /* Floaty */,
 				9AA2466F88532954894B16C5FAB7E309 /* Pods-SZHDemo */,
@@ -783,7 +836,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		157914E0EEA12E03BD2BD9B808F2B312 /* Resources */ = {
+		15BCDFFD3F8B05ED3BDDFB8594F62F79 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -831,6 +884,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/AgoraRtcEngine_iOS/AgoraRtcEngine_iOS-xcframeworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BDDA42BFB327EBD0788E4050D18FF09D /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/AgoraRtm_iOS/AgoraRtm_iOS-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/AgoraRtm_iOS/AgoraRtm_iOS-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/AgoraRtm_iOS/AgoraRtm_iOS-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -862,6 +932,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B2E9423CFB0F0DFBAB7F3C79EEE13908 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A888897313803250A85E3D27B86F9DD4 /* Pods-SZHDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B9BA2F3E20981E6576E8626EADB9300B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -872,40 +950,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FF837E95D1B53357B94C7FC5261C11C0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE02BED48C5B2126BC5C7858D21EE65E /* Pods-SZHDemo-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3888D23774391B74ACB73F249983DF57 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AGEVideoLayout;
-			target = 1E3F69CA415029D70E9A6EA1837F132C /* AGEVideoLayout */;
-			targetProxy = E39728460FC00A0E6D101AA1CA997A22 /* PBXContainerItemProxy */;
-		};
-		6B4F20C5327F6874A36AC7E8BCC3D730 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AgoraRtcEngine_iOS;
-			target = 183C29DD6DE04D22CA29BAE61F5C530B /* AgoraRtcEngine_iOS */;
-			targetProxy = BF0FD8622DDA5A894F7451BDB3BD4F3E /* PBXContainerItemProxy */;
-		};
-		933661A801F0BE8EBDD43B109152436A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Floaty;
-			target = D2A775A88EA787684F2905BCB73F96D1 /* Floaty */;
-			targetProxy = 4132E44C5CF5B54556009F423968BF97 /* PBXContainerItemProxy */;
-		};
-		E8E48B86953CB7322DEE74FD4C4E3CD2 /* PBXTargetDependency */ = {
+		13550A69F6C7CF492858D0E77D1ABE64 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CocoaAsyncSocket;
 			target = 6083682834ABE0AE7BD1CBF06CADD036 /* CocoaAsyncSocket */;
-			targetProxy = E2FF2D1F6FAB30584F410185E4EBBB9E /* PBXContainerItemProxy */;
+			targetProxy = 25C116051472CDB21B9C0CF09BA8A78B /* PBXContainerItemProxy */;
+		};
+		1B93500F7F7EFC051AEDEDC32592F03D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Floaty;
+			target = D2A775A88EA787684F2905BCB73F96D1 /* Floaty */;
+			targetProxy = EA242095B6AB6E44530AD6D0E7993D27 /* PBXContainerItemProxy */;
+		};
+		61802FB26D960AD357F6F79CC5165F90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AGEVideoLayout;
+			target = 1E3F69CA415029D70E9A6EA1837F132C /* AGEVideoLayout */;
+			targetProxy = 640462CFE397EB74629ACCBACAA06708 /* PBXContainerItemProxy */;
+		};
+		87A25E316F02EBBCE284A77B8EBD6CDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AgoraRtcEngine_iOS;
+			target = 183C29DD6DE04D22CA29BAE61F5C530B /* AgoraRtcEngine_iOS */;
+			targetProxy = F591E00AB408DC351B1A0B3F3AC557D6 /* PBXContainerItemProxy */;
+		};
+		D7F20F6164287E5F0646055C95DC464E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AgoraRtm_iOS;
+			target = C749B96AD7CBE862709769C59C7DF18E /* AgoraRtm_iOS */;
+			targetProxy = EA51D0642559D19726A145F66BCD61CF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -972,7 +1048,146 @@
 			};
 			name = Release;
 		};
-		39F11B24DECD516C9A85F1A4A667478C /* Release */ = {
+		34976D7E60C22FF19C9A4B492E15CDA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD39B8083DC9153EEAABAE55ACBC31AC /* AgoraRtm_iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3DE013CBCB3639C725A217DCBE82CE32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EE0A3CAF702D4B666D48E4A3E923110 /* AGEVideoLayout.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AGEVideoLayout/AGEVideoLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AGEVideoLayout/AGEVideoLayout-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AGEVideoLayout/AGEVideoLayout.modulemap";
+				PRODUCT_MODULE_NAME = AGEVideoLayout;
+				PRODUCT_NAME = AGEVideoLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		54A69FCE6F2CE7CF852C118D5811073A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 440A52836A3890E24A768512C0B777D2 /* AgoraRtm_iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		65F6B1425EEC0FFAA5E3ECBF9E27B4B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD1F19F921BE25770A31DD85E0E19EF0 /* AGEVideoLayout.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AGEVideoLayout/AGEVideoLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AGEVideoLayout/AGEVideoLayout-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AGEVideoLayout/AGEVideoLayout.modulemap";
+				PRODUCT_MODULE_NAME = AGEVideoLayout;
+				PRODUCT_NAME = AGEVideoLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6ED18CF76BDF8EB2E61BD519C1F0E476 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C987C8BE25284877FFEED401CF8D33B /* Pods-SZHDemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SZHDemo/Pods-SZHDemo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SZHDemo/Pods-SZHDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		73B28B563C5048F4E0F4DF93B91CD91E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 73F64F3081EA38B19238247AB28A0BDF /* Pods-SZHDemo.release.xcconfig */;
 			buildSettings = {
@@ -1010,78 +1225,9 @@
 			};
 			name = Release;
 		};
-		3DE013CBCB3639C725A217DCBE82CE32 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3AB7E4D0290BA89F8F594FE70A623FB /* AGEVideoLayout.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AGEVideoLayout/AGEVideoLayout-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AGEVideoLayout/AGEVideoLayout-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/AGEVideoLayout/AGEVideoLayout.modulemap";
-				PRODUCT_MODULE_NAME = AGEVideoLayout;
-				PRODUCT_NAME = AGEVideoLayout;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		65F6B1425EEC0FFAA5E3ECBF9E27B4B1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C45113E051CD52DCCED3025AE5F526F /* AGEVideoLayout.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AGEVideoLayout/AGEVideoLayout-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AGEVideoLayout/AGEVideoLayout-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/AGEVideoLayout/AGEVideoLayout.modulemap";
-				PRODUCT_MODULE_NAME = AGEVideoLayout;
-				PRODUCT_NAME = AGEVideoLayout;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		861C666496D61261F5A6DE527B4839C3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33566A26E18AE3DDFB4F093444FB3B5B /* AgoraRtcEngine_iOS.release.xcconfig */;
+			baseConfigurationReference = 4C47C7EEA32D54001C1F3DC7DD007AC7 /* AgoraRtcEngine_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1098,7 +1244,7 @@
 		};
 		88E73531C68FEC995B656F125B9BD903 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A994453A3DA372D5535BFA9F590477B /* CocoaAsyncSocket.debug.xcconfig */;
+			baseConfigurationReference = B820B0E05CB3CB08054AAE49D249EA52 /* CocoaAsyncSocket.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1132,7 +1278,7 @@
 		};
 		9DD09D0D00249C022E2A3426A4917732 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A42B29BA02AF59CE65202FDF6A000912 /* CocoaAsyncSocket.release.xcconfig */;
+			baseConfigurationReference = 04D0424981D1E02582C39711B20CAB89 /* CocoaAsyncSocket.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1167,7 +1313,7 @@
 		};
 		E49416477E9FC5E1FB426F6C36F20871 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 105EFB314D3B5A22121B083448AC9F30 /* Floaty.debug.xcconfig */;
+			baseConfigurationReference = 41D4E2D189C7B875C412B1ADD1328AB9 /* Floaty.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1200,46 +1346,9 @@
 			};
 			name = Debug;
 		};
-		EAB0BF9519A87B08AEA7063B53C47E23 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C987C8BE25284877FFEED401CF8D33B /* Pods-SZHDemo.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SZHDemo/Pods-SZHDemo-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SZHDemo/Pods-SZHDemo.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		F0BFC825DFA7880BB6E0C8E3F67338F3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4039B76B363AC19A1A503476522D13AD /* Floaty.release.xcconfig */;
+			baseConfigurationReference = 8C9FB72FDC94AC2922D0801569D9636F /* Floaty.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1341,7 +1450,7 @@
 		};
 		FB8F0C77E82C3797C48BC99EAFAE5B3B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CFAB6CA279D6C70B037A439D5EB7D00 /* AgoraRtcEngine_iOS.debug.xcconfig */;
+			baseConfigurationReference = D743BA6BF02C9D61CF647A841E47A566 /* AgoraRtcEngine_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1358,11 +1467,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		33C59692C00885A3EE4843D8B6118B0B /* Build configuration list for PBXNativeTarget "Pods-SZHDemo" */ = {
+		3773B325F140882DB74B64CD94FC005F /* Build configuration list for PBXNativeTarget "Pods-SZHDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EAB0BF9519A87B08AEA7063B53C47E23 /* Debug */,
-				39F11B24DECD516C9A85F1A4A667478C /* Release */,
+				6ED18CF76BDF8EB2E61BD519C1F0E476 /* Debug */,
+				73B28B563C5048F4E0F4DF93B91CD91E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1381,6 +1490,15 @@
 			buildConfigurations = (
 				E49416477E9FC5E1FB426F6C36F20871 /* Debug */,
 				F0BFC825DFA7880BB6E0C8E3F67338F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C2987931515191B934C1E94C1222C48 /* Build configuration list for PBXAggregateTarget "AgoraRtm_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34976D7E60C22FF19C9A4B492E15CDA5 /* Debug */,
+				54A69FCE6F2CE7CF852C118D5811073A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

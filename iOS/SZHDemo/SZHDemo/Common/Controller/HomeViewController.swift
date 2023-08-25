@@ -236,13 +236,6 @@ class HomeViewController: ViewController {
             controller.userArray = self.userArray
         }
     }
-    
-    func virtualBgTest(){
-        let back = AgoraVirtualBackgroundSource()
-        back.backgroundSourceType = .img
-        back.source = Bundle.main.path(forResource: "yellow", ofType: "jpg")
-        let result = agoraKit.enableVirtualBackground(true, backData: back, segData: nil)
-    }
 }
 
 /// agora rtc engine delegate events
