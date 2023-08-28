@@ -29,12 +29,14 @@ PODS:
   - AgoraRtcEngine_iOS/VideoCodecEnc (4.2.2)
   - AgoraRtcEngine_iOS/VirtualBackground (4.2.2)
   - AgoraRtcEngine_iOS/VQA (4.2.2)
+  - AgoraRtm_iOS (2.1.4)
   - CocoaAsyncSocket (7.6.5)
   - Floaty (4.2.0)
 
 DEPENDENCIES:
   - AGEVideoLayout (~> 1.0.2)
   - AgoraRtcEngine_iOS (= 4.2.2)
+  - AgoraRtm_iOS (~> 2.1.4)
   - CocoaAsyncSocket (= 7.6.5)
   - Floaty (~> 4.2.0)
 
@@ -42,15 +44,17 @@ SPEC REPOS:
   trunk:
     - AGEVideoLayout
     - AgoraRtcEngine_iOS
+    - AgoraRtm_iOS
     - CocoaAsyncSocket
     - Floaty
 
 SPEC CHECKSUMS:
   AGEVideoLayout: a0122fa3fde4fac227b08da8bee0c3fe8de1682c
   AgoraRtcEngine_iOS: c510de329cd905daff3f01fa4c872ea6d5eaee23
+  AgoraRtm_iOS: 11b767ee81a7202dcf09e045cd2d359b5abbc965
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
 
-PODFILE CHECKSUM: 57e3007fa349ce4a157bcd297e745003c0c115c7
+PODFILE CHECKSUM: 516f5bc1812485cf6b7a54ca97640db70ea5d88f
 
 COCOAPODS: 1.11.3

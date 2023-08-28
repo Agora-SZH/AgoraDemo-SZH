@@ -44,6 +44,7 @@
 		2CA6A9D12A821EE000214648 /* H265View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6A9D02A821EE000214648 /* H265View.swift */; };
 		2CA6A9D32A821EED00214648 /* H265View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6A9D22A821EED00214648 /* H265View.xib */; };
 		2CA6A9D52A84C3E200214648 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA6A9D42A84C3E200214648 /* UsersViewController.swift */; };
+		2CB520FB2A9C86D7004DC2C8 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB520FA2A9C86D7004DC2C8 /* NetWorkManager.swift */; };
 		2CF7647B2A8B592100C305B5 /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7647A2A8B592100C305B5 /* UserViewCell.swift */; };
 		2CF7647F2A8B5F6200C305B5 /* UserViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF7647E2A8B5F6200C305B5 /* UserViewCell.xib */; };
 		2CF764812A8C9F0800C305B5 /* VirtualBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF764802A8C9F0800C305B5 /* VirtualBgView.swift */; };
@@ -94,6 +95,7 @@
 		2CA6A9D02A821EE000214648 /* H265View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H265View.swift; sourceTree = "<group>"; };
 		2CA6A9D22A821EED00214648 /* H265View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = H265View.xib; sourceTree = "<group>"; };
 		2CA6A9D42A84C3E200214648 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		2CB520FA2A9C86D7004DC2C8 /* NetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
 		2CF7647A2A8B592100C305B5 /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
 		2CF7647E2A8B5F6200C305B5 /* UserViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewCell.xib; sourceTree = "<group>"; };
 		2CF764802A8C9F0800C305B5 /* VirtualBgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualBgView.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				2C227AC42A77B7B300F6FBB9 /* Util.swift */,
 				2C227AC52A77B7B300F6FBB9 /* BundleUtil.m */,
 				2C227AC62A77B7B300F6FBB9 /* MediaUtils.h */,
+				2CB520FA2A9C86D7004DC2C8 /* NetWorkManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				2C227AE32A77B7B300F6FBB9 /* BaseViewController.swift in Sources */,
 				2C227AF32A77B7B300F6FBB9 /* StatisticsInfo.swift in Sources */,
 				2C227AEF2A77B7B300F6FBB9 /* MediaUtils.m in Sources */,
+				2CB520FB2A9C86D7004DC2C8 /* NetWorkManager.swift in Sources */,
 				2CA6A9CD2A8100AA00214648 /* SRView.swift in Sources */,
 				2C227A922A77A1A400F6FBB9 /* ViewController.swift in Sources */,
 				2C227AEE2A77B7B300F6FBB9 /* AlertManager.swift in Sources */,
