@@ -24,11 +24,13 @@ class ScreenShare: BaseViewController {
     
     let cameraConnection = AgoraRtcConnection()
     
+    var channel2Listener: JoinChannelExListener = JoinChannelExListener()
+    
     let screenShare1Resolution = Configs.Resolutions[3]
     let screenShare1Fps = Configs.Fps[2]
     
     let screenShare2Resolution = Configs.Resolutions[4]
-    let screenShare2Fps =  Configs.Fps[2]
+    let screenShare2Fps = Configs.Fps[2]
     
     @IBOutlet weak var channel1TextField: NSTextField!
     @IBOutlet weak var joinChannel1Button: NSButton!
@@ -43,6 +45,8 @@ class ScreenShare: BaseViewController {
     @IBOutlet weak var channel2ScreenList: NSPopUpButton!
     @IBOutlet weak var roleSelectList: NSPopUpButton!
     
+    var selectClientRoleType: AgoraClientRole = .broadcaster
+    
     var windowManager: WindowList = WindowList()
     
     var channel1SelectedScreen: Window?
@@ -51,9 +55,11 @@ class ScreenShare: BaseViewController {
     
     @IBAction func roleSelected(_ sender: NSPopUpButton) {
         if sender.indexOfSelectedItem == 0 {
+            selectClientRoleType = .broadcaster
             channel1ScreenList.superview?.isHidden = false
             channel2ScreenList.superview?.isHidden = false
         } else if sender.indexOfSelectedItem == 1 {
+            selectClientRoleType = .audience
             channel1ScreenList.superview?.isHidden = true
             channel2ScreenList.superview?.isHidden = true
         }
@@ -107,6 +113,7 @@ class ScreenShare: BaseViewController {
         
         cameraConnection.channelId = channel1
         cameraConnection.localUid = self.cameraUid
+
         NetworkManager.shared.generateToken(channelName: channel, uid: self.cameraUid) { token in
             let result = self.agoraKit.joinChannelEx(byToken: token,
                                                      connection: self.cameraConnection,
@@ -178,18 +185,19 @@ class ScreenShare: BaseViewController {
             agoraKit.updateChannelEx(with: mediaOptions, connection: screenShare2Conn)
             
             
-            let nextVideoPlaceView = self.videos[2]
-            nextVideoPlaceView.uid = screenShare2Conn.localUid
-            
-            let videoCanvas = AgoraRtcVideoCanvas()
-            videoCanvas.mirrorMode = .disabled
-            videoCanvas.sourceType = .screenSecondary
-            videoCanvas.renderMode = .hidden
-            videoCanvas.uid = screenShare2Conn.localUid
-            // the view to be binded
-            videoCanvas.view = nextVideoPlaceView
-            self.agoraKit.setupLocalVideo(videoCanvas)
-            self.agoraKit.startPreview(.screenSecondary)
+            if let nextVideoPlaceView = videos.first(where: { $0.uid == nil }) {
+                nextVideoPlaceView.uid = screenShare2Conn.localUid
+                
+                let videoCanvas = AgoraRtcVideoCanvas()
+                videoCanvas.mirrorMode = .disabled
+                videoCanvas.sourceType = .screenSecondary
+                videoCanvas.renderMode = .hidden
+                videoCanvas.uid = screenShare2Conn.localUid
+                // the view to be binded
+                videoCanvas.view = nextVideoPlaceView
+                self.agoraKit.setupLocalVideo(videoCanvas)
+                self.agoraKit.startPreview(.screenSecondary)
+            }
         }
     }
     
@@ -212,7 +220,7 @@ class ScreenShare: BaseViewController {
     
     var isProcessingChannel1: Bool = false {
         didSet {
-             joinChannel1Button.isEnabled = !isProcessingChannel1
+            joinChannel1Button.isEnabled = !isProcessingChannel1
         }
     }
     
@@ -250,13 +258,14 @@ class ScreenShare: BaseViewController {
         self.channel2SelectedScreen = screens[0]
         channel1ScreenList.addItems(withTitles: screens.map { $0.name })
         channel2ScreenList.addItems(withTitles: screens.map { $0.name })
-
+        
         // Do view setup here.
         let config = AgoraRtcEngineConfig()
         config.appId = KeyCenter.AppId
         config.areaCode = GlobalSettings.shared.area
         agoraKit = AgoraRtcEngineKit.sharedEngine(with: config, delegate: self)
-        
+        agoraKit.setChannelProfile(.communication)
+       
         // Configuring Privatization Parameters
         Util.configPrivatization(agoraKit: agoraKit)
         agoraKit.enableVideo()
@@ -266,11 +275,9 @@ class ScreenShare: BaseViewController {
     
     
     func initCameraDevice() {
-        // find device in a separate thread to avoid blocking main thread
         let queue = DispatchQueue(label: "device.enumerateDevices")
         queue.async {[unowned self] in
             let cameras: [AgoraRtcDeviceInfo] = self.agoraKit.enumerateDevices(.videoCapture) ?? []
-            // use 0 index devices
             guard let cameraId = cameras[0].deviceId else {
                 return
             }
@@ -278,6 +285,7 @@ class ScreenShare: BaseViewController {
             self.agoraKit.setDevice(.videoCapture, deviceId: cameraId)
         }
     }
+    
     
     override func viewWillBeRemovedFromSplitView() {
         leave(NSButton())
@@ -293,28 +301,23 @@ class ScreenShare: BaseViewController {
             return
         }
         
-        agoraKit.setChannelProfile(.communication)
-        agoraKit.setVideoEncoderConfiguration(
-            AgoraVideoEncoderConfiguration(
-                size: screenShare1Resolution.size(),
-                frameRate: AgoraVideoFrameRate(rawValue: screenShare1Fps) ?? .fps30,
-                bitrate: AgoraVideoBitrateStandard,
-                orientationMode: .adaptative,
-                mirrorMode: .auto
-            )
-        )
-        
         isProcessingChannel1 = true
         
         let option = AgoraRtcChannelMediaOptions()
         option.publishCameraTrack = false
         option.autoSubscribeAudio = true
         option.autoSubscribeVideo = true
-        option.clientRoleType = .broadcaster
+        option.clientRoleType = selectClientRoleType
+        
+        let channel1Uid = (selectClientRoleType == .broadcaster)  ? self.screenShare1Uid : 6666
+        
+        let conn1 = AgoraRtcConnection()
+        conn1.localUid = channel1Uid
+        conn1.channelId = channel
         NetworkManager.shared.generateToken(channelName: channel, success: { token in
             let result = self.agoraKit.joinChannel(byToken: token,
                                                    channelId: channel,
-                                                   uid: self.screenShare1Uid,
+                                                   uid: channel1Uid,
                                                    mediaOptions: option)
             self.isProcessingChannel1 = false
             if result != 0 {
@@ -334,25 +337,36 @@ class ScreenShare: BaseViewController {
         if channel2.isEmpty {
             return
         }
-
+        
         let mediaOptions = AgoraRtcChannelMediaOptions()
         mediaOptions.publishCameraTrack = false
         mediaOptions.publishScreenTrack = false
         mediaOptions.publishSecondaryScreenTrack = true
-        mediaOptions.autoSubscribeAudio = false
-        mediaOptions.autoSubscribeVideo = false
-        
+        mediaOptions.autoSubscribeAudio = true
+        mediaOptions.autoSubscribeVideo = true
+        mediaOptions.channelProfile = .communication
+        mediaOptions.clientRoleType = selectClientRoleType
+
         isProcessingChannel2 = true
-        
+
+        var channel2Uid = screenShare2Uid
+        if selectClientRoleType == .audience {
+            channel2Uid = 7777
+            mediaOptions.publishSecondaryScreenTrack = false
+        }
+
         let screenShare2Conn = AgoraRtcConnection()
-        screenShare2Conn.localUid = screenShare2Uid
         screenShare2Conn.channelId = channel2
-        NetworkManager.shared.generateToken(channelName: screenShare2Conn.channelId, uid: screenShare2Conn.localUid) { token in
+        screenShare2Conn.localUid = channel2Uid
+
+        channel2Listener.connectionDelegate = self
+        channel2Listener.connection = screenShare2Conn
+        
+        NetworkManager.shared.generateToken(channelName: channel2, uid: channel2Uid) { token in
             let result = self.agoraKit.joinChannelEx(byToken: token,
                                                      connection: screenShare2Conn,
-                                                     delegate: self,
+                                                     delegate: self.channel2Listener,
                                                      mediaOptions: mediaOptions)
-            
             self.isProcessingChannel2 = false
             if result != 0 {
                 self.showAlert(title: "Error", message: "joinChannel with second uid call failed: \(result), please check your params")
@@ -409,11 +423,7 @@ class ScreenShare: BaseViewController {
         videos = []
         for i in 0...count - 1 {
             let view = VideoView.createFromNib()!
-            if(i == 0) {
-                view.placeholder.stringValue = "Local"
-            } else {
-                view.placeholder.stringValue = "Remote \(i)"
-            }
+            view.placeholder.stringValue = "video \(i)"
             videos.append(view)
         }
         // layout render view
@@ -421,24 +431,14 @@ class ScreenShare: BaseViewController {
     }
 }
 
+
+
 /// agora rtc engine delegate events
 extension ScreenShare: AgoraRtcEngineDelegate {
-    /// callback when warning occured for agora sdk, warning can usually be ignored, still it's nice to check out
-    /// what is happening
-    /// Warning code description can be found at:
-    /// en: https://api-ref.agora.io/en/voice-sdk/ios/3.x/Constants/AgoraWarningCode.html
-    /// cn: https://docs.agora.io/cn/Voice/API%20Reference/oc/Constants/AgoraWarningCode.html
-    /// @param warningCode warning code of the problem
     func rtcEngine(_ engine: AgoraRtcEngineKit, didOccurWarning warningCode: AgoraWarningCode) {
         LogUtils.log(message: "warning: \(warningCode.rawValue)", level: .warning)
     }
     
-    /// callback when error occured for agora sdk, you are recommended to display the error descriptions on demand
-    /// to let user know something wrong is happening
-    /// Error code description can be found at:
-    /// en: https://api-ref.agora.io/en/voice-sdk/macos/3.x/Constants/AgoraErrorCode.html#content
-    /// cn: https://docs.agora.io/cn/Voice/API%20Reference/oc/Constants/AgoraErrorCode.html
-    /// @param errorCode error code of the problem
     func rtcEngine(_ engine: AgoraRtcEngineKit, didOccurError errorCode: AgoraErrorCode) {
         LogUtils.log(message: "error: \(errorCode)", level: .error)
         if isProcessingChannel1 {
@@ -447,42 +447,31 @@ extension ScreenShare: AgoraRtcEngineDelegate {
         self.showAlert(title: "Error", message: "Error \(errorCode.rawValue) occur")
     }
     
-    /// callback when the local user joins a specified channel.
-    /// @param channel
-    /// @param uid uid of local user
-    /// @param elapsed time elapse since current sdk instance join the channel in ms
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinChannel channel: String, withUid uid: UInt, elapsed: Int) {
-        //        isProcessing = false
-        //        isJoined = true
-        //        videos[0].uid = self.screenShare1Uid
+        //        isProcessingChannel1 = false
+        //        isProcessingChannel2 = false
+        //        isChannel1Joined = true
+        //        isChannel2Joined = true
         LogUtils.log(message: "local user join \(channel) with uid \(uid) elapsed \(elapsed)ms", level: .info)
     }
     
-    /// callback when a remote user is joinning the channel, note audience in live broadcast mode will NOT trigger this event
-    /// @param uid uid of remote joined user
-    /// @param elapsed time elapse since current sdk instance join the channel in ms
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
         LogUtils.log(message: "remote user join: \(uid) \(elapsed)ms", level: .info)
-        
-        // find a VideoView w/o uid assigned
+        if selectClientRoleType == .broadcaster { return }
         if let remoteVideo = videos.first(where: { $0.uid == nil }) {
-            //            remoteVideo.uid = uid
-            //
-            //            let videoCanvas = AgoraRtcVideoCanvas()
-            //            videoCanvas.uid = uid
-            //            videoCanvas.view = remoteVideo.videocanvas
-            //            videoCanvas.renderMode = .hidden
-            //            agoraKit.setupRemoteVideo(videoCanvas)
+            remoteVideo.uid = uid
+            
+            let videoCanvas = AgoraRtcVideoCanvas()
+            videoCanvas.uid = uid
+            videoCanvas.view = remoteVideo.videocanvas
+            videoCanvas.renderMode = .hidden
+            agoraKit.setupRemoteVideo(videoCanvas)
             
         } else {
             LogUtils.log(message: "no video canvas available for \(uid), cancel bind", level: .warning)
         }
     }
     
-    /// callback when a remote user is leaving the channel, note audience in live broadcast mode will NOT trigger this event
-    /// @param uid uid of remote joined user
-    /// @param reason reason why this user left, note this event may be triggered when the remote user
-    /// become an audience in live broadcasting profile
     func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid: UInt, reason: AgoraUserOfflineReason) {
         LogUtils.log(message: "remote user left: \(uid) reason \(reason)", level: .info)
         
@@ -498,5 +487,108 @@ extension ScreenShare: AgoraRtcEngineDelegate {
             LogUtils.log(message: "no matching video canvas for \(uid), cancel unbind", level: .warning)
         }
     }
-    
 }
+
+
+
+extension ScreenShare: JoinChannelExConnectionDelegate {
+    func rtcEngine(_ engine: AgoraRtcEngineKit, connection: AgoraRtcConnection, didOccurWarning warningCode: AgoraWarningCode) {
+        LogUtils.log(message: "warning: \(warningCode.description)", level: .warning)
+    }
+    
+    func rtcEngine(_ engine: AgoraRtcEngineKit, connection: AgoraRtcConnection, didOccurError errorCode: AgoraErrorCode) {
+        self.showAlert(title: "Error", message: "Error \(errorCode.description) occur")
+        if isProcessingChannel2 {
+            isProcessingChannel2 = false
+        }
+    }
+    
+    func rtcEngine(_ engine: AgoraRtcEngineKit, connection: AgoraRtcConnection, didJoinChannel channel: String, withUid uid: UInt, elapsed: Int) {
+        LogUtils.log(message: "Join \(channel) with uid \(uid) elapsed \(elapsed)ms", level: .info)
+    }
+    
+    func rtcEngine(_ engine: AgoraRtcEngineKit, connection: AgoraRtcConnection, didJoinedOfUid uid: UInt, elapsed: Int) {
+        LogUtils.log(message: "remote user join: \(uid) \(elapsed)ms", level: .info)
+        if selectClientRoleType == .broadcaster { return }
+        
+        if let remoteVideo = videos.first(where: { $0.uid == nil }) {
+            remoteVideo.uid = uid
+            
+            let videoCanvas = AgoraRtcVideoCanvas()
+            videoCanvas.uid = uid
+            videoCanvas.view = remoteVideo.videocanvas
+            videoCanvas.renderMode = .hidden
+        
+            agoraKit.setupRemoteVideoEx(videoCanvas, connection: connection)
+        } else {
+            LogUtils.log(message: "no video canvas available for \(uid), cancel bind", level: .warning)
+        }
+        
+    }
+    
+    func rtcEngine(_ engine: AgoraRtcEngineKit, connection: AgoraRtcConnection, didOfflineOfUid uid: UInt, reason: AgoraUserOfflineReason) {
+        LogUtils.log(message: "remote user left: \(uid) reason \(reason)", level: .info)
+        
+        if let remoteVideo = videos.first(where: { $0.uid == uid }) {
+            let videoCanvas = AgoraRtcVideoCanvas()
+            videoCanvas.uid = uid
+            videoCanvas.view = nil
+            videoCanvas.renderMode = .hidden
+            agoraKit.setupRemoteVideoEx(videoCanvas, connection: connection)
+            remoteVideo.uid = nil
+        } else {
+            LogUtils.log(message: "no matching video canvas for \(uid), cancel unbind", level: .warning)
+        }
+    }
+}
+
+
+
+
+protocol JoinChannelExConnectionDelegate : NSObject {
+    func rtcEngine(_ engine: AgoraRtcEngineKit, connection: AgoraRtcConnection, didOccurWarning warningCode: AgoraWarningCode)
+    func rtcEngine(_ engine: AgoraRtcEngineKit, connection: AgoraRtcConnection, didOccurError errorCode: AgoraErrorCode)
+    func rtcEngine(_ engine: AgoraRtcEngineKit, connection: AgoraRtcConnection, didJoinChannel channel: String, withUid uid: UInt, elapsed: Int)
+    func rtcEngine(_ engine: AgoraRtcEngineKit, connection: AgoraRtcConnection, didJoinedOfUid uid: UInt, elapsed: Int)
+    func rtcEngine(_ engine: AgoraRtcEngineKit, connection: AgoraRtcConnection, didOfflineOfUid uid: UInt, reason: AgoraUserOfflineReason)
+}
+
+
+class JoinChannelExListener: NSObject, AgoraRtcEngineDelegate {
+    weak var connectionDelegate: JoinChannelExConnectionDelegate?
+    var connection :AgoraRtcConnection?
+    
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didOccurWarning warningCode: AgoraWarningCode) {
+        if let connection {
+            self.connectionDelegate?.rtcEngine(engine, connection: connection, didOccurWarning: warningCode)
+        }
+    }
+
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didOccurError errorCode: AgoraErrorCode) {
+        if let connection {
+            self.connectionDelegate?.rtcEngine(engine, connection: connection, didOccurError: errorCode)
+        }
+    }
+    
+    internal func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinChannel channel: String, withUid uid: UInt, elapsed: Int) {
+        if let connection {
+            self.connectionDelegate?.rtcEngine(engine, connection: connection, didJoinChannel: channel, withUid: uid, elapsed: elapsed)
+        }
+    }
+    
+    internal func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
+        if let connection  {
+            self.connectionDelegate?.rtcEngine(engine, connection: connection, didJoinedOfUid: uid, elapsed: elapsed)
+        }
+    }
+    
+    internal func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid: UInt, reason: AgoraUserOfflineReason) {
+        if let connection  {
+            self.connectionDelegate?.rtcEngine(engine, connection: connection, didOfflineOfUid: uid, reason: reason)
+        }
+    }
+    internal func rtcEngine(_ engine: AgoraRtcEngineKit, localAudioStateChanged state: AgoraAudioLocalState, error: AgoraAudioLocalError) {
+        print("localAudioState == \(state.rawValue)")
+    }
+}
+

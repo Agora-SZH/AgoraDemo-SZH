@@ -33,7 +33,7 @@
                                                                 <constraint firstAttribute="height" constant="16" id="rFg-vt-o4V"/>
                                                             </constraints>
                                                             <textFieldCell key="cell" lineBreakMode="clipping" title="频道一" id="x7V-Mk-4Ql">
-                                                                <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                                <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
@@ -58,7 +58,7 @@
                                                             </constraints>
                                                             <buttonCell key="cell" type="push" title="加入" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="A4O-Ww-vmQ">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                <font key="font" size="12" name=".PingFangSC-Regular"/>
+                                                                <font key="font" metaFont="cellTitle"/>
                                                             </buttonCell>
                                                             <connections>
                                                                 <action selector="onJoinChannel1:" target="Gwp-vd-c2J" id="rjk-c1-pWT"/>
@@ -73,7 +73,7 @@
                                                                         <constraint firstAttribute="height" constant="16" id="UCY-Bb-CmK"/>
                                                                     </constraints>
                                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="选择屏幕" id="kLP-R8-nbS">
-                                                                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                                        <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -86,7 +86,7 @@
                                                                     </constraints>
                                                                     <buttonCell key="cell" type="push" title="720摄像头" bezelStyle="rounded" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hCK-f9-AHg">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                        <font key="font" metaFont="system" size="12"/>
+                                                                        <font key="font" metaFont="cellTitle"/>
                                                                     </buttonCell>
                                                                     <connections>
                                                                         <action selector="start720CameraCapture:" target="Gwp-vd-c2J" id="spH-mZ-sDS"/>
@@ -115,7 +115,7 @@
                                                                     </constraints>
                                                                     <buttonCell key="cell" type="push" title="1080屏幕共享" bezelStyle="rounded" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BfM-1S-adU">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                        <font key="font" metaFont="system" size="12"/>
+                                                                        <font key="font" metaFont="cellTitle"/>
                                                                     </buttonCell>
                                                                     <connections>
                                                                         <action selector="startScreenShare1:" target="Gwp-vd-c2J" id="tH4-1z-i7R"/>
@@ -153,12 +153,12 @@
                                                     <rect key="frame" x="15" y="530" width="163" height="50"/>
                                                     <subviews>
                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sLM-xy-ZTB">
-                                                            <rect key="frame" x="3" y="34" width="64" height="16"/>
+                                                            <rect key="frame" x="3" y="34" width="65" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="bFu-zE-zG0"/>
                                                             </constraints>
                                                             <textFieldCell key="cell" lineBreakMode="clipping" title="主播/观众" id="Gky-ic-3FY">
-                                                                <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                                <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
@@ -169,13 +169,13 @@
                                                                 <constraint firstAttribute="height" constant="20" id="YVP-bk-4QO"/>
                                                                 <constraint firstAttribute="width" constant="71" id="qo6-Ue-MWo"/>
                                                             </constraints>
-                                                            <popUpButtonCell key="cell" type="push" title="主播" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="g70-zX-q7g" id="Z1A-va-fwh">
+                                                            <popUpButtonCell key="cell" type="push" title="主播" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="g70-zX-q7g" id="Z1A-va-fwh">
                                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="menu"/>
                                                                 <menu key="menu" id="vAg-BU-lQB">
                                                                     <items>
-                                                                        <menuItem title="主播" id="g70-zX-q7g"/>
-                                                                        <menuItem title="观众" state="on" id="9wH-IA-GYC"/>
+                                                                        <menuItem title="主播" state="on" id="g70-zX-q7g"/>
+                                                                        <menuItem title="观众" id="9wH-IA-GYC"/>
                                                                     </items>
                                                                 </menu>
                                                             </popUpButtonCell>
@@ -202,7 +202,7 @@
                                                                 <constraint firstAttribute="height" constant="16" id="GQl-di-n7G"/>
                                                             </constraints>
                                                             <textFieldCell key="cell" lineBreakMode="clipping" title="频道二" id="hXg-N8-301">
-                                                                <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                                <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
@@ -227,7 +227,7 @@
                                                             </constraints>
                                                             <buttonCell key="cell" type="push" title="加入" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qf7-D9-Zcm">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                <font key="font" metaFont="system" size="12"/>
+                                                                <font key="font" metaFont="cellTitle"/>
                                                             </buttonCell>
                                                             <connections>
                                                                 <action selector="onJoinChannel2:" target="Gwp-vd-c2J" id="0Hq-n9-ZIE"/>
@@ -242,7 +242,7 @@
                                                                         <constraint firstAttribute="height" constant="16" id="1Ys-Sc-RGM"/>
                                                                     </constraints>
                                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="选择屏幕" id="ajY-7G-9XK">
-                                                                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                                        <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -270,7 +270,7 @@
                                                                     </constraints>
                                                                     <buttonCell key="cell" type="push" title="4K屏幕共享" bezelStyle="rounded" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hxr-wV-NJH">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                        <font key="font" metaFont="system" size="12"/>
+                                                                        <font key="font" metaFont="cellTitle"/>
                                                                     </buttonCell>
                                                                     <connections>
                                                                         <action selector="startScreenSharing2:" target="Gwp-vd-c2J" id="6mH-3H-lMK"/>
@@ -310,7 +310,7 @@
                                                     </constraints>
                                                     <buttonCell key="cell" type="push" title="退出" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Od3-5b-KvH">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                        <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="leave:" target="Gwp-vd-c2J" id="wq4-mb-JI5"/>
