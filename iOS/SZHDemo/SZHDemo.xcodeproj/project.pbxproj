@@ -95,7 +95,7 @@
 		2CA6A9D02A821EE000214648 /* H265View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H265View.swift; sourceTree = "<group>"; };
 		2CA6A9D22A821EED00214648 /* H265View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = H265View.xib; sourceTree = "<group>"; };
 		2CA6A9D42A84C3E200214648 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
-		2CB520FA2A9C86D7004DC2C8 /* NetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
+		2CB520FA2A9C86D7004DC2C8 /* NetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetWorkManager.swift; path = ../Utils/NetWorkManager.swift; sourceTree = "<group>"; };
 		2CF7647A2A8B592100C305B5 /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
 		2CF7647E2A8B5F6200C305B5 /* UserViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewCell.xib; sourceTree = "<group>"; };
 		2CF764802A8C9F0800C305B5 /* VirtualBgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualBgView.swift; sourceTree = "<group>"; };
@@ -181,6 +181,7 @@
 		2C227AAB2A77B7B300F6FBB9 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				2CB520FA2A9C86D7004DC2C8 /* NetWorkManager.swift */,
 				2C227AAC2A77B7B300F6FBB9 /* ToastView.swift */,
 				2C227AAE2A77B7B300F6FBB9 /* JSONObject.swift */,
 			);
@@ -195,7 +196,6 @@
 				2C227AC42A77B7B300F6FBB9 /* Util.swift */,
 				2C227AC52A77B7B300F6FBB9 /* BundleUtil.m */,
 				2C227AC62A77B7B300F6FBB9 /* MediaUtils.h */,
-				2CB520FA2A9C86D7004DC2C8 /* NetWorkManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
