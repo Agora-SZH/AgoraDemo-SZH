@@ -27,9 +27,9 @@ class UsersViewController: UIViewController {
         let url = "http://10.82.103.206:8080/GetUserInfo"
         let par:[String : Any] = ["uid":888]
         NetworkManager.shared.postRequest(urlString: url, params: par) { _ in
-            print("success")
+            ToastView.show(text: "success")
         } failure: { String in
-            print("failure:\(String)")
+            ToastView.show(text: "failure:\(String)")
         }
     }
 }
