@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C04DE652AB83AC00094943F /* CreateMeetingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C04DE642AB83AC00094943F /* CreateMeetingVC.swift */; };
+		2C04DE672AB83AD00094943F /* JoinMeetingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C04DE662AB83AD00094943F /* JoinMeetingVC.swift */; };
+		2C1CAA962AB8347F0061AEC7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CAA952AB8347F0061AEC7 /* HomeViewController.swift */; };
 		2C227A8E2A77A1A400F6FBB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C227A8D2A77A1A400F6FBB9 /* AppDelegate.swift */; };
 		2C227A902A77A1A400F6FBB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C227A8F2A77A1A400F6FBB9 /* SceneDelegate.swift */; };
 		2C227A922A77A1A400F6FBB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C227A912A77A1A400F6FBB9 /* ViewController.swift */; };
 		2C227A952A77A1A400F6FBB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C227A932A77A1A400F6FBB9 /* Main.storyboard */; };
 		2C227A972A77A1A500F6FBB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C227A962A77A1A500F6FBB9 /* Assets.xcassets */; };
 		2C227A9A2A77A1A500F6FBB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C227A982A77A1A500F6FBB9 /* LaunchScreen.storyboard */; };
-		2C227AA22A77A79C00F6FBB9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C227AA12A77A79C00F6FBB9 /* HomeViewController.swift */; };
+		2C227AA22A77A79C00F6FBB9 /* MeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C227AA12A77A79C00F6FBB9 /* MeetingViewController.swift */; };
 		2C227ADF2A77B7B300F6FBB9 /* VideoViewSampleBufferDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C227AAA2A77B7B300F6FBB9 /* VideoViewSampleBufferDisplayView.xib */; };
 		2C227AE02A77B7B300F6FBB9 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C227AAC2A77B7B300F6FBB9 /* ToastView.swift */; };
 		2C227AE22A77B7B300F6FBB9 /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C227AAE2A77B7B300F6FBB9 /* JSONObject.swift */; };
@@ -61,6 +64,9 @@
 
 /* Begin PBXFileReference section */
 		0989AC8B08BE71466D5B4C7C /* Pods-SZHDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SZHDemo.release.xcconfig"; path = "Target Support Files/Pods-SZHDemo/Pods-SZHDemo.release.xcconfig"; sourceTree = "<group>"; };
+		2C04DE642AB83AC00094943F /* CreateMeetingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMeetingVC.swift; sourceTree = "<group>"; };
+		2C04DE662AB83AD00094943F /* JoinMeetingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinMeetingVC.swift; sourceTree = "<group>"; };
+		2C1CAA952AB8347F0061AEC7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2C227A8A2A77A1A400F6FBB9 /* SZHDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SZHDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C227A8D2A77A1A400F6FBB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C227A8F2A77A1A400F6FBB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +75,7 @@
 		2C227A962A77A1A500F6FBB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C227A992A77A1A500F6FBB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C227A9B2A77A1A500F6FBB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C227AA12A77A79C00F6FBB9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2C227AA12A77A79C00F6FBB9 /* MeetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingViewController.swift; sourceTree = "<group>"; };
 		2C227AAA2A77B7B300F6FBB9 /* VideoViewSampleBufferDisplayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoViewSampleBufferDisplayView.xib; sourceTree = "<group>"; };
 		2C227AAC2A77B7B300F6FBB9 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		2C227AAE2A77B7B300F6FBB9 /* JSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONObject.swift; sourceTree = "<group>"; };
@@ -231,6 +237,9 @@
 				2C7AE3912AA5DC9800197C65 /* LoginViewController.swift */,
 				2C7AE3B52AA6CA2D00197C65 /* LoginViewModel.swift */,
 				2C227ACB2A77B7B300F6FBB9 /* LogViewController.swift */,
+				2C1CAA952AB8347F0061AEC7 /* HomeViewController.swift */,
+				2C04DE642AB83AC00094943F /* CreateMeetingVC.swift */,
+				2C04DE662AB83AD00094943F /* JoinMeetingVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -265,7 +274,7 @@
 				2C227AC72A77B7B300F6FBB9 /* EntryViewController.swift */,
 				2C227AAF2A77B7B300F6FBB9 /* BaseViewController.swift */,
 				2C227A912A77A1A400F6FBB9 /* ViewController.swift */,
-				2C227AA12A77A79C00F6FBB9 /* HomeViewController.swift */,
+				2C227AA12A77A79C00F6FBB9 /* MeetingViewController.swift */,
 				2C806F532A7A0E0F001E6B50 /* SettingViewController.swift */,
 				2CA6A9D42A84C3E200214648 /* UsersViewController.swift */,
 				2C7AE38F2AA5D8E600197C65 /* ABaseViewController.swift */,
@@ -423,11 +432,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C04DE672AB83AD00094943F /* JoinMeetingVC.swift in Sources */,
 				2C227AF62A77B7B300F6FBB9 /* LogViewController.swift in Sources */,
 				2C227AE02A77B7B300F6FBB9 /* ToastView.swift in Sources */,
 				2C227AE32A77B7B300F6FBB9 /* BaseViewController.swift in Sources */,
 				2C227AF32A77B7B300F6FBB9 /* StatisticsInfo.swift in Sources */,
 				2C227AEF2A77B7B300F6FBB9 /* MediaUtils.m in Sources */,
+				2C1CAA962AB8347F0061AEC7 /* HomeViewController.swift in Sources */,
+				2C04DE652AB83AC00094943F /* CreateMeetingVC.swift in Sources */,
 				2C7AE3922AA5DC9800197C65 /* LoginViewController.swift in Sources */,
 				2CB520FB2A9C86D7004DC2C8 /* NetWorkManager.swift in Sources */,
 				2CA6A9CD2A8100AA00214648 /* SRView.swift in Sources */,
@@ -450,7 +462,7 @@
 				2C227AFD2A77B7B300F6FBB9 /* GlobalSettings.swift in Sources */,
 				2C7AE3BC2AA6CB7500197C65 /* TextFieldCustomClear.swift in Sources */,
 				2C806F542A7A0E0F001E6B50 /* SettingViewController.swift in Sources */,
-				2C227AA22A77A79C00F6FBB9 /* HomeViewController.swift in Sources */,
+				2C227AA22A77A79C00F6FBB9 /* MeetingViewController.swift in Sources */,
 				2CF764812A8C9F0800C305B5 /* VirtualBgView.swift in Sources */,
 				2C7AE3B42AA6C91C00197C65 /* StorageManager.swift in Sources */,
 				2C227AED2A77B7B300F6FBB9 /* VideoView.swift in Sources */,

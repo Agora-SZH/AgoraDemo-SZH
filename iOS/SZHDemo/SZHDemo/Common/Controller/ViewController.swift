@@ -35,7 +35,7 @@ class ViewController: UIViewController {
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "join") {
-            let controller = segue.destination as!HomeViewController
+            let controller = segue.destination as!MeetingViewController
             controller.appid = appidTF.text!
             controller.token = tokenTF.text!
             controller.channel = channelTF.text!

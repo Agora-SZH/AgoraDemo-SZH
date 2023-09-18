@@ -148,6 +148,12 @@ class LoginViewController: ABaseViewController {
 //                                localUserProperties: ["my": "aaa"],
 //                                flexRoomProps: ["name" : "roomName"])
 //        vm.entryRoom(info: info)
+        var homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MeetingViewController") as! MeetingViewController
+
+        homeVC.appid = "aab8b8f5a8cd4469a63042fcfafe7063"
+        homeVC.channel = "test"
+        navigationController?.pushViewController(homeVC, animated: true)
+        dismissLoading()
     }
     
     @IBAction func onClickTip(_ sender: Any) {

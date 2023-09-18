@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  MeetingViewController.swift
 //  SZHDemo
 //
 //  Created by jinggang on 2023/7/31.
@@ -14,7 +14,7 @@ struct SuperResolution: Codable {
     let type: Int
 }
 
-class HomeViewController: ViewController {
+class MeetingViewController: ViewController {
     var appid:String = ""
     var token:String = ""
     var channel:String = ""
@@ -28,7 +28,7 @@ class HomeViewController: ViewController {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var buttomView: UIView!
     @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var container: AGEVideoContainer!
+    @IBOutlet weak var collectionView: UICollectionView!
     var agoraKit: AgoraRtcEngineKit!
     var ges : UIGestureRecognizer!
     var isJoined: Bool = false
@@ -43,6 +43,16 @@ class HomeViewController: ViewController {
     
     var nosie:AINoisePramaters!
     var sr:Int = 0
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +82,9 @@ class HomeViewController: ViewController {
         localVideo = Bundle.loadVideoView(type: .local, audioOnly: false)
         localVideo.isUserInteractionEnabled = true
         localVideo.frame = CGRectMake(0, 100, 150, 180)
+        //TODO:
+        localVideo.isHidden = true
+        //
         self.backView.addSubview(localVideo)
         self.localGestureSetup()//添加UI手势方法
         let videoCanvas = AgoraRtcVideoCanvas()
@@ -100,9 +113,11 @@ class HomeViewController: ViewController {
         agoraKit.switchCamera()
     }
     
-    //设置
-    @IBAction func setting(_ sender: UIButton) {
+    //message
+    @IBAction func ShowMessage(_ sender: UIButton) {
     }
+    
+    
     //mute 音频
     @IBAction func MuteAudio(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -144,7 +159,6 @@ class HomeViewController: ViewController {
     
     //退出频道
     @IBAction func Leave(_ sender: Any) {
-        self.dismiss(animated: true)
         agoraKit.disableAudio()
         agoraKit.disableVideo()
         if isJoined {
@@ -153,6 +167,7 @@ class HomeViewController: ViewController {
                 LogUtils.log(message: "left channel, duration: \(stats.duration)", level: .info)
             }
         }
+        self.navigationController?.popViewController(animated: true)
     }
     func timeStart() {
         if !(timer != nil) {
@@ -226,7 +241,7 @@ class HomeViewController: ViewController {
         }
     }
     
-    @IBAction func unwindToHomeViewController(_ unwindSegue: UIStoryboardSegue) {
+    @IBAction func unwindToMeetingViewController(_ unwindSegue: UIStoryboardSegue) {
 //        if let settingVC = unwindSegue.source as? SettingViewController {}
     }
     
@@ -239,7 +254,7 @@ class HomeViewController: ViewController {
 }
 
 /// agora rtc engine delegate events
-extension HomeViewController: AgoraRtcEngineDelegate {
+extension MeetingViewController: AgoraRtcEngineDelegate {
     func rtcEngine(_ engine: AgoraRtcEngineKit, didOccurWarning warningCode: AgoraWarningCode) {
         LogUtils.log(message: "warning: \(warningCode.description)", level: .warning)
     }
@@ -312,21 +327,21 @@ extension HomeViewController: AgoraRtcEngineDelegate {
         
     func rtcEngine(_ engine: AgoraRtcEngineKit, networkQuality uid: UInt, txQuality: AgoraNetworkQuality, rxQuality: AgoraNetworkQuality) {
         if uid == userId {
-            if txQuality == .excellent || txQuality == .good || txQuality == .unknown {
-                stateImage.image = UIImage.init(named: "states-nice")
-            }
-            else if txQuality == .poor {
-                stateImage.image = UIImage.init(named: "states-poor")
-            }
-            else if txQuality == .bad || txQuality == .vBad || txQuality == .down || txQuality == .detecting || txQuality == .unsupported{
-                stateImage.image = UIImage.init(named: "states-bad")
-            }
+//            if txQuality == .excellent || txQuality == .good || txQuality == .unknown {
+//                stateImage.image = UIImage.init(named: "states-nice")
+//            }
+//            else if txQuality == .poor {
+//                stateImage.image = UIImage.init(named: "states-poor")
+//            }
+//            else if txQuality == .bad || txQuality == .vBad || txQuality == .down || txQuality == .detecting || txQuality == .unsupported{
+//                stateImage.image = UIImage.init(named: "states-bad")
+//            }
         }
     }
 }
 
 //超分 MediaFilter 回调
-extension HomeViewController: AgoraMediaFilterEventDelegate{
+extension MeetingViewController: AgoraMediaFilterEventDelegate{
     func onEvent(_ provider: String?, extension: String?, key: String?, value: String?) {
                 if let srKey = key, srKey == "sr_type" {
                     if let jsonData = value?.data(using: .utf8) {
@@ -362,7 +377,7 @@ extension HomeViewController: AgoraMediaFilterEventDelegate{
 }
 
 
-extension HomeViewController: MoreDelegate {
+extension MeetingViewController: MoreDelegate {
     //隐藏页面
     func Hidden() {
         moreView?.frame = CGRectMake(0, self.view.frame.size.height, (moreView?.frame.size.width)!, (moreView?.frame.size.height)!)
