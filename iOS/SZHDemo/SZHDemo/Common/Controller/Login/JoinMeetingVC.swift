@@ -14,7 +14,7 @@ class JoinMeetingVC: ABaseViewController {
         var homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MeetingViewController") as! MeetingViewController
 
         homeVC.appid = "aab8b8f5a8cd4469a63042fcfafe7063"
-        homeVC.channel = "test"
+        homeVC.channel = "jinggang"
         navigationController?.pushViewController(homeVC, animated: true)
     }
     

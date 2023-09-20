@@ -14,7 +14,7 @@ struct SuperResolution: Codable {
     let type: Int
 }
 
-class MeetingViewController: ViewController {
+class MeetingViewController: ViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     var appid:String = ""
     var token:String = ""
     var channel:String = ""
@@ -43,7 +43,9 @@ class MeetingViewController: ViewController {
     
     var nosie:AINoisePramaters!
     var sr:Int = 0
-    
+    private let cellIdentifier = "AgoraMeetingCell"
+    var zoomedView:UIView? = nil
+    var exitBtn:UIButton!
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -58,6 +60,13 @@ class MeetingViewController: ViewController {
         super.viewDidLoad()
         channelL.text = channel
         self.timeStart()//启动通话计时
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: "AgoraMeetingCell", bundle: nil), forCellWithReuseIdentifier:cellIdentifier)
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 190, height: 240) //设置每个单元格的大小
+        collectionView.collectionViewLayout = layout
         
         //配置RtcEngine
         let config = AgoraRtcEngineConfig()
@@ -84,15 +93,6 @@ class MeetingViewController: ViewController {
         localVideo.frame = CGRectMake(0, 100, 150, 180)
         //TODO:
         localVideo.isHidden = true
-        //
-        self.backView.addSubview(localVideo)
-        self.localGestureSetup()//添加UI手势方法
-        let videoCanvas = AgoraRtcVideoCanvas()
-        videoCanvas.uid = 0
-        videoCanvas.view = localVideo.videoView
-        videoCanvas.renderMode = .hidden
-        agoraKit.setupLocalVideo(videoCanvas)
-        agoraKit.startPreview()
         agoraKit.setDefaultAudioRouteToSpeakerphone(true)
         
         //加入频道
@@ -169,6 +169,73 @@ class MeetingViewController: ViewController {
         }
         self.navigationController?.popViewController(animated: true)
     }
+    
+    //UICollectionCellDatasource methods
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return userArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AgoraMeetingCell
+        
+        //默认本地用户预览放在第一个cell的位置
+        if indexPath.row == 0 {
+            let localVideoCanvas = AgoraRtcVideoCanvas()
+            localVideoCanvas.uid = UInt(userArray[0])
+            localVideoCanvas.view = cell.backVideoView
+            localVideoCanvas.renderMode = .hidden
+            cell.usernameL.text = "\(localVideoCanvas.uid)"
+            cell.topBtn.isSelected = true
+            agoraKit.setupLocalVideo(localVideoCanvas)
+            agoraKit.startPreview()
+        }else {
+            let remoteVideoCanvas = AgoraRtcVideoCanvas()
+            remoteVideoCanvas.view = cell.backVideoView
+            remoteVideoCanvas.uid = UInt(userArray[indexPath.row])
+            remoteVideoCanvas.renderMode = .hidden
+            cell.usernameL.text = "\(remoteVideoCanvas.uid)"
+            agoraKit.setupRemoteVideo(remoteVideoCanvas)
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("did select item at index \(indexPath.row)")
+        //点击用户视图 进入演讲者模式
+        // 获取选中的单元格
+        guard let selectedCell = collectionView.cellForItem(at: indexPath) else {
+            return
+        }
+        // 获取选中单元格的位置信息
+        let cellFrame = selectedCell.convert(selectedCell.bounds, to: collectionView.superview)
+        // 创建一个放大后的视图
+        zoomedView = UIView(frame: cellFrame)
+        // 添加动画效果将其放大到全屏
+        UIView.animate(withDuration: 0.3) {
+            self.zoomedView?.frame = self.view.bounds
+        }
+        let remoteVideoCanvas = AgoraRtcVideoCanvas()
+        remoteVideoCanvas.view = zoomedView
+        remoteVideoCanvas.uid = UInt(userArray[indexPath.row])
+        remoteVideoCanvas.renderMode = .hidden
+        agoraKit.setupRemoteVideo(remoteVideoCanvas)
+        // 将放大后的视图添加到视图层级中
+        backView.addSubview(zoomedView!)
+        
+        exitBtn = UIButton(frame: CGRect(x: 100, y: 50, width: 30, height: 30))
+        let backgroundImage = UIImage(named: "应用管理")
+        exitBtn.setBackgroundImage(backgroundImage, for: .normal)
+        
+        exitBtn.addTarget(self, action: #selector(exitFullScreen), for: .touchUpInside)
+        backView.addSubview(exitBtn)
+    }
+    //退出演讲者模式
+    @objc func exitFullScreen() {
+        zoomedView?.removeFromSuperview()
+        collectionView.reloadData()
+        exitBtn.removeFromSuperview()
+    }
+    //timer
     func timeStart() {
         if !(timer != nil) {
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerIntervalx), userInfo: nil, repeats: true)
@@ -271,58 +338,45 @@ extension MeetingViewController: AgoraRtcEngineDelegate {
         //添加本地用户uid到user list
         userArray.append(Int(uid))
         print("joined")
+        collectionView.reloadData()
     }
 
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
         LogUtils.log(message: "remote user join: \(uid) \(elapsed)ms", level: .info)
-        remoteVideo = Bundle.loadVideoView(type: .remote, audioOnly: false)
-        remoteVideo.isUserInteractionEnabled = true
-        remoteVideo.frame = CGRectMake(0, -57, self.backView.frame.size.width, self.backView.frame.size.height+92)
-        self.backView.addSubview(remoteVideo)
-        self.backView.bringSubviewToFront(localVideo)
-        self.remoteGestureSetup()
-        let videoCanvas = AgoraRtcVideoCanvas()
-        videoCanvas.uid = uid
-        videoCanvas.view = remoteVideo.videoView
-        videoCanvas.renderMode = .hidden
-        agoraKit.setupRemoteVideo(videoCanvas)
         //添加远端用户uid到user list
         userArray.append(Int(uid))
+        collectionView.reloadData()
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid: UInt, reason: AgoraUserOfflineReason) {
         LogUtils.log(message: "remote user left: \(uid) reason \(reason)", level: .info)
-        let videoCanvas = AgoraRtcVideoCanvas()
-        videoCanvas.uid = uid
-        videoCanvas.view = nil
-        videoCanvas.renderMode = .hidden
-        agoraKit.setupRemoteVideo(videoCanvas)
         //从到user list移除远端用户uid
         if userArray.contains(Int(uid)) {
          let index = userArray.firstIndex(of:Int(uid))
             userArray.remove(at: index!)
+            collectionView.reloadData()
         }
-        self.remoteVideo.removeFromSuperview()
+//        self.remoteVideo.removeFromSuperview()
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, reportRtcStats stats: AgoraChannelStats) {
-        localVideo.statsInfo?.updateChannelStats(stats)
+//        localVideo.statsInfo?.updateChannelStats(stats)
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, localVideoStats stats: AgoraRtcLocalVideoStats, sourceType: AgoraVideoSourceType) {
-        localVideo.statsInfo?.updateLocalVideoStats(stats)
+//        localVideo.statsInfo?.updateLocalVideoStats(stats)
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, localAudioStats stats: AgoraRtcLocalAudioStats) {
-        localVideo.statsInfo?.updateLocalAudioStats(stats)
+//        localVideo.statsInfo?.updateLocalAudioStats(stats)
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, remoteVideoStats stats: AgoraRtcRemoteVideoStats) {
-        remoteVideo.statsInfo?.updateVideoStats(stats)
+//        remoteVideo.statsInfo?.updateVideoStats(stats)
     }
 
     func rtcEngine(_ engine: AgoraRtcEngineKit, remoteAudioStats stats: AgoraRtcRemoteAudioStats) {
-        remoteVideo.statsInfo?.updateAudioStats(stats)
+//        remoteVideo.statsInfo?.updateAudioStats(stats)
     }
         
     func rtcEngine(_ engine: AgoraRtcEngineKit, networkQuality uid: UInt, txQuality: AgoraNetworkQuality, rxQuality: AgoraNetworkQuality) {
