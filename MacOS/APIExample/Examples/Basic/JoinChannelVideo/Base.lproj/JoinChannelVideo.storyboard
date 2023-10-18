@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22154"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -82,28 +82,28 @@
                                         </view>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wck-kx-dah">
                                             <rect key="frame" x="26" y="7" width="178" height="32"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="20" id="K09-ZA-g0M"/>
-                                                <constraint firstAttribute="width" constant="164" id="Onh-rv-7aR"/>
-                                            </constraints>
                                             <buttonCell key="cell" type="push" title="Join" bezelStyle="rounded" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Lhu-U1-6qh">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="K09-ZA-g0M"/>
+                                                <constraint firstAttribute="width" constant="164" id="Onh-rv-7aR"/>
+                                            </constraints>
                                             <connections>
                                                 <action selector="onVideoCallButtonPressed:" target="YjT-yy-DnJ" id="0oH-L6-nRD"/>
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BWE-hJ-hu7">
                                             <rect key="frame" x="213" y="7" width="88" height="32"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="74" id="4Oa-el-QhD"/>
-                                                <constraint firstAttribute="height" constant="20" id="RvC-2q-gD7"/>
-                                            </constraints>
                                             <buttonCell key="cell" type="push" title="高级设置" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ccu-fP-UnT">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="74" id="4Oa-el-QhD"/>
+                                                <constraint firstAttribute="height" constant="20" id="RvC-2q-gD7"/>
+                                            </constraints>
                                             <connections>
                                                 <action selector="supperSets:" target="YjT-yy-DnJ" id="ggk-3v-E8Y"/>
                                             </connections>

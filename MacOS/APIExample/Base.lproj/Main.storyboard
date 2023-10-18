@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22154"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -696,12 +696,12 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="sL9-0i-oWK" kind="relationship" relationship="window.shadowedContentViewController" id="bmU-eE-GhP"/>
+                        <segue destination="UrG-AH-YrR" kind="relationship" relationship="window.shadowedContentViewController" id="feK-UR-zSO"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="164" y="-70"/>
+            <point key="canvasLocation" x="-34" y="-221"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="GTp-Rb-RN0">
@@ -709,7 +709,6 @@
                 <splitViewController id="sL9-0i-oWK" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem holdingPriority="255" behavior="contentList" separatorStyle="none" id="63c-uO-XIT"/>
-                        <splitViewItem canCollapse="YES" separatorStyle="none" id="Lq1-uY-z7v"/>
                     </splitViewItems>
                     <splitView key="splitView" arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" id="1JX-5Q-i5O">
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
@@ -721,7 +720,6 @@
                     <connections>
                         <outlet property="splitView" destination="1JX-5Q-i5O" id="8GU-N7-cCK"/>
                         <segue destination="frP-Og-4hq" kind="relationship" relationship="splitItems" id="6ZS-Aq-0Wv"/>
-                        <segue destination="UrG-AH-YrR" kind="relationship" relationship="splitItems" id="5lh-eM-9HV"/>
                     </connections>
                 </splitViewController>
                 <customObject id="RHW-HG-6Qu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -766,7 +764,7 @@
                                                             <rect key="frame" x="1" y="1" width="246" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Yoo-BB-x79">
+                                                                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Yoo-BB-x79">
                                                                     <rect key="frame" x="20" y="0.0" width="246" height="17"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="17" id="mQT-GL-T2e"/>
@@ -791,7 +789,7 @@
                                                             <rect key="frame" x="1" y="20" width="246" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="QTx-vV-DAq">
+                                                                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="QTx-vV-DAq">
                                                                     <rect key="frame" x="20" y="0.0" width="246" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="14" id="tIf-oG-A6G"/>
@@ -834,14 +832,14 @@
                             </scrollView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="1eW-RY-z9X">
                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="8Dp-kj-zaV"/>
-                                    <constraint firstAttribute="width" constant="32" id="yN4-V5-R92"/>
-                                </constraints>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSSmartBadgeTemplate" imagePosition="only" alignment="center" inset="2" id="PTe-Da-jjD">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="8Dp-kj-zaV"/>
+                                    <constraint firstAttribute="width" constant="32" id="yN4-V5-R92"/>
+                                </constraints>
                                 <connections>
                                     <action selector="onClickSetting:" target="frP-Og-4hq" id="LYl-a0-Sxl"/>
                                 </connections>
@@ -858,12 +856,12 @@
                 </viewController>
                 <customObject id="nr4-u5-WOG" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="798" y="199"/>
+            <point key="canvasLocation" x="885" y="474"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="KsQ-B6-tlj">
             <objects>
-                <viewController id="UrG-AH-YrR" sceneMemberID="viewController">
+                <viewController id="UrG-AH-YrR" customClass="ViewController" customModule="APIExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="jb0-Tp-CG8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -871,7 +869,7 @@
                 </viewController>
                 <customObject id="IIl-IA-NcC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868" y="898"/>
+            <point key="canvasLocation" x="719" y="-252"/>
         </scene>
     </scenes>
     <resources>

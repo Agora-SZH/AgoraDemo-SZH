@@ -8,6 +8,40 @@
 
 import Cocoa
 
+class ViewController: NSViewController, MeetingBeginDelegate {
+ 
+    let begin = MeetingBeginWindowController()
+    let create = CreateMettingWindowController()
+    let main = MainMeetingInterface()
+   
+    override func viewDidLoad() {
+          super.viewDidLoad()
+          begin.delegate = self
+    }
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+//        begin.loadWindow()
+//        self.view.window?.addChildWindow(begin.window!, ordered: .above)
+        main.loadWindow()
+        self.view.window?.addChildWindow(main.window!, ordered: .above)
+    }
+
+    func didCreateMeeting() {
+        create.isCreate = true
+        create.loadWindow()
+        self.view.window?.addChildWindow(create.window!, ordered: .above)
+    }
+    
+    func didJoinMetting() {
+        create.isCreate = false
+        create.loadWindow()
+        self.view.window?.addChildWindow(create.window!, ordered: .above)
+    }
+
+}
+
+
 struct MenuItem {
     var name: String
     var identifier: String
@@ -127,18 +161,4 @@ extension MenuController: NSTableViewDataSource, NSTableViewDelegate {
     }
 }
 
-class ViewController: NSViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-}
 

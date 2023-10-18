@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22154" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22154"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,7 +13,7 @@
             <rect key="frame" x="0.0" y="0.0" width="479" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1ZJ-uM-MB9">
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1ZJ-uM-MB9">
                     <rect key="frame" x="219" y="128" width="41" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Label" id="yc2-hq-PU1">
                         <font key="font" usesAppearanceFont="YES"/>
@@ -24,7 +24,7 @@
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="HYt-MR-8N2" customClass="AgoraMetalRender" customModule="APIExample" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="479" height="272"/>
                 </customView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3YF-wM-Mfa">
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3YF-wM-Mfa">
                     <rect key="frame" x="457" y="246" width="4" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" id="q6g-VN-Awo">
                         <font key="font" metaFont="system"/>

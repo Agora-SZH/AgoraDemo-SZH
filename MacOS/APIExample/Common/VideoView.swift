@@ -67,26 +67,26 @@ class VideoView: NSView, NibLoadable {
     }
 }
 
-class MetalVideoView: NSView,NibLoadable {
-    @IBOutlet weak var placeholder: NSTextField!
-    @IBOutlet weak var videocanvas: AgoraMetalRender!
-    @IBOutlet weak var infolabel: NSTextField!
-    
-    var uid:UInt? {
-        didSet {
-            infolabel.stringValue = uid == nil ? "" : "\(uid!)"
-        }
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-}
-
-class SampleBufferDisplayView: NSView,NibLoadable {
-    @IBOutlet weak var videoView: AgoraSampleBufferRender!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-}
+//class MetalVideoView: NSView,NibLoadable {
+//    @IBOutlet weak var placeholder: NSTextField!
+//    @IBOutlet weak var videocanvas: AgoraMetalRender!
+//    @IBOutlet weak var infolabel: NSTextField!
+//    
+//    var uid:UInt? {
+//        didSet {
+//            infolabel.stringValue = uid == nil ? "" : "\(uid!)"
+//        }
+//    }
+//    
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//    }
+//}
+//
+//class SampleBufferDisplayView: NSView,NibLoadable {
+//    @IBOutlet weak var videoView: AgoraSampleBufferRender!
+//    
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//    }
+//}

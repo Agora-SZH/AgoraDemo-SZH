@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22154" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22154"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CreateMettingWindowController" customModule="APIExample" customModuleProvider="target">
+            <connections>
+                <outlet property="beautySetting" destination="CUP-sG-9fH" id="GyG-Yy-0f6"/>
+                <outlet property="beginMeeting" destination="034-AB-Htd" id="Pfb-J3-i2g"/>
+                <outlet property="mettingName" destination="SqR-s6-xah" id="agn-B0-Yiq"/>
+                <outlet property="passWord" destination="QS0-gX-oSx" id="gSQ-MO-Sj7"/>
+                <outlet property="passWordView" destination="8YW-4b-0QO" id="b8C-MO-szG"/>
+                <outlet property="userName" destination="Gg3-61-8Dc" id="8Pp-Iz-To6"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="发起会议" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="329" height="448"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
+            <view key="contentView" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="329" height="448"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="1Fc-7f-6Qv">
+                        <rect key="frame" x="30" y="381" width="250" height="23"/>
+                        <subviews>
+                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SqR-s6-xah">
+                                <rect key="frame" x="87" y="1" width="163" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="163" id="AzV-E3-2Gs"/>
+                                    <constraint firstAttribute="height" constant="21" id="rWe-eP-Njz"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="border" placeholderString="请输入会议名称" id="IfD-jY-0IB">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f7U-jV-xT9">
+                                <rect key="frame" x="27" y="4" width="54" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="bVI-OD-yHv"/>
+                                    <constraint firstAttribute="width" constant="50" id="wIM-1I-SxB"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="会议名称" id="m7s-aC-6Dh">
+                                    <font key="font" metaFont="cellTitle"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="250" id="GId-Y3-KQz"/>
+                            <constraint firstItem="SqR-s6-xah" firstAttribute="leading" secondItem="f7U-jV-xT9" secondAttribute="trailing" constant="8" symbolic="YES" id="LB6-3s-TKV"/>
+                            <constraint firstItem="SqR-s6-xah" firstAttribute="centerY" secondItem="1Fc-7f-6Qv" secondAttribute="centerY" id="McD-tb-e1e"/>
+                            <constraint firstItem="f7U-jV-xT9" firstAttribute="centerY" secondItem="1Fc-7f-6Qv" secondAttribute="centerY" id="PtM-Jl-QW8"/>
+                            <constraint firstAttribute="trailing" secondItem="SqR-s6-xah" secondAttribute="trailing" id="mWH-8d-orF"/>
+                            <constraint firstAttribute="height" constant="23" id="zcM-RT-QuX"/>
+                        </constraints>
+                    </customView>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="9Xe-Iq-NBq">
+                        <rect key="frame" x="30" y="338" width="250" height="23"/>
+                        <subviews>
+                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gg3-61-8Dc">
+                                <rect key="frame" x="87" y="1" width="163" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7sn-hJ-HXy"/>
+                                    <constraint firstAttribute="width" constant="163" id="Vi2-QI-TWj"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="border" placeholderString="请输入用户名" id="bnb-eL-Q3s">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ABP-EP-zbK">
+                                <rect key="frame" x="27" y="4" width="54" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="WrE-zy-M7w"/>
+                                    <constraint firstAttribute="height" constant="15" id="uJw-Mt-2Le"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="用户名" id="ccd-5c-GBg">
+                                    <font key="font" metaFont="cellTitle"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ABP-EP-zbK" firstAttribute="centerY" secondItem="9Xe-Iq-NBq" secondAttribute="centerY" id="ANa-nH-dl8"/>
+                            <constraint firstItem="Gg3-61-8Dc" firstAttribute="centerY" secondItem="9Xe-Iq-NBq" secondAttribute="centerY" id="HuI-eb-R3w"/>
+                            <constraint firstAttribute="width" constant="250" id="Lpc-Pt-wz4"/>
+                            <constraint firstItem="Gg3-61-8Dc" firstAttribute="leading" secondItem="ABP-EP-zbK" secondAttribute="trailing" constant="8" symbolic="YES" id="VZL-MQ-6qN"/>
+                            <constraint firstAttribute="height" constant="23" id="hLZ-Lq-i4B"/>
+                            <constraint firstAttribute="trailing" secondItem="Gg3-61-8Dc" secondAttribute="trailing" id="pmI-ho-s6m"/>
+                        </constraints>
+                    </customView>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="8YW-4b-0QO">
+                        <rect key="frame" x="30" y="295" width="250" height="23"/>
+                        <subviews>
+                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QS0-gX-oSx">
+                                <rect key="frame" x="115" y="1" width="135" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8DY-co-iYb"/>
+                                    <constraint firstAttribute="width" constant="135" id="sKc-VJ-kGI"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="border" placeholderString="请输入密码" id="lSN-E3-4r7">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fKo-eL-sSy">
+                                <rect key="frame" x="31" y="2.5" width="76" height="18"/>
+                                <buttonCell key="cell" type="check" title="会议密码" bezelStyle="regularSquare" imagePosition="right" alignment="right" state="on" inset="2" id="aEw-UJ-ZQV">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="cellTitle"/>
+                                </buttonCell>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="ZNM-PD-FZJ"/>
+                                    <constraint firstAttribute="width" constant="74" id="xK2-zn-8vs"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="withPassWord:" target="-2" id="gM8-6l-N2L"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QS0-gX-oSx" secondAttribute="trailing" id="NaK-rj-M8x"/>
+                            <constraint firstAttribute="height" constant="23" id="Qm0-gV-gMc"/>
+                            <constraint firstItem="fKo-eL-sSy" firstAttribute="centerY" secondItem="8YW-4b-0QO" secondAttribute="centerY" id="RXd-NJ-buu"/>
+                            <constraint firstItem="QS0-gX-oSx" firstAttribute="centerY" secondItem="8YW-4b-0QO" secondAttribute="centerY" id="YBd-h3-Oec"/>
+                            <constraint firstAttribute="width" constant="250" id="gsM-CX-k1f"/>
+                            <constraint firstItem="QS0-gX-oSx" firstAttribute="leading" secondItem="fKo-eL-sSy" secondAttribute="trailing" constant="10" id="mNb-t9-Qe8"/>
+                        </constraints>
+                    </customView>
+                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nqo-YD-Uv0">
+                        <rect key="frame" x="18" y="245" width="61" height="14"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" title="入会前设置" id="324-p0-P5h">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RdQ-je-wti">
+                        <rect key="frame" x="43" y="208" width="106" height="18"/>
+                        <buttonCell key="cell" type="check" title="打开摄像头" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="ONS-0d-4aV">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="104" id="ZB6-4P-TfE"/>
+                            <constraint firstAttribute="height" constant="16" id="uRw-9n-L9W"/>
+                        </constraints>
+                        <connections>
+                            <action selector="openCamera:" target="-2" id="pHK-ib-Nus"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nzs-bD-Bxx">
+                        <rect key="frame" x="43" y="172" width="106" height="18"/>
+                        <buttonCell key="cell" type="check" title="打开麦克风" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="2Ih-U5-ceA">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="1hf-a4-dLk"/>
+                            <constraint firstAttribute="width" constant="104" id="lk8-Tz-gpx"/>
+                        </constraints>
+                        <connections>
+                            <action selector="openMic:" target="-2" id="nmU-IX-ujh"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5sO-br-hcY">
+                        <rect key="frame" x="43" y="136" width="106" height="18"/>
+                        <buttonCell key="cell" type="check" title="美颜" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="C3u-SZ-qg4">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="4YR-nA-pVk"/>
+                            <constraint firstAttribute="width" constant="104" id="rwZ-10-yar"/>
+                        </constraints>
+                        <connections>
+                            <action selector="openBeauty:" target="-2" id="Xhb-JQ-5Us"/>
+                        </connections>
+                    </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="CUP-sG-9fH">
+                        <rect key="frame" x="64" y="101" width="74" height="16"/>
+                        <buttonCell key="cell" type="bevel" title="美颜设置 》" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="eDm-A7-1Ny">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="settingBeauty:" target="-2" id="WwB-Aa-J8d"/>
+                        </connections>
+                    </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="034-AB-Htd">
+                        <rect key="frame" x="40" y="25" width="249" height="32"/>
+                        <buttonCell key="cell" type="bevel" title="发起会议" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="UKP-Ep-aQn">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <color key="contentTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="4US-Kp-idN"/>
+                        </constraints>
+                        <connections>
+                            <action selector="beginMeeting:" target="-2" id="mEl-Lv-omi"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="8YW-4b-0QO" firstAttribute="top" secondItem="9Xe-Iq-NBq" secondAttribute="bottom" constant="20" id="0Cv-ej-Awl"/>
+                    <constraint firstItem="nqo-YD-Uv0" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="79k-RE-v0i"/>
+                    <constraint firstItem="034-AB-Htd" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="40" id="9wf-xq-S3d"/>
+                    <constraint firstItem="RdQ-je-wti" firstAttribute="top" secondItem="nqo-YD-Uv0" secondAttribute="bottom" constant="20" id="Bfs-wH-V8X"/>
+                    <constraint firstItem="CUP-sG-9fH" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="64" id="GOb-fp-QVQ"/>
+                    <constraint firstAttribute="bottom" secondItem="034-AB-Htd" secondAttribute="bottom" constant="25" id="I8T-NU-aLC"/>
+                    <constraint firstItem="RdQ-je-wti" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="45" id="OHK-cE-KhX"/>
+                    <constraint firstItem="9Xe-Iq-NBq" firstAttribute="top" secondItem="1Fc-7f-6Qv" secondAttribute="bottom" constant="20" id="OIM-jB-CoN"/>
+                    <constraint firstItem="5sO-br-hcY" firstAttribute="top" secondItem="nzs-bD-Bxx" secondAttribute="bottom" constant="20" id="P1l-R6-O6J"/>
+                    <constraint firstItem="nzs-bD-Bxx" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="45" id="UDj-gH-Jfa"/>
+                    <constraint firstItem="CUP-sG-9fH" firstAttribute="top" secondItem="5sO-br-hcY" secondAttribute="bottom" constant="20" id="gRD-Ao-TS6"/>
+                    <constraint firstItem="9Xe-Iq-NBq" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="30" id="gho-bw-kcl"/>
+                    <constraint firstItem="5sO-br-hcY" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="45" id="jFD-05-Agl"/>
+                    <constraint firstItem="nqo-YD-Uv0" firstAttribute="top" secondItem="8YW-4b-0QO" secondAttribute="bottom" constant="36" id="qPK-WJ-D1r"/>
+                    <constraint firstItem="8YW-4b-0QO" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="30" id="unG-fi-ZQo"/>
+                    <constraint firstItem="1Fc-7f-6Qv" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="30" id="vla-Pk-12O"/>
+                    <constraint firstItem="1Fc-7f-6Qv" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="44" id="y2W-Cp-Pnc"/>
+                    <constraint firstItem="nzs-bD-Bxx" firstAttribute="top" secondItem="RdQ-je-wti" secondAttribute="bottom" constant="20" id="yc7-BK-4lC"/>
+                    <constraint firstAttribute="trailing" secondItem="034-AB-Htd" secondAttribute="trailing" constant="40" id="yvS-or-zCL"/>
+                </constraints>
+            </view>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                    <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="-102.5" y="118"/>
+        </window>
+    </objects>
+</document>

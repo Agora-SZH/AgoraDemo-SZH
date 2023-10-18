@@ -21,10 +21,9 @@ class JoinChannelVideoMain: BaseViewController, NSWindowDelegate {
     
     var videos: [VideoView] = []
     @IBOutlet weak var Container: AGEVideoContainer!
-    
 
     let setVc = AdvancedSettingController()
-    
+
     let videoEncoderConfig = AgoraVideoEncoderConfiguration()
 
     lazy var captureConfig: AgoraCameraCapturerConfiguration = {
@@ -272,6 +271,7 @@ class JoinChannelVideoMain: BaseViewController, NSWindowDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do view setup here.
         let config = AgoraRtcEngineConfig()
         config.appId = KeyCenter.AppId

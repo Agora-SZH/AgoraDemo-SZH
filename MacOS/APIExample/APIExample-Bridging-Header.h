@@ -4,8 +4,6 @@
 
 #import "ExternalAudio.h"
 #import "AgoraCustomEncryption.h"
-#import "AgoraYUVImageSourcePush.h"
 #import <AgoraRtcKit/AgoraRtcEngineKitEx.h>
 #import "MediaUtils.h"
-#import "AgoraSampleBufferRender.h"
 #import "KFMP4Demuxer.h"

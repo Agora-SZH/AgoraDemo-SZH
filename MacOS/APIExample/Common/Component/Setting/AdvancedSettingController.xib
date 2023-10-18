@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22154" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22154"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -34,7 +34,7 @@
                                     <action selector="openH265:" target="F0z-JX-Cv5" id="O3y-N1-noN"/>
                                 </connections>
                             </switch>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hIk-n9-PRL">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hIk-n9-PRL">
                                 <rect key="frame" x="2" y="5" width="38" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="H265" id="KcC-P9-hDu">
                                     <font key="font" metaFont="system"/>
@@ -65,7 +65,7 @@
                                     <action selector="colorinhance:" target="F0z-JX-Cv5" id="EYZ-CV-cdD"/>
                                 </connections>
                             </switch>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wVF-Kf-sKe">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wVF-Kf-sKe">
                                 <rect key="frame" x="2" y="5" width="58" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="色彩增强" id="aSu-fT-iBX">
                                     <font key="font" metaFont="system"/>
@@ -96,7 +96,7 @@
                                     <action selector="darklightinhance:" target="F0z-JX-Cv5" id="cqH-ay-0iq"/>
                                 </connections>
                             </switch>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7AQ-GD-uq1">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7AQ-GD-uq1">
                                 <rect key="frame" x="2" y="5" width="58" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="暗光增强" id="0S1-80-QN8">
                                     <font key="font" metaFont="system"/>
@@ -127,7 +127,7 @@
                                     <action selector="videonoisereduction:" target="F0z-JX-Cv5" id="2vd-8c-OIp"/>
                                 </connections>
                             </switch>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ysu-kL-vw8">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ysu-kL-vw8">
                                 <rect key="frame" x="2" y="5" width="58" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="视频降噪" id="NFG-BT-20g">
                                     <font key="font" metaFont="system"/>
@@ -158,7 +158,7 @@
                                     <action selector="ratesaving:" target="F0z-JX-Cv5" id="S2b-Yf-ihK"/>
                                 </connections>
                             </switch>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GGQ-F3-0Ip">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GGQ-F3-0Ip">
                                 <rect key="frame" x="2" y="5" width="58" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="码率节省" id="xTc-Sc-Ame">
                                     <font key="font" metaFont="system"/>
@@ -180,7 +180,7 @@
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="cPH-Hk-otn">
                         <rect key="frame" x="30" y="150" width="170" height="25"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zn5-BA-3lL">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zn5-BA-3lL">
                                 <rect key="frame" x="2" y="5" width="71" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="编码分辨率" id="oGU-Q6-HWR">
                                     <font key="font" metaFont="system"/>
@@ -190,9 +190,6 @@
                             </textField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mPD-Wa-Sep" userLabel="编码分辨率">
                                 <rect key="frame" x="72" y="-1" width="102" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="95" id="soC-ON-N3n"/>
-                                </constraints>
                                 <popUpButtonCell key="cell" type="push" title="960x540" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="erN-zC-Gvz" id="h74-bF-S2m" userLabel="编码分辨率">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
@@ -209,6 +206,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="soC-ON-N3n"/>
+                                </constraints>
                                 <connections>
                                     <action selector="dimensionsSet:" target="F0z-JX-Cv5" id="Sax-Se-PyK"/>
                                 </connections>
@@ -226,7 +226,7 @@
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="c1Q-D8-uOT">
                         <rect key="frame" x="30" y="105" width="170" height="25"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JhJ-od-KZc">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JhJ-od-KZc">
                                 <rect key="frame" x="2" y="5" width="58" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="编码帧率" id="8cx-rn-eSX">
                                     <font key="font" metaFont="system"/>
@@ -236,9 +236,6 @@
                             </textField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BbN-Iy-fha" userLabel="编码帧率">
                                 <rect key="frame" x="72" y="-1" width="102" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="95" id="aw6-o0-LUA"/>
-                                </constraints>
                                 <popUpButtonCell key="cell" type="push" title="15 fps" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="tBD-QG-z9G" id="6dG-yC-fnp" userLabel="编码帧率">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
@@ -252,6 +249,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="aw6-o0-LUA"/>
+                                </constraints>
                                 <connections>
                                     <action selector="frameRate:" target="F0z-JX-Cv5" id="TVc-sg-Vw4"/>
                                 </connections>
@@ -269,7 +269,7 @@
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="Fbv-w0-vE9">
                         <rect key="frame" x="190" y="375" width="170" height="25"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iK4-K8-gBM">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iK4-K8-gBM">
                                 <rect key="frame" x="2" y="5" width="47" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="AI 降噪" id="aIL-qC-4EX">
                                     <font key="font" metaFont="system"/>
@@ -308,7 +308,7 @@
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="h1q-qi-Se1">
                         <rect key="frame" x="190" y="330" width="170" height="25"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vMl-Fv-lfh">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vMl-Fv-lfh">
                                 <rect key="frame" x="2" y="5" width="73" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="AI 回声消除" id="13j-h6-lLa">
                                     <font key="font" metaFont="system"/>
@@ -346,7 +346,7 @@
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="INf-uf-yyD">
                         <rect key="frame" x="190" y="285" width="215" height="25"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OVv-JF-8np">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OVv-JF-8np">
                                 <rect key="frame" x="2" y="5" width="111" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="回声消除尾音长度" id="QzR-Hr-fqo">
                                     <font key="font" metaFont="system"/>
@@ -385,7 +385,7 @@
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="CrG-NW-rHQ">
                         <rect key="frame" x="190" y="240" width="215" height="25"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xdE-a9-U97">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xdE-a9-U97">
                                 <rect key="frame" x="2" y="5" width="97" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="回声消除滤波器" id="4Gc-e5-oxU">
                                     <font key="font" metaFont="system"/>
@@ -423,7 +423,7 @@
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="6mi-5i-OkP">
                         <rect key="frame" x="30" y="60" width="110" height="25"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bty-iB-ey6">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bty-iB-ey6">
                                 <rect key="frame" x="2" y="5" width="31" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="超分" id="ubi-lH-61q">
                                     <font key="font" metaFont="system"/>
