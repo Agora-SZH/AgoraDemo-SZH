@@ -1,31 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22154" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22155" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22155"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainMeetingInterface" customModule="APIExample" customModuleProvider="target">
             <connections>
+                <outlet property="bottomBar" destination="B0V-Dh-cbM" id="NaL-yC-6rW"/>
+                <outlet property="cameraButton" destination="e8J-a9-eTM" id="y3n-yS-ote"/>
+                <outlet property="endMeeting" destination="mie-IR-Z1d" id="Pfa-sW-xlP"/>
+                <outlet property="micButton" destination="jmV-4M-4gE" id="GzB-52-eFF"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="307"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="307"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="B0V-Dh-cbM">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="44"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="edp-QG-X19">
+                                <rect key="frame" x="125" y="5" width="230" height="35"/>
+                                <subviews>
+                                    <button imageHugsTitle="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jmV-4M-4gE">
+                                        <rect key="frame" x="2" y="2" width="38" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="bevel" title="音频" bezelStyle="regularSquare" image="bar-speaker0" imagePosition="above" alignment="center" alternateImage="bar-speaker1" imageScaling="proportionallyUpOrDown" inset="2" id="0vC-E1-EFn">
+                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system" size="9"/>
+                                        </buttonCell>
+                                        <color key="contentTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="switchMicOnOff:" target="-2" id="7jX-WU-Jz0"/>
+                                        </connections>
+                                    </button>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e8J-a9-eTM">
+                                        <rect key="frame" x="42" y="2" width="35" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="bevel" title="视频" bezelStyle="regularSquare" image="video_off" imagePosition="above" alignment="center" alternateImage="video_on" imageScaling="proportionallyUpOrDown" inset="2" id="sJ4-Ar-j2f">
+                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system" size="9"/>
+                                        </buttonCell>
+                                        <color key="contentTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="switchVideoOnOff:" target="-2" id="yG7-Z8-PWv"/>
+                                        </connections>
+                                    </button>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8iR-9g-C2i">
+                                        <rect key="frame" x="81" y="2" width="42" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="bevel" title="屏幕共享" bezelStyle="regularSquare" image="share" imagePosition="above" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="vhX-rh-cpp">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system" size="9"/>
+                                        </buttonCell>
+                                        <color key="contentTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="shareScreen:" target="-2" id="S9z-0Q-ZK4"/>
+                                        </connections>
+                                    </button>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djr-xP-rW4">
+                                        <rect key="frame" x="123" y="2" width="40" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="bevel" title="录制" bezelStyle="regularSquare" image="record" imagePosition="above" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="G78-8f-sWe">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system" size="9"/>
+                                        </buttonCell>
+                                        <color key="contentTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="recordRtc:" target="-2" id="cza-mR-3lJ"/>
+                                        </connections>
+                                    </button>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nAr-mN-aPD">
+                                        <rect key="frame" x="158" y="2" width="40" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="bevel" title="聊天" bezelStyle="regularSquare" image="chat" imagePosition="above" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="AdG-hd-51m">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system" size="9"/>
+                                        </buttonCell>
+                                        <color key="contentTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="chatWithOthers:" target="-2" id="xBu-sw-pl2"/>
+                                        </connections>
+                                    </button>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8oO-al-b7n">
+                                        <rect key="frame" x="191" y="2" width="40" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="bevel" title="成员" bezelStyle="regularSquare" image="members" imagePosition="above" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="vFg-eC-IJK">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system" size="9"/>
+                                        </buttonCell>
+                                        <color key="contentTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="roomMembers:" target="-2" id="z26-JR-2Ni"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="7Dj-Gu-0Dd"/>
+                                    <constraint firstAttribute="height" constant="35" id="b2o-kh-nrP"/>
+                                </constraints>
+                            </customView>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="mie-IR-Z1d">
+                                <rect key="frame" x="395" y="9" width="70" height="27"/>
+                                <buttonCell key="cell" type="bevel" title="结束会议" bezelStyle="regularSquare" alignment="center" inset="2" id="pjD-RW-SVb">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system" size="11"/>
+                                </buttonCell>
+                                <color key="contentTintColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="cjN-et-geN"/>
+                                    <constraint firstAttribute="width" constant="70" id="oUr-Lq-wdk"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="endMeeting:" target="-2" id="M2e-ig-Yl1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="mie-IR-Z1d" firstAttribute="centerY" secondItem="B0V-Dh-cbM" secondAttribute="centerY" id="4AJ-K8-mLN"/>
+                            <constraint firstItem="edp-QG-X19" firstAttribute="centerX" secondItem="B0V-Dh-cbM" secondAttribute="centerX" id="C2h-73-GxX"/>
+                            <constraint firstAttribute="height" constant="44" id="MuX-Mr-WGE"/>
+                            <constraint firstItem="edp-QG-X19" firstAttribute="centerY" secondItem="B0V-Dh-cbM" secondAttribute="centerY" id="QlV-FV-MJu"/>
+                            <constraint firstAttribute="trailing" secondItem="mie-IR-Z1d" secondAttribute="trailing" constant="15" id="SRg-Ab-YAC"/>
+                        </constraints>
+                    </customView>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xp2-dQ-0aA">
+                        <rect key="frame" x="174" y="205" width="163" height="96"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="B0V-Dh-cbM" secondAttribute="trailing" id="1m6-u0-uF1"/>
+                    <constraint firstAttribute="bottom" secondItem="B0V-Dh-cbM" secondAttribute="bottom" id="Eay-kt-Sd7"/>
+                    <constraint firstItem="B0V-Dh-cbM" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="mpU-bh-KPb"/>
+                </constraints>
             </view>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                    <color key="value" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="60" y="84"/>
+            <point key="canvasLocation" x="164" y="80.5"/>
         </window>
     </objects>
+    <resources>
+        <image name="bar-speaker0" width="28" height="28"/>
+        <image name="bar-speaker1" width="28" height="28"/>
+        <image name="chat" width="56" height="56"/>
+        <image name="members" width="56" height="56"/>
+        <image name="record" width="56" height="56"/>
+        <image name="share" width="56" height="56"/>
+        <image name="video_off" width="28" height="28"/>
+        <image name="video_on" width="28" height="28"/>
+    </resources>
 </document>

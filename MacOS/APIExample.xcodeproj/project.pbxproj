@@ -47,6 +47,8 @@
 		671BD67927E09E3B0076D5E1 /* AgoraPcmSourcePush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671BD67827E09E3B0076D5E1 /* AgoraPcmSourcePush.swift */; };
 		671BD67B27E0A4F50076D5E1 /* output.raw in Resources */ = {isa = PBXBuildFile; fileRef = 671BD67A27E0A4F50076D5E1 /* output.raw */; };
 		67E23C7D2805995200FAB905 /* MediaUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E23C7C2805995200FAB905 /* MediaUtils.m */; };
+		8A24270E2AE10AA700E6A096 /* MeetingTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A24270D2AE10AA600E6A096 /* MeetingTabBar.xib */; };
+		8A2427102AE10AC500E6A096 /* MeetingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A24270F2AE10AC500E6A096 /* MeetingTabBar.swift */; };
 		8A3D2A0E2AD3B122004D6EC3 /* CreateMettingWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D2A0C2AD3B122004D6EC3 /* CreateMettingWindowController.swift */; };
 		8A3D2A0F2AD3B122004D6EC3 /* CreateMettingWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A3D2A0D2AD3B122004D6EC3 /* CreateMettingWindowController.xib */; };
 		8A3D2A1B2AD46BCC004D6EC3 /* MainMeetingInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3D2A192AD46BCC004D6EC3 /* MainMeetingInterface.swift */; };
@@ -158,6 +160,8 @@
 		67E23C7B2805995200FAB905 /* MediaUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaUtils.h; sourceTree = "<group>"; };
 		67E23C7C2805995200FAB905 /* MediaUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaUtils.m; sourceTree = "<group>"; };
 		6BBF4C6353B110D6BD63427E /* Pods_APIExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APIExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A24270D2AE10AA600E6A096 /* MeetingTabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeetingTabBar.xib; sourceTree = "<group>"; };
+		8A24270F2AE10AC500E6A096 /* MeetingTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTabBar.swift; sourceTree = "<group>"; };
 		8A3D2A0C2AD3B122004D6EC3 /* CreateMettingWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMettingWindowController.swift; sourceTree = "<group>"; };
 		8A3D2A0D2AD3B122004D6EC3 /* CreateMettingWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateMettingWindowController.xib; sourceTree = "<group>"; };
 		8A3D2A192AD46BCC004D6EC3 /* MainMeetingInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMeetingInterface.swift; sourceTree = "<group>"; };
@@ -416,6 +420,8 @@
 				8A4309432AD577CC00FB5F79 /* MPButton+Extensions.swift */,
 				8A3D2A192AD46BCC004D6EC3 /* MainMeetingInterface.swift */,
 				8A3D2A1A2AD46BCC004D6EC3 /* MainMeetingInterface.xib */,
+				8A24270D2AE10AA600E6A096 /* MeetingTabBar.xib */,
+				8A24270F2AE10AC500E6A096 /* MeetingTabBar.swift */,
 			);
 			path = MeetingMain;
 			sourceTree = "<group>";
@@ -609,6 +615,7 @@
 				E77D54D628F56D3A00D51C1E /* sample.yuv in Resources */,
 				034C62A025297ABB00296ECF /* audioeffect.mp3 in Resources */,
 				03896D3424F8A011008593CD /* Assets.xcassets in Resources */,
+				8A24270E2AE10AA700E6A096 /* MeetingTabBar.xib in Resources */,
 				03896D3724F8A011008593CD /* Main.storyboard in Resources */,
 				67033726279E81DF0069F4B3 /* bg.jpg in Resources */,
 				8A3D2A1C2AD46BCC004D6EC3 /* MainMeetingInterface.xib in Resources */,
@@ -729,6 +736,7 @@
 				034C62872528255F00296ECF /* WindowsCenter.swift in Sources */,
 				0336A1CA25034F4700D61B7F /* ExternalAudio.mm in Sources */,
 				E779025B2A482CFC008791AD /* KFMP4Demuxer.m in Sources */,
+				8A2427102AE10AC500E6A096 /* MeetingTabBar.swift in Sources */,
 				8ADD9B3D2A80DF050057A2EC /* AdvancedSettingController.swift in Sources */,
 				57887A75258859D8006E962A /* SettingsController.swift in Sources */,
 				036D3A9E24FA3A1000B1D8DC /* LogUtils.swift in Sources */,

@@ -15,6 +15,12 @@ class MainMeetingInterface: NSWindowController {
     
     var agoraView: AgoraVideoViewer?
 
+    @IBOutlet weak var bottomBar: NSView!
+    @IBOutlet weak var micButton: NSButton!
+    @IBOutlet weak var cameraButton: NSButton!
+    @IBOutlet weak var endMeeting: NSButton!
+    
+    
     override var windowNibName: NSNib.Name! {
         return NSNib.Name("MainMeetingInterface")
     }
@@ -37,18 +43,19 @@ class MainMeetingInterface: NSWindowController {
         super.loadWindow()
         window?.center()
         
-//        let audioState = MPButton.newToggleButton(image: NSImage(named: "bar-speaker0"), alternateImage: NSImage(named: "bar-speaker1"), title: "音频", imagePosition: .imageAbove)
-//        let vedioState = MPButton.newToggleButton(image: NSImage(named: "bar-camera0"), alternateImage: NSImage(named: "bar-camera1"), title: "视频", imagePosition: .imageAbove)
-//        let share = MPButton.newNormalButton(image: NSImage(named: "bar_chat0"), title: "共享", imagePosition: .imageAbove)
-//        let  record = MPButton.newNormalButton(image: NSImage(named: "camera-rotate"), title: "录制", imagePosition: .imageAbove)
-//        let  chat = MPButton.newNormalButton(image: NSImage(named: "bar_more0"), title: "聊天", imagePosition: .imageAbove)
-//        let  users = MPButton.newNormalButton(image: NSImage(named: "bar_user0"), title: "成员", imagePosition: .imageAbove)
+        bottomBar.wantsLayer = true
+        bottomBar.layer?.backgroundColor = .black.copy(alpha: 0.4)
+        micButton.configToggleButton(title: "音频")
+        cameraButton.configToggleButton(title: "视频")
+        endMeeting.wantsLayer = true
+        endMeeting.layer?.borderColor = .white
+        endMeeting.layer?.borderWidth = 0.8
         
-        var agSettings = AgoraSettings()
-      
+
+        let agSettings = AgoraSettings()
         let agoraView = AgoraVideoViewer(
             connectionData: AgoraConnectionData(
-                appId: "05039ead7cf5415ca365cce36d61350a",
+                appId: "cc64ef10d45e48448b526af8814daeb3",
                 rtcToken: ""
             ),
             style: .floating,
@@ -57,9 +64,14 @@ class MainMeetingInterface: NSWindowController {
         )
 
         let mainView = window?.contentView
-        agoraView.fills(view: mainView!)
+//        agoraView.fills(view: mainView!)
+//        let config = AgoraLocalAccessPointConfiguration()
+//        config.mode = .localOnly
+//        config.ipList = ["172.18.15.1"]
+//        config.verifyDomainName="ap.1207049.agora.local"
+//        agoraView.agkit.setLocalAccessPoint(withConfig: config);
 
-        agoraView.join(channel: "test", as: .broadcaster)
+        agoraView.join(channel: "123", as: .broadcaster)
 
         self.agoraView = agoraView
     }
@@ -75,6 +87,44 @@ class MainMeetingInterface: NSWindowController {
 
           self.agoraView?.style = segmentedStyle
       }
+    
+    @IBAction func switchMicOnOff(_ sender: NSButton) {
+        
+        
+    }
+    
+    @IBAction func switchVideoOnOff(_ sender: NSButton) {
+        
+    }
+    
+    @IBAction func shareScreen(_ sender: NSButton) {
+        
+    }
+    
+    @IBAction func recordRtc(_ sender: NSButton) {
+        
+    }
+    
+    @IBAction func chatWithOthers(_ sender: NSButton) {
+        
+    }
+    
+    @IBAction func roomMembers(_ sender: NSButton) {
+        
+    }
+    
+    
+    @IBAction func endMeeting(_ sender: NSButton) {
+        
+    }
+    
+}
+
+
+extension MainMeetingInterface {
+    
+    
+    
 }
 
 

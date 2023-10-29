@@ -12,7 +12,6 @@ class ViewController: NSViewController, MeetingBeginDelegate {
  
     let begin = MeetingBeginWindowController()
     let create = CreateMettingWindowController()
-    let main = MainMeetingInterface()
    
     override func viewDidLoad() {
           super.viewDidLoad()
@@ -23,8 +22,6 @@ class ViewController: NSViewController, MeetingBeginDelegate {
         super.viewWillAppear()
 //        begin.loadWindow()
 //        self.view.window?.addChildWindow(begin.window!, ordered: .above)
-        main.loadWindow()
-        self.view.window?.addChildWindow(main.window!, ordered: .above)
     }
 
     func didCreateMeeting() {
@@ -90,8 +87,13 @@ class MenuController: NSViewController {
     
     @IBOutlet weak var tableView:NSTableView!
     
+    let main = MainMeetingInterface()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        main.loadWindow()
+        self.view.window?.addChildWindow(main.window!, ordered: .above)
     }
     
     @IBAction func onClickSetting(_ sender: NSButton) {

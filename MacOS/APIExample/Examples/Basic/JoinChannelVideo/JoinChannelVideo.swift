@@ -281,6 +281,11 @@ class JoinChannelVideoMain: BaseViewController, NSWindowDelegate {
         agoraKit = AgoraRtcEngineKit.sharedEngine(with: config, delegate: self)
         // Configuring Privatization Parameters
         Util.configPrivatization(agoraKit: agoraKit)
+        
+        agoraKit.setParameters("{\"rtc.debug.enable\": true}");
+        agoraKit.setParameters("{\"che.audio.apm_dump\":true}");
+        agoraKit.setParameters("{\"che.audio.frame_dump\":{\"location\":\"all\",\"action\":\"start\",\"max_size_bytes\":\"120000000\",\"uuid\":\"123456789\",\"duration\":\"1200000\"}}");
+        
         agoraKit.enableVideo()
         
         initSelectCameraPicker()
