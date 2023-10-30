@@ -45,10 +45,11 @@ class MainMeetingInterface: NSWindowController {
         
         bottomBar.wantsLayer = true
         bottomBar.layer?.backgroundColor = .black.copy(alpha: 0.4)
+        
         micButton.configToggleButton(title: "音频")
         cameraButton.configToggleButton(title: "视频")
         endMeeting.wantsLayer = true
-        endMeeting.layer?.borderColor = .white
+        endMeeting.layer?.borderColor = NSColor.red.cgColor
         endMeeting.layer?.borderWidth = 0.8
         
 
