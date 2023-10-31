@@ -10,11 +10,11 @@ import AgoraUIKit
 extension MPButton {
     
     func configToggleButton(title: String) {
-        let att = NSAttributedString(string: title, attributes: [.font: NSFont.systemFont(ofSize: 12),
+        let att = NSAttributedString(string: title, attributes: [.font: NSFont.systemFont(ofSize: 11),
                                                                  .foregroundColor: NSColor.white])
         self.attributedTitle = att
         let attributedColor = NSColor(red: 19/255.0, green: 139/255.0, blue: 214/255.0, alpha: 1.0)
-        let alternateAtt = NSAttributedString(string: title, attributes: [.font: NSFont.systemFont(ofSize: 12),
+        let alternateAtt = NSAttributedString(string: title, attributes: [.font: NSFont.systemFont(ofSize: 11),
                                                                  .foregroundColor: attributedColor])
         self.attributedAlternateTitle = alternateAtt
     }

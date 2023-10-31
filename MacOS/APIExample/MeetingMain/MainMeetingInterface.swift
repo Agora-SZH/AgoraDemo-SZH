@@ -14,8 +14,19 @@ import AgoraRtcKit
 class MainMeetingInterface: NSWindowController {
     
     var agoraView: AgoraVideoViewer?
-
+    
+    @IBOutlet weak var topBar: NSView!
+    @IBOutlet weak var topBarSwitchViewBtnWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var strechButton: NSButton!
+    @IBOutlet weak var switchViewBtn: NSButton!
+    
+    @IBOutlet weak var meetingName: NSTextField!
+    @IBOutlet weak var meetingTime: NSTextField!
+    @IBOutlet weak var netWorkStatusImg: NSImageView!
+    @IBOutlet weak var invitePeople: NSButton!
+    
     @IBOutlet weak var bottomBar: NSView!
+    
     @IBOutlet weak var micButton: NSButton!
     @IBOutlet weak var cameraButton: NSButton!
     @IBOutlet weak var endMeeting: NSButton!
@@ -43,6 +54,12 @@ class MainMeetingInterface: NSWindowController {
         super.loadWindow()
         window?.center()
         
+        topBar.wantsLayer = true
+        topBar.layer?.backgroundColor = .black.copy(alpha: 0.4)
+        switchViewBtn.wantsLayer = true
+        switchViewBtn.layer?.borderColor = NSColor.gray.cgColor
+        switchViewBtn.layer?.borderWidth = 1.2
+        
         bottomBar.wantsLayer = true
         bottomBar.layer?.backgroundColor = .black.copy(alpha: 0.4)
         
@@ -66,13 +83,9 @@ class MainMeetingInterface: NSWindowController {
 
         let mainView = window?.contentView
 //        agoraView.fills(view: mainView!)
-//        let config = AgoraLocalAccessPointConfiguration()
-//        config.mode = .localOnly
-//        config.ipList = ["172.18.15.1"]
-//        config.verifyDomainName="ap.1207049.agora.local"
-//        agoraView.agkit.setLocalAccessPoint(withConfig: config);
 
-        agoraView.join(channel: "123", as: .broadcaster)
+
+//        agoraView.join(channel: "123", as: .broadcaster)
 
         self.agoraView = agoraView
     }
@@ -88,6 +101,27 @@ class MainMeetingInterface: NSWindowController {
 
           self.agoraView?.style = segmentedStyle
       }
+    
+    
+    @IBAction func openNotifyView(_ sender: NSButton) {
+        
+    }
+    
+    @IBAction func switchViewAction(_ sender: NSButton) {
+        if sender.state == .on {
+            topBarSwitchViewBtnWidthConstraint?.isActive = false
+            strechButton.isHidden = true
+        } else {
+            topBarSwitchViewBtnWidthConstraint?.isActive = true
+            strechButton.isHidden = false
+        }
+    }
+    
+    @IBAction func strechSpeakerView(_ sender: NSButton) {
+        
+    }
+    
+    
     
     @IBAction func switchMicOnOff(_ sender: NSButton) {
         

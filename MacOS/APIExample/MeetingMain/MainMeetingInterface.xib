@@ -11,14 +11,22 @@
                 <outlet property="bottomBar" destination="B0V-Dh-cbM" id="NaL-yC-6rW"/>
                 <outlet property="cameraButton" destination="e8J-a9-eTM" id="y3n-yS-ote"/>
                 <outlet property="endMeeting" destination="mie-IR-Z1d" id="Pfa-sW-xlP"/>
+                <outlet property="invitePeople" destination="N6e-hj-QRi" id="aHj-ve-Vhl"/>
+                <outlet property="meetingName" destination="rNg-mQ-KT5" id="NfW-md-Iyc"/>
+                <outlet property="meetingTime" destination="3BS-lN-rK6" id="scH-eq-oHo"/>
                 <outlet property="micButton" destination="jmV-4M-4gE" id="GzB-52-eFF"/>
+                <outlet property="netWorkStatusImg" destination="o9M-pJ-Let" id="aBd-hC-8BI"/>
+                <outlet property="strechButton" destination="8Ud-yJ-N8p" id="dlv-qB-Ygf"/>
+                <outlet property="switchViewBtn" destination="rAL-xl-ngd" id="5bg-sS-nAX"/>
+                <outlet property="topBar" destination="xp2-dQ-0aA" id="wH5-Kf-h9K"/>
+                <outlet property="topBarSwitchViewBtnWidthConstraint" destination="uN0-oW-go1" id="Fqz-KD-90O"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="F0z-JX-Cv5">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="602" height="310"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
@@ -61,7 +69,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="bevel" title="共享" bezelStyle="regularSquare" image="share" imagePosition="above" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="vhX-rh-cpp">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="cellTitle"/>
+                                            <font key="font" metaFont="system" size="11"/>
                                         </buttonCell>
                                         <color key="contentTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
@@ -73,7 +81,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="bevel" title="录制" bezelStyle="regularSquare" image="record" imagePosition="above" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="G78-8f-sWe">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="cellTitle"/>
+                                            <font key="font" metaFont="system" size="11"/>
                                         </buttonCell>
                                         <color key="contentTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
@@ -85,7 +93,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="bevel" title="聊天" bezelStyle="regularSquare" image="chat" imagePosition="above" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="AdG-hd-51m">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="cellTitle"/>
+                                            <font key="font" metaFont="system" size="11"/>
                                         </buttonCell>
                                         <color key="contentTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
@@ -97,7 +105,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="bevel" title="成员" bezelStyle="regularSquare" image="members" imagePosition="above" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="vFg-eC-IJK">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="cellTitle"/>
+                                            <font key="font" metaFont="system" size="11"/>
                                         </buttonCell>
                                         <color key="contentTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
@@ -135,16 +143,71 @@
                         </constraints>
                     </customView>
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="xp2-dQ-0aA">
-                        <rect key="frame" x="0.0" y="280" width="602" height="30"/>
+                        <rect key="frame" x="0.0" y="246" width="602" height="64"/>
                         <subviews>
-                            <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CeN-gs-dVN">
-                                <rect key="frame" x="452" y="0.0" width="150" height="30"/>
+                            <stackView distribution="equalSpacing" orientation="horizontal" alignment="centerY" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipw-8F-H17">
+                                <rect key="frame" x="442" y="9" width="145" height="25"/>
+                                <subviews>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="kkx-h9-rZM">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                        <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="notify" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="VMW-JT-2Ug">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="ajB-th-p3Y"/>
+                                            <constraint firstAttribute="width" constant="25" id="oPG-B7-caL"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="openNotifyView:" target="-2" id="W0J-PW-Dds"/>
+                                        </connections>
+                                    </button>
+                                    <button imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rAL-xl-ngd">
+                                        <rect key="frame" x="25" y="0.0" width="103" height="25"/>
+                                        <buttonCell key="cell" type="bevel" title="演讲者视图" alternateTitle="平铺视图" bezelStyle="regularSquare" image="speak_view" imagePosition="left" alignment="center" alternateImage="tile_view" imageScaling="proportionallyDown" inset="2" id="3y6-MY-Hvk">
+                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                            <font key="font" size="11" name=".PingFangSC-Regular"/>
+                                        </buttonCell>
+                                        <color key="contentTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="mHi-YW-6Ky"/>
+                                            <constraint firstAttribute="width" constant="100" id="uN0-oW-go1"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="switchViewAction:" target="-2" id="rL7-Xc-vFN"/>
+                                        </connections>
+                                    </button>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="8Ud-yJ-N8p">
+                                        <rect key="frame" x="128" y="0.0" width="25" height="25"/>
+                                        <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="strech" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="gUL-3Y-IKn">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="YRR-pe-bDZ"/>
+                                            <constraint firstAttribute="height" constant="25" id="g2Z-eU-8hn"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="strechSpeakerView:" target="-2" id="3QE-sd-a9h"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="oxF-j7-GSW"/>
+                                    <constraint firstAttribute="width" constant="145" id="m3X-eN-B8p"/>
                                 </constraints>
-                            </customView>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                             <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rNg-mQ-KT5">
-                                <rect key="frame" x="13" y="5" width="41" height="15"/>
+                                <rect key="frame" x="13" y="14" width="41" height="15"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="会议名" id="I0h-jY-OwS">
                                     <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -152,59 +215,45 @@
                                 </textFieldCell>
                             </textField>
                             <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3BS-lN-rK6">
-                                <rect key="frame" x="60" y="5" width="38" height="15"/>
+                                <rect key="frame" x="60" y="15" width="36" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="00:33" id="gTq-fe-6PS">
-                                    <font key="font" metaFont="cellTitle"/>
-                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <font key="font" metaFont="system" size="11"/>
+                                    <color key="textColor" white="0.47999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o9M-pJ-Let">
-                                <rect key="frame" x="106" y="3" width="20" height="20"/>
+                                <rect key="frame" x="104" y="10" width="23" height="23"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="7dC-wK-b6s"/>
-                                    <constraint firstAttribute="height" constant="20" id="RwG-6V-9Yd"/>
+                                    <constraint firstAttribute="width" constant="23" id="7dC-wK-b6s"/>
+                                    <constraint firstAttribute="height" constant="23" id="RwG-6V-9Yd"/>
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="signal_good" id="6S9-zj-yaC"/>
                             </imageView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="N6e-hj-QRi">
-                                <rect key="frame" x="136" y="3" width="20" height="20"/>
+                                <rect key="frame" x="137" y="10" width="23" height="23"/>
                                 <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="invite_meeting" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="0hz-0F-hVk">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="S6A-L6-f7K"/>
-                                    <constraint firstAttribute="height" constant="20" id="Z2y-ts-MPE"/>
-                                </constraints>
-                            </button>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="kkx-h9-rZM">
-                                <rect key="frame" x="427" y="5" width="20" height="20"/>
-                                <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="invite_meeting" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="VMW-JT-2Ug">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="CJ7-Qd-Bfs"/>
-                                    <constraint firstAttribute="height" constant="20" id="eVs-vd-vXv"/>
+                                    <constraint firstAttribute="width" constant="23" id="S6A-L6-f7K"/>
+                                    <constraint firstAttribute="height" constant="23" id="Z2y-ts-MPE"/>
                                 </constraints>
                             </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="N6e-hj-QRi" firstAttribute="centerY" secondItem="o9M-pJ-Let" secondAttribute="centerY" id="0OM-sJ-saZ"/>
-                            <constraint firstAttribute="trailing" secondItem="CeN-gs-dVN" secondAttribute="trailing" id="1V2-eh-yTI"/>
-                            <constraint firstItem="rNg-mQ-KT5" firstAttribute="top" secondItem="xp2-dQ-0aA" secondAttribute="top" constant="10" id="D4S-MH-CiS"/>
+                            <constraint firstAttribute="trailing" secondItem="ipw-8F-H17" secondAttribute="trailing" constant="15" id="3rv-by-tGL"/>
+                            <constraint firstItem="rNg-mQ-KT5" firstAttribute="top" secondItem="xp2-dQ-0aA" secondAttribute="top" constant="35" id="D4S-MH-CiS"/>
                             <constraint firstItem="3BS-lN-rK6" firstAttribute="centerY" secondItem="rNg-mQ-KT5" secondAttribute="centerY" id="EBW-Dy-rvY"/>
                             <constraint firstItem="rNg-mQ-KT5" firstAttribute="leading" secondItem="xp2-dQ-0aA" secondAttribute="leading" constant="15" id="GYr-fR-lim"/>
                             <constraint firstItem="N6e-hj-QRi" firstAttribute="leading" secondItem="o9M-pJ-Let" secondAttribute="trailing" constant="10" id="KXE-L5-hmA"/>
-                            <constraint firstAttribute="height" constant="30" id="QFo-Me-Da9"/>
+                            <constraint firstAttribute="height" constant="64" id="QFo-Me-Da9"/>
                             <constraint firstItem="o9M-pJ-Let" firstAttribute="centerY" secondItem="3BS-lN-rK6" secondAttribute="centerY" id="RF6-aB-d8f"/>
                             <constraint firstItem="3BS-lN-rK6" firstAttribute="leading" secondItem="rNg-mQ-KT5" secondAttribute="trailing" constant="10" id="Wo9-yE-6iX"/>
                             <constraint firstItem="o9M-pJ-Let" firstAttribute="leading" secondItem="3BS-lN-rK6" secondAttribute="trailing" constant="10" id="a2g-PI-tRs"/>
-                            <constraint firstItem="CeN-gs-dVN" firstAttribute="top" secondItem="xp2-dQ-0aA" secondAttribute="top" id="h9h-eQ-Rn1"/>
-                            <constraint firstItem="CeN-gs-dVN" firstAttribute="leading" secondItem="kkx-h9-rZM" secondAttribute="trailing" constant="5" id="hve-Aa-3sa"/>
-                            <constraint firstItem="kkx-h9-rZM" firstAttribute="centerY" secondItem="xp2-dQ-0aA" secondAttribute="centerY" id="oGi-6d-EM0"/>
-                            <constraint firstAttribute="bottom" secondItem="CeN-gs-dVN" secondAttribute="bottom" id="owW-Pc-9te"/>
+                            <constraint firstItem="ipw-8F-H17" firstAttribute="top" secondItem="xp2-dQ-0aA" secondAttribute="top" constant="30" id="jfk-ap-u5W"/>
                         </constraints>
                     </customView>
                 </subviews>
@@ -225,7 +274,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="223" y="42"/>
+            <point key="canvasLocation" x="214" y="70"/>
         </window>
     </objects>
     <resources>
@@ -234,9 +283,13 @@
         <image name="chat" width="56" height="56"/>
         <image name="invite_meeting" width="64" height="64"/>
         <image name="members" width="56" height="56"/>
+        <image name="notify" width="64" height="64"/>
         <image name="record" width="56" height="56"/>
         <image name="share" width="56" height="56"/>
         <image name="signal_good" width="24" height="24"/>
+        <image name="speak_view" width="42" height="38"/>
+        <image name="strech" width="64" height="64"/>
+        <image name="tile_view" width="30" height="30"/>
         <image name="video_off" width="28" height="28"/>
         <image name="video_on" width="28" height="28"/>
     </resources>

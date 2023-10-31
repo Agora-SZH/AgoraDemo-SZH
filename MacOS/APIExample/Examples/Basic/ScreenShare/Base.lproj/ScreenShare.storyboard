@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22155"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,7 +27,7 @@
                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="Id1-GG-SJ5">
                                                     <rect key="frame" x="15" y="395" width="300" height="100"/>
                                                     <subviews>
-                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VyU-8u-D18">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VyU-8u-D18">
                                                             <rect key="frame" x="3" y="84" width="44" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="rFg-vt-o4V"/>
@@ -38,7 +38,7 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="s8B-HR-C9V">
+                                                        <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="s8B-HR-C9V">
                                                             <rect key="frame" x="5" y="58" width="96" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="96" id="DnM-Ev-UFa"/>
@@ -52,14 +52,14 @@
                                                         </textField>
                                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8j6-XV-FnX">
                                                             <rect key="frame" x="109" y="52" width="61" height="32"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="F1x-tW-S4m"/>
-                                                                <constraint firstAttribute="width" constant="47" id="fYu-Pf-DmJ"/>
-                                                            </constraints>
                                                             <buttonCell key="cell" type="push" title="加入" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="A4O-Ww-vmQ">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="cellTitle"/>
                                                             </buttonCell>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="F1x-tW-S4m"/>
+                                                                <constraint firstAttribute="width" constant="47" id="fYu-Pf-DmJ"/>
+                                                            </constraints>
                                                             <connections>
                                                                 <action selector="onJoinChannel1:" target="Gwp-vd-c2J" id="rjk-c1-pWT"/>
                                                             </connections>
@@ -67,7 +67,7 @@
                                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="hsk-2S-l0P">
                                                             <rect key="frame" x="0.0" y="0.0" width="300" height="48"/>
                                                             <subviews>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0cJ-Gr-zFO">
+                                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0cJ-Gr-zFO">
                                                                     <rect key="frame" x="3" y="32" width="58" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="UCY-Bb-CmK"/>
@@ -80,43 +80,43 @@
                                                                 </textField>
                                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="efZ-2H-l1r">
                                                                     <rect key="frame" x="203" y="0.0" width="94" height="32"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="80" id="XVK-zd-V6N"/>
-                                                                        <constraint firstAttribute="height" constant="20" id="n2E-fv-WSV"/>
-                                                                    </constraints>
                                                                     <buttonCell key="cell" type="push" title="720摄像头" bezelStyle="rounded" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hCK-f9-AHg">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                         <font key="font" metaFont="cellTitle"/>
                                                                     </buttonCell>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="80" id="XVK-zd-V6N"/>
+                                                                        <constraint firstAttribute="height" constant="20" id="n2E-fv-WSV"/>
+                                                                    </constraints>
                                                                     <connections>
                                                                         <action selector="start720CameraCapture:" target="Gwp-vd-c2J" id="spH-mZ-sDS"/>
                                                                     </connections>
                                                                 </button>
                                                                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WqW-5g-yPL">
                                                                     <rect key="frame" x="2" y="3" width="87" height="25"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="80" id="BxI-of-MHY"/>
-                                                                        <constraint firstAttribute="height" constant="20" id="dMb-ua-5Dz"/>
-                                                                    </constraints>
                                                                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="w9g-uh-8Jg">
                                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                                         <font key="font" size="12" name="HelveticaNeue"/>
                                                                         <menu key="menu" id="lDX-ff-qOp"/>
                                                                     </popUpButtonCell>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="80" id="BxI-of-MHY"/>
+                                                                        <constraint firstAttribute="height" constant="20" id="dMb-ua-5Dz"/>
+                                                                    </constraints>
                                                                     <connections>
                                                                         <action selector="channel1SelectScreen:" target="Gwp-vd-c2J" id="OQs-Sx-gWk"/>
                                                                     </connections>
                                                                 </popUpButton>
                                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m5Y-g9-nbd">
                                                                     <rect key="frame" x="93" y="0.0" width="109" height="32"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="95" id="ElH-cQ-OkE"/>
-                                                                        <constraint firstAttribute="height" constant="20" id="JcZ-LR-CIn"/>
-                                                                    </constraints>
                                                                     <buttonCell key="cell" type="push" title="1080屏幕共享" bezelStyle="rounded" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BfM-1S-adU">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                         <font key="font" metaFont="cellTitle"/>
                                                                     </buttonCell>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="95" id="ElH-cQ-OkE"/>
+                                                                        <constraint firstAttribute="height" constant="20" id="JcZ-LR-CIn"/>
+                                                                    </constraints>
                                                                     <connections>
                                                                         <action selector="startScreenShare1:" target="Gwp-vd-c2J" id="tH4-1z-i7R"/>
                                                                     </connections>
@@ -152,7 +152,7 @@
                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="sI3-qY-FGM">
                                                     <rect key="frame" x="15" y="530" width="163" height="50"/>
                                                     <subviews>
-                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sLM-xy-ZTB">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sLM-xy-ZTB">
                                                             <rect key="frame" x="3" y="34" width="65" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="bFu-zE-zG0"/>
@@ -165,10 +165,6 @@
                                                         </textField>
                                                         <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4s8-sP-NhT">
                                                             <rect key="frame" x="2" y="5" width="78" height="25"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="YVP-bk-4QO"/>
-                                                                <constraint firstAttribute="width" constant="71" id="qo6-Ue-MWo"/>
-                                                            </constraints>
                                                             <popUpButtonCell key="cell" type="push" title="主播" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="g70-zX-q7g" id="Z1A-va-fwh">
                                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="menu"/>
@@ -179,6 +175,10 @@
                                                                     </items>
                                                                 </menu>
                                                             </popUpButtonCell>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="YVP-bk-4QO"/>
+                                                                <constraint firstAttribute="width" constant="71" id="qo6-Ue-MWo"/>
+                                                            </constraints>
                                                             <connections>
                                                                 <action selector="roleSelected:" target="Gwp-vd-c2J" id="u1t-N3-Cn6"/>
                                                             </connections>
@@ -196,7 +196,7 @@
                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="b5r-lD-rsc">
                                                     <rect key="frame" x="15" y="250" width="300" height="110"/>
                                                     <subviews>
-                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GOb-bj-c0S">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GOb-bj-c0S">
                                                             <rect key="frame" x="3" y="94" width="44" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="GQl-di-n7G"/>
@@ -207,7 +207,7 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TqL-jn-J60">
+                                                        <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TqL-jn-J60">
                                                             <rect key="frame" x="5" y="68" width="96" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="96" id="Rka-GS-QGy"/>
@@ -221,14 +221,14 @@
                                                         </textField>
                                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mwO-64-hMH">
                                                             <rect key="frame" x="109" y="62" width="61" height="32"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="47" id="C62-uY-fxQ"/>
-                                                                <constraint firstAttribute="height" constant="20" id="G6F-ev-Hkj"/>
-                                                            </constraints>
                                                             <buttonCell key="cell" type="push" title="加入" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qf7-D9-Zcm">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="cellTitle"/>
                                                             </buttonCell>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="47" id="C62-uY-fxQ"/>
+                                                                <constraint firstAttribute="height" constant="20" id="G6F-ev-Hkj"/>
+                                                            </constraints>
                                                             <connections>
                                                                 <action selector="onJoinChannel2:" target="Gwp-vd-c2J" id="0Hq-n9-ZIE"/>
                                                             </connections>
@@ -236,7 +236,7 @@
                                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="61C-Ju-TYL">
                                                             <rect key="frame" x="0.0" y="0.0" width="300" height="58"/>
                                                             <subviews>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YHD-NL-3Cv">
+                                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YHD-NL-3Cv">
                                                                     <rect key="frame" x="3" y="42" width="58" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="1Ys-Sc-RGM"/>
@@ -249,29 +249,29 @@
                                                                 </textField>
                                                                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aYy-2m-UsQ">
                                                                     <rect key="frame" x="2" y="13" width="87" height="25"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="20" id="0zH-2E-WgZ"/>
-                                                                        <constraint firstAttribute="width" constant="80" id="Q3K-GV-vBi"/>
-                                                                    </constraints>
                                                                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="M7l-4s-hks">
                                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                                         <font key="font" size="12" name="HelveticaNeue"/>
                                                                         <menu key="menu" id="GZx-oX-Wza"/>
                                                                     </popUpButtonCell>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="20" id="0zH-2E-WgZ"/>
+                                                                        <constraint firstAttribute="width" constant="80" id="Q3K-GV-vBi"/>
+                                                                    </constraints>
                                                                     <connections>
                                                                         <action selector="channel2SelectScreen:" target="Gwp-vd-c2J" id="XsW-w6-x4j"/>
                                                                     </connections>
                                                                 </popUpButton>
                                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gS3-9Q-d0q">
                                                                     <rect key="frame" x="93" y="10" width="109" height="32"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="20" id="POu-vJ-lgp"/>
-                                                                        <constraint firstAttribute="width" constant="95" id="fw6-iJ-CV7"/>
-                                                                    </constraints>
                                                                     <buttonCell key="cell" type="push" title="4K屏幕共享" bezelStyle="rounded" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hxr-wV-NJH">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                         <font key="font" metaFont="cellTitle"/>
                                                                     </buttonCell>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="20" id="POu-vJ-lgp"/>
+                                                                        <constraint firstAttribute="width" constant="95" id="fw6-iJ-CV7"/>
+                                                                    </constraints>
                                                                     <connections>
                                                                         <action selector="startScreenSharing2:" target="Gwp-vd-c2J" id="6mH-3H-lMK"/>
                                                                     </connections>
@@ -304,14 +304,14 @@
                                                 </customView>
                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4kd-f5-6QF">
                                                     <rect key="frame" x="127" y="179" width="61" height="32"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="47" id="BaC-4H-iWA"/>
-                                                        <constraint firstAttribute="height" constant="20" id="z8P-Mk-Xtb"/>
-                                                    </constraints>
                                                     <buttonCell key="cell" type="push" title="退出" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Od3-5b-KvH">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="47" id="BaC-4H-iWA"/>
+                                                        <constraint firstAttribute="height" constant="20" id="z8P-Mk-Xtb"/>
+                                                    </constraints>
                                                     <connections>
                                                         <action selector="leave:" target="Gwp-vd-c2J" id="wq4-mb-JI5"/>
                                                     </connections>
