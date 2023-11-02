@@ -92,8 +92,8 @@ class MenuController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        main.loadWindow()
-        self.view.window?.addChildWindow(main.window!, ordered: .above)
+//        main.loadWindow()
+//        self.view.window?.addChildWindow(main.window!, ordered: .above)
     }
     
     @IBAction func onClickSetting(_ sender: NSButton) {
