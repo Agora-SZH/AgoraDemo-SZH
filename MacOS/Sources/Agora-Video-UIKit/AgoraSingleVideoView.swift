@@ -171,7 +171,6 @@ public class AgoraSingleVideoView: MPView {
         self.micFlagColor = micColor
         self.singleVideoViewDelegate = delegate
         super.init(frame: .zero)
-        self.setBackground()
         self.canvas.uid = uid
         let hostingView = MPView()
         hostingView.frame = self.bounds
@@ -192,39 +191,6 @@ public class AgoraSingleVideoView: MPView {
 
     private func setupMutedFlag() {
         self.audioMuted = true
-    }
-
-    internal func setBackground() {
-        let backgroundView = MPView()
-        #if os(iOS)
-        backgroundView.backgroundColor = .secondarySystemBackground
-        let bgButton = MPButton(type: .custom)
-        bgButton.setImage(
-            UIImage(
-                systemName: MPButton.personSymbol,
-                withConfiguration: UIImage.SymbolConfiguration(scale: .large)),
-            for: .normal
-        )
-        #elseif os(macOS)
-        backgroundView.wantsLayer = true
-        backgroundView.layer?.backgroundColor = NSColor.windowBackgroundColor.cgColor
-        let bgButton = MPButton()
-        bgButton.title = "人"
-        bgButton.isBordered = false
-        bgButton.isEnabled = false
-        #endif
-        backgroundView.addSubview(bgButton)
-
-        bgButton.frame = backgroundView.bounds
-        self.addSubview(backgroundView)
-        backgroundView.frame = self.bounds
-        #if os(iOS)
-        bgButton.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        backgroundView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        #elseif os(macOS)
-        bgButton.autoresizingMask = [.width, .height]
-        backgroundView.autoresizingMask = [.width, .height]
-        #endif
     }
 
     required init?(coder: NSCoder) {

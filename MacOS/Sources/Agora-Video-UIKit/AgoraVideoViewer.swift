@@ -245,6 +245,8 @@ open class AgoraVideoViewer: MPView, SingleVideoViewDelegate {
 
     /// View that holds all of the videos displayed in grid formation
     public internal(set) lazy var backgroundVideoHolder: MPView = {
+        self.wantsLayer = true
+        self.layer?.backgroundColor = .clear
         let rtnView = MPView()
         #if os(iOS)
         self.addSubview(rtnView)
@@ -252,7 +254,7 @@ open class AgoraVideoViewer: MPView, SingleVideoViewDelegate {
         #elseif os(macOS)
         self.addSubview(rtnView, positioned: .below, relativeTo: nil)
         rtnView.wantsLayer = true
-        rtnView.layer?.backgroundColor = NSColor.windowBackgroundColor.cgColor
+        rtnView.layer?.backgroundColor = .clear
         #endif
         rtnView.frame = self.bounds
         #if os(iOS)

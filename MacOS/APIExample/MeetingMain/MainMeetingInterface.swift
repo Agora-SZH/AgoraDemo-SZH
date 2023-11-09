@@ -70,22 +70,27 @@ class MainMeetingInterface: NSWindowController {
         endMeeting.layer?.borderWidth = 0.8
         
 
-        let agSettings = AgoraSettings()
+        var agSettings = AgoraSettings()
+//        agSettings.collectionPosition = .bottom
         let agoraView = AgoraVideoViewer(
             connectionData: AgoraConnectionData(
-                appId: "cc64ef10d45e48448b526af8814daeb3",
+                appId: "05039ead7cf5415ca365cce36d61350a",
                 rtcToken: ""
             ),
-            style: .floating,
+            style: .grid,
             agoraSettings: agSettings,
             delegate: self
         )
 
         let mainView = window?.contentView
-//        agoraView.fills(view: mainView!)
+        agoraView.translatesAutoresizingMaskIntoConstraints = false
+        mainView?.addSubview(agoraView)
+        agoraView.topAnchor.constraint(equalTo: mainView!.topAnchor ,constant: 64).isActive = true
+        agoraView.leftAnchor.constraint(equalTo: mainView!.leftAnchor).isActive = true
+        agoraView.rightAnchor.constraint(equalTo: mainView!.rightAnchor).isActive = true
+        agoraView.bottomAnchor.constraint(equalTo: mainView!.bottomAnchor ,constant: -120).isActive = true
 
-
-//        agoraView.join(channel: "123", as: .broadcaster)
+        agoraView.join(channel: "test", as: .broadcaster)
 
         self.agoraView = agoraView
     }
@@ -165,22 +170,6 @@ extension MainMeetingInterface {
 
 extension MainMeetingInterface: AgoraVideoViewerDelegate {
     func joinedChannel(channel: String) {
-        /*
-        if self.segmentControl != nil {
-            return
-        }
-        let newControl = NSSegmentedControl(
-            labels: ["floating", "grid"], trackingMode: .selectOne, target: self,
-            action: #selector(segmentedControlHit)
-        )
-        newControl.selectedSegment = self.agoraView?.style == .floating ? 0 : 1
-        self.view.addSubview(newControl)
-        newControl.translatesAutoresizingMaskIntoConstraints = false
-        [
-            newControl.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10),
-            newControl.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -10)
-        ].forEach { $0.isActive = true }
-         */
     }
 }
 

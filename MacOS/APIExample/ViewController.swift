@@ -88,12 +88,21 @@ class MenuController: NSViewController {
     @IBOutlet weak var tableView:NSTableView!
     
     let main = MainMeetingInterface()
+    
+    var setting: MeetingSetWindowController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        main.loadWindow()
-//        self.view.window?.addChildWindow(main.window!, ordered: .above)
+        let settingStoryboard = NSStoryboard(name: "MeetingSetWindowController", bundle: nil)
+        setting = settingStoryboard.instantiateController(withIdentifier: "MeetingSet") as? MeetingSetWindowController
+        setting?.showWindow(nil)
+//        self.setting?.loadWindow()
+//        self.view.window?.addChildWindow(self.setting!.window!, ordered: .above)
+        
+        
+//        setting.loadWindow()
+//        self.view.window?.addChildWindow(setting.window!, ordered: .above)
     }
     
     @IBAction func onClickSetting(_ sender: NSButton) {

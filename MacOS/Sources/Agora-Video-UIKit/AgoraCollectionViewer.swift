@@ -47,7 +47,7 @@ internal class AgoraCollectionViewer: MPCollectionView {
         )
         self.isSelectable = true
         self.allowsMultipleSelection = false
-        self.backgroundColors = [NSColor.windowBackgroundColor.withAlphaComponent(0.7)]
+        self.backgroundColors = [.clear]
     }
     #endif
 
@@ -122,15 +122,15 @@ open class AgoraCollectionItem: MPCollectionViewCell {
     }
     public override func viewDidLoad() {
         super.viewDidLoad()
-        view.wantsLayer = true
-        view.layer?.backgroundColor = NSColor.lightGray.cgColor
-        self.view.addSubview(self.backgroundIcon)
-        self.backgroundIcon.frame = CGRect(
-            origin: CGPoint(x: (self.view.bounds.width - 50) / 2,
-                            y: (self.view.bounds.height - 50) / 2),
-            size: CGSize(width: 50, height: 50)
-        )
-        self.backgroundIcon.autoresizingMask = [.maxXMargin, .minXMargin, .maxYMargin, .minYMargin]
+//        view.wantsLayer = true
+//        view.layer?.backgroundColor = NSColor.lightGray.cgColor
+//        self.view.addSubview(self.backgroundIcon)
+//        self.backgroundIcon.frame = CGRect(
+//            origin: CGPoint(x: (self.view.bounds.width - 50) / 2,
+//                            y: (self.view.bounds.height - 50) / 2),
+//            size: CGSize(width: 50, height: 50)
+//        )
+//        self.backgroundIcon.autoresizingMask = [.maxXMargin, .minXMargin, .maxYMargin, .minYMargin]
      }
     #endif
 
@@ -198,7 +198,7 @@ extension AgoraVideoViewer: MPCollectionViewDelegate, MPCollectionViewDataSource
             withIdentifier: NSUserInterfaceItemIdentifier("collectionCell"), for: indexPath
         ) as? AgoraCollectionItem ?? AgoraCollectionItem()
         cell.view.wantsLayer = true
-        cell.view.layer?.backgroundColor = NSColor.blue.withAlphaComponent(0.4).cgColor
+//        cell.view.layer?.backgroundColor = NSColor.blue.withAlphaComponent(0.4).cgColor
         return cell
     }
 
