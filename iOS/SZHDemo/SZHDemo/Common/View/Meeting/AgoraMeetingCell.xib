@@ -54,7 +54,7 @@
                             <constraint firstAttribute="height" constant="70" id="lZM-os-e2u"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_皇冠" translatesAutoresizingMaskIntoConstraints="NO" id="DkB-bb-5qa">
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_皇冠" translatesAutoresizingMaskIntoConstraints="NO" id="DkB-bb-5qa">
                         <rect key="frame" x="8" y="218" width="14" height="14"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="14" id="08j-uv-yHB"/>

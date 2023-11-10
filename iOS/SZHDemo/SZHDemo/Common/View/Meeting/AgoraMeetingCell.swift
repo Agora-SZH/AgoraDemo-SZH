@@ -9,8 +9,11 @@ import UIKit
 
 
 class AgoraMeetingCell: UICollectionViewCell {
-    var audioOnly:Bool = false
-    var isHost:Bool = true
+//    var audioOnly:Bool = false
+//    var isHost:Bool = true
+    private var _audioOnly:Bool = false
+    private var _isHost:Bool = false
+    
     var cellPopView:MeetingCellPop!
     @IBOutlet weak var backVideoView: UIView!
     
@@ -37,23 +40,40 @@ class AgoraMeetingCell: UICollectionViewCell {
         contentView.bringSubviewToFront(hostImage)
         contentView.bringSubviewToFront(audioBtn)
         contentView.bringSubviewToFront(usernameL)
-        if (isHost == true) {//如果是主持人 显示标志
-            avatarImage.isHidden = false
-            audioBtnConstraint.constant = 24
-        }else {//如果不是主持人 隐藏标志
-            avatarImage.isHidden = true
-            audioBtnConstraint.constant = 8
-        }
-        
-        if (audioOnly == true) {//如果是纯音频 隐藏视频渲染视图
-            avatarImage.isHidden = false
-            contentView.isHidden = true
-        }else {
-            avatarImage.isHidden = true
-            contentView.isHidden = false
-        }
     }
 
+    var audioOnly: Bool {
+        get {
+            return _audioOnly
+        }
+        set {
+            if (newValue == true) {//如果是纯音频 隐藏视频渲染视图
+                avatarImage.isHidden = false
+                backVideoView.isHidden = true
+            }else {
+                avatarImage.isHidden = true
+                backVideoView.isHidden = false
+            }
+            _audioOnly = newValue
+        }
+    }
+    
+    var isHost: Bool {
+        get {
+            return _isHost
+        }
+        set {
+            if (newValue == true) {//如果是主持人 显示标志
+                hostImage.isHidden = false
+                audioBtnConstraint.constant = 24
+            }else {//如果不是主持人 隐藏标志
+                hostImage.isHidden = true
+                audioBtnConstraint.constant = 8
+            }
+            _isHost = newValue
+        }
+    }
+    
     //点击置顶按钮
     @IBAction func topClick(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -74,5 +94,6 @@ class AgoraMeetingCell: UICollectionViewCell {
             cellPopView.removeFromSuperview()
         }
     }
+    
     
 }

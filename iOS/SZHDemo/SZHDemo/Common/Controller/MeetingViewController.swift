@@ -115,6 +115,7 @@ class MeetingViewController: ViewController,UICollectionViewDelegate,UICollectio
     
     //message
     @IBAction func ShowMessage(_ sender: UIButton) {
+        ToastView.show(text: "Please input message!")
     }
     
     
@@ -128,6 +129,23 @@ class MeetingViewController: ViewController,UICollectionViewDelegate,UICollectio
     @IBAction func MuteVideo(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         agoraKit.muteLocalVideoStream(sender.isSelected)
+        // 获取可见的单元格
+        let visibleIndexPaths = collectionView.indexPathsForVisibleItems
+
+        // 根据索引路径排序可见单元格
+        let sortedIndexPaths = visibleIndexPaths.sorted { $0.item < $1.item }
+
+        // 遍历排序后的索引路径，获取可见单元格
+        for indexPath in sortedIndexPaths {
+            if let cell = collectionView.cellForItem(at: indexPath) {
+                // 在这里使用可见单元格（cell）
+                if indexPath.row == 0 {
+                    let meettingCell = cell as! AgoraMeetingCell
+                    meettingCell.audioOnly = sender.isSelected
+                }
+            }
+        }
+        
     }
     
     //当前频道所有用户
@@ -186,6 +204,8 @@ class MeetingViewController: ViewController,UICollectionViewDelegate,UICollectio
             localVideoCanvas.renderMode = .hidden
             cell.usernameL.text = "\(localVideoCanvas.uid)"
             cell.topBtn.isSelected = true
+            cell.isHost = true
+            cell.audioOnly = false
             agoraKit.setupLocalVideo(localVideoCanvas)
             agoraKit.startPreview()
         }else {
@@ -194,6 +214,8 @@ class MeetingViewController: ViewController,UICollectionViewDelegate,UICollectio
             remoteVideoCanvas.uid = UInt(userArray[indexPath.row])
             remoteVideoCanvas.renderMode = .hidden
             cell.usernameL.text = "\(remoteVideoCanvas.uid)"
+            cell.isHost = false
+            cell.audioOnly = false
             agoraKit.setupRemoteVideo(remoteVideoCanvas)
         }
         return cell
@@ -268,44 +290,6 @@ class MeetingViewController: ViewController,UICollectionViewDelegate,UICollectio
             messageLabel.textAlignment = textAlignment
         }
         self.present(alertController, animated: true, completion: nil)
-    }
-    
-    //本地视图绑定手势
-    private func localGestureSetup() {
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(localViewPan(gesture:)))
-        localVideo.addGestureRecognizer(panGesture)
-    }
-    //远端视图绑定手势
-    private func remoteGestureSetup() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(remoteViewTap(gesture:)))
-        remoteVideo.addGestureRecognizer(tapGesture)
-    }
-    //拖拽事件
-    @objc private func localViewPan(gesture: UIPanGestureRecognizer) {
-        if gesture.state == .changed {
-            if let  panView = gesture.view {
-                let translation = gesture.translation(in: panView)
-                panView.transform = panView.transform.translatedBy(x: translation.x, y: translation.y)
-                gesture.setTranslation(.zero, in: panView)
-            }
-        }
-    }
-    //tap事件
-    @objc private func remoteViewTap(gesture: UITapGestureRecognizer) {
-        
-        if popViewHidden {
-            UIView.animate(withDuration: 0.3, delay: 0) {
-                self.topView.transform = self.topView.transform.translatedBy(x: 0, y: 85)
-                self.buttomView.transform = self.buttomView.transform.translatedBy(x: 0, y: -85)
-            }
-           popViewHidden = false
-        }else {
-            UIView.animate(withDuration: 0.3, delay: 0) {
-                self.topView.transform = self.topView.transform.translatedBy(x: 0, y: -85)
-                self.buttomView.transform = self.buttomView.transform.translatedBy(x: 0, y: 85)
-            }
-           popViewHidden = true
-        }
     }
     
     @IBAction func unwindToMeetingViewController(_ unwindSegue: UIStoryboardSegue) {
@@ -421,7 +405,7 @@ extension MeetingViewController: AgoraMediaFilterEventDelegate{
                             default:
                                 break
                             }
-                            remoteVideo.statsInfo?.updateSuperResolution(stat)
+//                            remoteVideo.statsInfo?.updateSuperResolution(stat)
                         } catch {
                             print("Error decoding JSON: \(error)")
                         }
@@ -631,7 +615,7 @@ extension MeetingViewController: MoreDelegate {
              }
             """
             agoraKit.setParameters(pameters)
-            remoteVideo.statsInfo?.updateSuperResolution("")
+//            remoteVideo.statsInfo?.updateSuperResolution("")
             print("关闭超分")
         }else if (index == 1) {//1.33倍超分
             pameters = """
